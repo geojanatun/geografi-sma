@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Penelitian Geografi — Kelas X | Geografi SMA</title>
+  <meta name="description" content="Modul 3 Geografi Kelas X (Fase E): Menjawab pertanyaan tentang fenomena geosfer secara sistematis, dari merumuskan masalah sampai menulis laporan. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-x.html -->
+<body data-modul="x-03" data-kelas="x">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html" aria-current="page">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Penelitian Geografi</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas X · Kelompok A · Modul 3</span>
+          <h1>🔬 Penelitian Geografi</h1>
+          <p class="subtitle">
+            Menjawab pertanyaan tentang fenomena geosfer secara sistematis, dari merumuskan masalah sampai menulis laporan.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 3 × 45 menit</li>
+            <li>📚 Fase E</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 1: Wilayah tempat tinggal dan lingkungan sekitar</strong><br><span class="cp-sub">Permasalahan kewilayahan</span> — Menerapkan penelitian geografi untuk memecahkan permasalahan kewilayahan</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 1.5</span> Peserta didik mampu mengidentifikasi permasalahan kewilayahan setempat serta merumuskan masalah penelitian geografi sederhana.</li>
+            <li><span class="atp-kode">ATP 1.6</span> Peserta didik mampu menerapkan metode penelitian geografi (pengumpulan data spasial dan analisis) untuk memecahkan masalah kewilayahan.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>menguraikan langkah-langkah penelitian geografi secara runtut;</li>
+            <li>membedakan jenis data dan memilih teknik pengumpulan data yang sesuai;</li>
+            <li>menentukan populasi dan sampel serta menyusun kerangka laporan penelitian sederhana.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#langkah">Langkah-Langkah Penelitian</a></li>
+            <li><a href="#data">Jenis Data dan Teknik Pengumpulannya</a></li>
+            <li><a href="#sampel">Populasi dan Sampel</a></li>
+            <li><a href="#laporan">Laporan Penelitian</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="x-03-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Langkah pertama dalam penelitian geografi adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-p1" value="a"> menentukan masalah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p1" value="b"> menyusun laporan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p1" value="c"> menarik kesimpulan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p1" value="d"> mengolah data</label></li>
+            </ul>
+            <p class="quiz-feedback">Penelitian diawali dengan menentukan masalah yang dirumuskan dalam bentuk pertanyaan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>2. Data hasil wawancara langsung peneliti dengan warga termasuk data …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-p2" value="a"> sekunder</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p2" value="b"> tersier</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p2" value="c"> pustaka</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p2" value="d"> primer</label></li>
+            </ul>
+            <p class="quiz-feedback">Data yang dikumpulkan langsung oleh peneliti disebut data primer.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>3. Data berupa angka, seperti suhu udara dan curah hujan, termasuk data …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-p3" value="a"> kualitatif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p3" value="b"> deskriptif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p3" value="c"> naratif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p3" value="d"> kuantitatif</label></li>
+            </ul>
+            <p class="quiz-feedback">Data kuantitatif berupa angka; data kualitatif berupa keterangan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Seluruh objek yang menjadi sasaran penelitian disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-p4" value="a"> sampel</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p4" value="b"> variabel</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p4" value="c"> populasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p4" value="d"> responden</label></li>
+            </ul>
+            <p class="quiz-feedback">Populasi adalah seluruh objek penelitian; sampel adalah sebagian yang mewakili.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Daftar pertanyaan tertulis yang dibagikan kepada responden disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-p5" value="a"> angket</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p5" value="b"> observasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p5" value="c"> dokumentasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-p5" value="d"> studi pustaka</label></li>
+            </ul>
+            <p class="quiz-feedback">Angket (kuesioner) berisi pertanyaan tertulis untuk diisi responden.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="langkah">A. Langkah-Langkah Penelitian</h2>
+          <ol>
+            <li><strong>Menentukan masalah</strong>: masalah dirumuskan dalam bentuk pertanyaan, misalnya “Mengapa Desa X sering tergenang saat hujan?”.</li>
+            <li><strong>Menetapkan tujuan</strong>: apa yang ingin diketahui dari penelitian.</li>
+            <li><strong>Merumuskan hipotesis</strong>: dugaan sementara jawaban atas masalah, yang akan diuji dengan data.</li>
+            <li><strong>Mengumpulkan data</strong> di lapangan atau dari sumber lain.</li>
+            <li><strong>Mengolah dan menganalisis data</strong> dalam bentuk tabel, grafik, atau peta.</li>
+            <li><strong>Menarik kesimpulan</strong> sebagai jawaban atas rumusan masalah.</li>
+            <li><strong>Menyusun laporan</strong> penelitian.</li>
+          </ol>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-03-1 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x03-alur">
+            <span class="media-label">🖼️ Diagram Alur</span>
+            <svg viewBox="0 0 560 236" role="img" aria-labelledby="x03-alur-j x03-alur-d">
+              <title id="x03-alur-j">Tujuh langkah penelitian geografi</title>
+              <desc id="x03-alur-d">Diagram alur berurutan: menentukan masalah, menetapkan tujuan, merumuskan hipotesis, mengumpulkan data, mengolah dan menganalisis data, menarik kesimpulan, menyusun laporan.</desc>
+              <defs><marker id="pn-x03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-garis)"/></marker></defs>
+              <path class="garis" d="M130,55 H146" marker-end="url(#pn-x03)"/><path class="garis" d="M270,55 H286" marker-end="url(#pn-x03)"/>
+              <path class="garis" d="M410,55 H426" marker-end="url(#pn-x03)"/><path class="garis" d="M490,84 V162" marker-end="url(#pn-x03)"/>
+              <path class="garis" d="M430,195 H414" marker-end="url(#pn-x03)"/><path class="garis" d="M290,195 H274" marker-end="url(#pn-x03)"/>
+              <rect class="kotak" x="10" y="26" width="120" height="58" rx="10"/><text class="t-tengah" x="70" y="52" style="font-size:14px">Menentukan</text><text class="t-tengah t-tebal" x="70" y="71" style="font-size:14px">masalah</text><circle class="nomor" cx="16" cy="28" r="11"/><text class="nomor-teks" x="16" y="32.5">1</text><rect class="kotak" x="150" y="26" width="120" height="58" rx="10"/><text class="t-tengah" x="210" y="52" style="font-size:14px">Menetapkan</text><text class="t-tengah t-tebal" x="210" y="71" style="font-size:14px">tujuan</text><circle class="nomor" cx="156" cy="28" r="11"/><text class="nomor-teks" x="156" y="32.5">2</text><rect class="kotak" x="290" y="26" width="120" height="58" rx="10"/><text class="t-tengah" x="350" y="52" style="font-size:14px">Merumuskan</text><text class="t-tengah t-tebal" x="350" y="71" style="font-size:14px">hipotesis</text><circle class="nomor" cx="296" cy="28" r="11"/><text class="nomor-teks" x="296" y="32.5">3</text><rect class="kotak" x="430" y="26" width="120" height="58" rx="10"/><text class="t-tengah" x="490" y="52" style="font-size:14px">Mengumpulkan</text><text class="t-tengah t-tebal" x="490" y="71" style="font-size:14px">data</text><circle class="nomor" cx="436" cy="28" r="11"/><text class="nomor-teks" x="436" y="32.5">4</text><rect class="kotak" x="430" y="166" width="120" height="58" rx="10"/><text class="t-tengah" x="490" y="192" style="font-size:14px">Mengolah &amp;</text><text class="t-tengah t-tebal" x="490" y="211" style="font-size:14px">menganalisis</text><circle class="nomor" cx="436" cy="168" r="11"/><text class="nomor-teks" x="436" y="172.5">5</text><rect class="kotak" x="290" y="166" width="120" height="58" rx="10"/><text class="t-tengah" x="350" y="192" style="font-size:14px">Menarik</text><text class="t-tengah t-tebal" x="350" y="211" style="font-size:14px">kesimpulan</text><circle class="nomor" cx="296" cy="168" r="11"/><text class="nomor-teks" x="296" y="172.5">6</text><rect class="kotak" x="150" y="166" width="120" height="58" rx="10"/><text class="t-tengah" x="210" y="192" style="font-size:14px">Menyusun</text><text class="t-tengah t-tebal" x="210" y="211" style="font-size:14px">laporan</text><circle class="nomor" cx="156" cy="168" r="11"/><text class="nomor-teks" x="156" y="172.5">7</text><text class="t-kecil" x="20" y="200">Mulai dari</text><text class="t-kecil" x="20" y="217">rumusan masalah ↗</text>
+            </svg>
+            <figcaption>Penelitian geografi berjalan runtut. Hasil langkah ke-6 (kesimpulan) harus menjawab rumusan masalah pada langkah ke-1.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="data">B. Jenis Data dan Teknik Pengumpulannya</h2>
+          <p>
+            Berdasarkan sumbernya, data dibedakan menjadi <strong>data primer</strong> (dikumpulkan langsung oleh
+            peneliti, misalnya hasil wawancara) dan <strong>data sekunder</strong> (diperoleh dari pihak lain, misalnya data
+            BPS atau BMKG). Berdasarkan sifatnya, ada <strong>data kuantitatif</strong> (berupa angka, seperti curah hujan)
+            dan <strong>data kualitatif</strong> (berupa keterangan, seperti pendapat warga).
+          </p>
+          <div class="table-wrap">
+            <table>
+              <caption>Teknik pengumpulan data</caption>
+              <thead><tr><th scope="col">Teknik</th><th scope="col">Cara</th><th scope="col">Contoh</th></tr></thead>
+              <tbody>
+                <tr><td>Observasi</td><td>Pengamatan langsung di lapangan</td><td>Mengukur lebar dan kedalaman saluran air</td></tr>
+                <tr><td>Wawancara</td><td>Tanya jawab langsung dengan narasumber</td><td>Bertanya kepada ketua RT tentang riwayat banjir</td></tr>
+                <tr><td>Angket (kuesioner)</td><td>Daftar pertanyaan tertulis</td><td>Survei kebiasaan membuang sampah warga</td></tr>
+                <tr><td>Dokumentasi</td><td>Mengumpulkan foto, arsip, dan dokumen</td><td>Foto genangan dan data monografi desa</td></tr>
+                <tr><td>Studi pustaka</td><td>Membaca buku, jurnal, dan laporan</td><td>Membaca laporan kebencanaan BPBD</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="sampel">C. Populasi dan Sampel</h2>
+          <p>
+            <strong>Populasi</strong> adalah seluruh objek penelitian, sedangkan <strong>sampel</strong> adalah sebagian
+            populasi yang mewakili. Pada <em>random sampling</em>, setiap anggota populasi berpeluang sama terpilih.
+            Pada <em>purposive sampling</em>, sampel dipilih berdasarkan pertimbangan tertentu, misalnya hanya rumah
+            di bantaran sungai.
+          </p>
+
+          <h2 id="laporan">D. Laporan Penelitian</h2>
+          <p>
+            Laporan sederhana memuat: <strong>pendahuluan</strong> (latar belakang, rumusan masalah, tujuan),
+            <strong>kajian pustaka</strong>, <strong>metode penelitian</strong> (lokasi, waktu, teknik pengumpulan dan
+            analisis data), <strong>hasil dan pembahasan</strong> (tabel, grafik, peta), serta <strong>penutup</strong>
+            (kesimpulan dan saran), ditambah daftar pustaka dan lampiran.
+          </p>
+
+
+
+
+
+          <!-- MEDIA-MULAI x-03-2 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x03-grafik">
+            <span class="media-label">📊 Grafik</span>
+            <svg viewBox="0 0 520 300" role="img" aria-labelledby="x03-grafik-j x03-grafik-d">
+              <title id="x03-grafik-j">Contoh grafik batang hasil observasi sampah plastik</title>
+              <desc id="x03-grafik-d">Grafik batang jumlah sampah plastik di lima titik: kantin 42, gerbang 18, lapangan 25, kelas 12, musala 6.</desc>
+              <defs></defs>
+              <line class="kisi" x1="60" y1="240.0" x2="500" y2="240.0"/><text class="t-kecil t-kanan" x="52" y="244.0">0</text><line class="kisi" x1="60" y1="198.0" x2="500" y2="198.0"/><text class="t-kecil t-kanan" x="52" y="202.0">10</text><line class="kisi" x1="60" y1="156.0" x2="500" y2="156.0"/><text class="t-kecil t-kanan" x="52" y="160.0">20</text><line class="kisi" x1="60" y1="114.0" x2="500" y2="114.0"/><text class="t-kecil t-kanan" x="52" y="118.0">30</text><line class="kisi" x1="60" y1="72.0" x2="500" y2="72.0"/><text class="t-kecil t-kanan" x="52" y="76.0">40</text><line class="kisi" x1="60" y1="30.0" x2="500" y2="30.0"/><text class="t-kecil t-kanan" x="52" y="34.0">50</text><line class="sumbu" x1="60" y1="240" x2="500" y2="240"/><line class="sumbu" x1="60" y1="30" x2="60" y2="240"/><rect class="batang" x="79" y="63.6" width="50" height="176.4" rx="3"><title>Kantin: 42 buah</title></rect><text class="t-tengah t-tebal" x="104" y="56.6">42</text><text class="t-tengah" x="104" y="262">Kantin</text><rect class="batang" x="167" y="164.4" width="50" height="75.6" rx="3"><title>Gerbang: 18 buah</title></rect><text class="t-tengah t-tebal" x="192" y="157.4">18</text><text class="t-tengah" x="192" y="262">Gerbang</text><rect class="batang" x="255" y="135.0" width="50" height="105.0" rx="3"><title>Lapangan: 25 buah</title></rect><text class="t-tengah t-tebal" x="280" y="128.0">25</text><text class="t-tengah" x="280" y="262">Lapangan</text><rect class="batang" x="343" y="189.6" width="50" height="50.4" rx="3"><title>Kelas: 12 buah</title></rect><text class="t-tengah t-tebal" x="368" y="182.6">12</text><text class="t-tengah" x="368" y="262">Kelas</text><rect class="batang" x="431" y="214.8" width="50" height="25.2" rx="3"><title>Musala: 6 buah</title></rect><text class="t-tengah t-tebal" x="456" y="207.8">6</text><text class="t-tengah" x="456" y="262">Musala</text><text class="t-kecil t-tengah" transform="translate(16 135) rotate(-90)">Jumlah sampah plastik (buah)</text><text class="t-kecil t-tengah" x="280" y="290">Titik pengamatan</text>
+            </svg>
+            <figcaption><strong>Contoh penyajian data</strong> (data ilustrasi) pada bagian hasil dan pembahasan. Dari grafik terlihat sampah terbanyak di kantin. Pertanyaan lanjutan untuk pembahasan: <em>mengapa</em> di sana, dan apa solusinya?</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Penelitian geografi dimulai dari rumusan masalah, tujuan, dan hipotesis, lalu pengumpulan, pengolahan, dan analisis data hingga kesimpulan.</li>
+            <li>Data primer diperoleh langsung oleh peneliti; data sekunder diperoleh dari pihak lain.</li>
+            <li>Teknik pengumpulan data: observasi, wawancara, angket, dokumentasi, dan studi pustaka.</li>
+            <li>Sampel adalah bagian populasi yang mewakili, dipilih misalnya secara acak (random) atau bertujuan (purposive).</li>
+            <li>Laporan penelitian memuat pendahuluan, kajian pustaka, metode, hasil dan pembahasan, serta penutup.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="x-03" data-pembanding="x-03-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>1. Dugaan sementara terhadap jawaban rumusan masalah yang masih harus dibuktikan dengan data disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s1" value="a"> Tujuan penelitian</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s1" value="b"> Kesimpulan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s1" value="c"> Variabel</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s1" value="d"> Hipotesis</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Hipotesis</strong> adalah jawaban sementara yang diuji kebenarannya melalui data penelitian.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Data curah hujan bulanan yang diunduh dari situs BMKG oleh siswa termasuk data …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s2" value="a"> Sekunder dan kuantitatif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s2" value="b"> Primer dan kualitatif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s2" value="c"> Primer dan kuantitatif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s2" value="d"> Sekunder dan kualitatif</label></li>
+            </ul>
+            <p class="quiz-feedback">Data diperoleh dari pihak lain (<strong>sekunder</strong>) dan berupa angka (<strong>kuantitatif</strong>).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>3. Teknik pengumpulan data dengan mengamati dan mengukur langsung kondisi saluran air di lapangan adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s3" value="a"> Angket</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s3" value="b"> Observasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s3" value="c"> Wawancara</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s3" value="d"> Studi pustaka</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Observasi</strong> dilakukan dengan pengamatan langsung terhadap objek di lapangan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Peneliti hanya memilih rumah di bantaran sungai sebagai sampel karena paling sering terdampak banjir. Teknik pengambilan sampel ini adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s4" value="a"> Random sampling</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s4" value="b"> Sampling sistematis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s4" value="c"> Purposive sampling</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s4" value="d"> Sampel jenuh</label></li>
+            </ul>
+            <p class="quiz-feedback">Sampel dipilih berdasarkan pertimbangan atau tujuan tertentu, sehingga disebut <strong>purposive sampling</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Bagian laporan penelitian yang memuat tabel, grafik, dan peta hasil olahan data beserta penjelasannya adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s5" value="a"> Hasil dan pembahasan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s5" value="b"> Pendahuluan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s5" value="c"> Kajian pustaka</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s5" value="d"> Daftar pustaka</label></li>
+            </ul>
+            <p class="quiz-feedback">Pengolahan dan analisis data disajikan pada bagian <strong>hasil dan pembahasan</strong>.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>6. Rumusan masalah yang paling tepat untuk penelitian geografi adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s6" value="a"> Desa X terletak di Kabupaten Bogor.</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s6" value="b"> Banjir adalah bencana alam.</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s6" value="c"> Warga Desa X ramah.</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s6" value="d"> Mengapa Desa X sering tergenang saat hujan?</label></li>
+            </ul>
+            <p class="quiz-feedback">Rumusan masalah ditulis dalam bentuk <strong>pertanyaan</strong> yang dapat dijawab melalui penelitian.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>7. Seorang siswa membaca laporan kebencanaan BPBD untuk memperkuat teori penelitiannya. Teknik ini disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s7" value="a"> observasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s7" value="b"> studi pustaka</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s7" value="c"> wawancara</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s7" value="d"> angket</label></li>
+            </ul>
+            <p class="quiz-feedback">Membaca buku, jurnal, dan laporan termasuk <strong>studi pustaka</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>8. Setiap rumah di sebuah RW memiliki peluang yang sama untuk dipilih sebagai sampel. Teknik sampling ini adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s8" value="a"> random sampling</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s8" value="b"> purposive sampling</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s8" value="c"> quota sampling</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s8" value="d"> snowball sampling</label></li>
+            </ul>
+            <p class="quiz-feedback">Pada <strong>random sampling</strong>, setiap anggota populasi berpeluang sama terpilih.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>9. Pendapat warga tentang penyebab banjir yang ditulis dalam bentuk keterangan termasuk data …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s9" value="a"> kuantitatif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s9" value="b"> numerik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s9" value="c"> statistik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s9" value="d"> kualitatif</label></li>
+            </ul>
+            <p class="quiz-feedback">Data berupa keterangan atau pendapat termasuk data <strong>kualitatif</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>10. Bagian laporan yang memuat lokasi, waktu, serta teknik pengumpulan dan analisis data adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x03-s10" value="a"> metode penelitian</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s10" value="b"> pendahuluan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s10" value="c"> kajian pustaka</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x03-s10" value="d"> penutup</label></li>
+            </ul>
+            <p class="quiz-feedback">Lokasi, waktu, dan teknik penelitian dijelaskan pada bagian <strong>metode penelitian</strong>.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Mini-Riset: Sampah di Lingkungan Madrasah</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Lakukan penelitian sederhana secara berkelompok (4–5 orang) selama satu minggu.</p>
+          <ol>
+            <li>Rumuskan satu masalah, misalnya “Di bagian mana lingkungan madrasah paling banyak ditemukan sampah plastik, dan mengapa?”.</li>
+            <li>Tuliskan tujuan dan hipotesis penelitianmu.</li>
+            <li>Kumpulkan data dengan observasi (hitung sampah di 4–5 titik), wawancara singkat dengan 5 warga madrasah, dan dokumentasi foto.</li>
+            <li>Olah data menjadi tabel dan grafik batang, lalu tandai titik pengamatan pada denah madrasah.</li>
+            <li>Tarik kesimpulan dan berikan saran kepada madrasah.</li>
+          </ol>
+          <p><strong>Produk:</strong> Laporan penelitian sederhana (3–5 halaman) dengan sistematika pendahuluan, metode, hasil dan pembahasan, serta penutup.</p>
+          <p><strong>Kriteria penilaian:</strong> kejelasan rumusan masalah, ketepatan teknik pengumpulan data, penyajian tabel/grafik/peta, dan kesesuaian kesimpulan dengan data.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="x-03" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="x-02-peta-sig.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Peta, Penginderaan Jauh, dan SIG</span>
+          </a>
+          <a href="x-04-bumi-ruang-kehidupan.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Bumi sebagai Ruang Kehidupan</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>
