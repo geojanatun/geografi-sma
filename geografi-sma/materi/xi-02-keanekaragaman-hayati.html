@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Pola Keanekaragaman Hayati Indonesia dan Dunia — Kelas XI | Geografi SMA</title>
+  <meta name="description" content="Modul 2 Geografi Kelas XI (Fase F): Mengapa flora dan fauna tersebar tidak merata, dan bagaimana kita menjaganya. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Leaflet 1.9.4 (pustaka peta) disimpan di dalam website: js/vendor/leaflet/
+       Tidak memakai CDN, sehingga tidak terblokir jaringan sekolah dan tetap jalan tanpa internet. -->
+  <link rel="stylesheet" href="../js/vendor/leaflet/leaflet.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-xi.html -->
+<body data-modul="xi-02" data-kelas="xi">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <li><a href="../kelas-xi.html" aria-current="page">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Pola Keanekaragaman Hayati Indonesia dan Dunia</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas XI · Modul 2</span>
+          <h1>🦜 Pola Keanekaragaman Hayati Indonesia dan Dunia</h1>
+          <p class="subtitle">
+            Mengapa flora dan fauna tersebar tidak merata, dan bagaimana kita menjaganya.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase F</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Proses/fenomena yang memengaruhi lingkungan fisik</span> — Menganalisis persebaran bioma di dunia dan pengaruhnya terhadap manusia.</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 2.5</span> Peserta didik mampu menganalisis pola persebaran bioma dunia serta pengaruh keberadaannya terhadap pola kehidupan manusia.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>menganalisis faktor-faktor yang memengaruhi persebaran flora dan fauna;</li>
+            <li>membandingkan karakteristik fauna Asiatis, peralihan, dan Australis di Indonesia;</li>
+            <li>mengidentifikasi bioma dunia dan menjelaskan upaya pelestarian keanekaragaman hayati.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#judul-3d-keanekaragaman-hayati">Model 3D</a></li>
+            <li><a href="#faktor">Faktor Persebaran Flora dan Fauna</a></li>
+            <li><a href="#indonesia">Persebaran Fauna di Indonesia</a></li>
+            <li><a href="#dunia">Bioma Dunia</a></li>
+            <li><a href="#pelestarian">Ancaman dan Pelestarian</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="xi-02-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>1. Seluruh makhluk hidup beserta lingkungan tempat hidupnya di permukaan bumi disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-p1" value="a"> atmosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p1" value="b"> hidrosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p1" value="c"> biosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p1" value="d"> litosfer</label></li>
+            </ul>
+            <p class="quiz-feedback">Biosfer adalah lapisan kehidupan di bumi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Hewan atau tumbuhan yang hanya ditemukan di satu wilayah tertentu disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-p2" value="a"> endemik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p2" value="b"> invasif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p2" value="c"> migran</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p2" value="d"> punah</label></li>
+            </ul>
+            <p class="quiz-feedback">Spesies endemik hanya hidup secara alami di wilayah tertentu.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>3. Komodo merupakan hewan khas yang hidup di …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-p3" value="a"> Kalimantan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p3" value="b"> Papua</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p3" value="c"> Sumatra</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p3" value="d"> Nusa Tenggara Timur</label></li>
+            </ul>
+            <p class="quiz-feedback">Komodo hidup di Pulau Komodo, Rinca, dan Flores (Nusa Tenggara Timur).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Taman nasional berfungsi terutama untuk …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-p4" value="a"> membuka lahan perkebunan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p4" value="b"> membangun permukiman</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p4" value="c"> melestarikan flora dan fauna di habitat aslinya</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p4" value="d"> menambang bahan galian</label></li>
+            </ul>
+            <p class="quiz-feedback">Taman nasional adalah kawasan pelestarian alam di habitat asli.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Hutan Indonesia sebagian besar berupa hutan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-p5" value="a"> hujan tropis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p5" value="b"> taiga</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p5" value="c"> gugur</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-p5" value="d"> tundra</label></li>
+            </ul>
+            <p class="quiz-feedback">Iklim tropis yang basah membentuk hutan hujan tropis.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- MODEL3D-MULAI -->
+        <!-- ===== EDIT DI SINI: model 3D modul ini (file di folder 3d/) ===== -->
+        <section class="model-3d" aria-labelledby="judul-3d-keanekaragaman-hayati">
+          <div class="model-3d-kepala">
+            <span class="model-ikon" aria-hidden="true">🦜</span>
+            <div>
+              <span class="media-label">🧊 Model 3D Interaktif</span>
+              <h2 id="judul-3d-keanekaragaman-hayati" class="box-title">Keanekaragaman Hayati 3D</h2>
+            </div>
+          </div>
+          <p>Turunkan muka laut ke zaman es untuk melihat Paparan Sunda dan Sahul, Garis Wallace–Weber, bioma dunia, dan pelestarian.</p>
+          <ul class="model-fitur"><li>Zaman es</li><li>Garis Wallace & Weber</li><li>Bioma dunia</li></ul>
+          <div class="model-aksi">
+            <button type="button" class="btn btn-primary" data-muat-3d="../3d/keanekaragaman-hayati.html?embed=1" aria-controls="bingkai-3d-keanekaragaman-hayati">▶ Tampilkan di halaman ini</button>
+            <a class="btn btn-outline" href="../3d/keanekaragaman-hayati.html">⛶ Buka layar penuh</a>
+          </div>
+          <div class="model-3d-bingkai" id="bingkai-3d-keanekaragaman-hayati" hidden></div>
+          <noscript><p><a href="../3d/keanekaragaman-hayati.html">Buka model 3D</a></p></noscript>
+        </section>
+        <!-- MODEL3D-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="faktor">A. Faktor Persebaran Flora dan Fauna</h2>
+          <ul>
+            <li><strong>Iklim</strong>: suhu, curah hujan, kelembapan, dan angin menentukan jenis vegetasi.</li>
+            <li><strong>Edafik (tanah)</strong>: tekstur, kesuburan, dan kandungan air tanah.</li>
+            <li><strong>Fisiografi</strong>: ketinggian dan bentuk muka bumi, misalnya vegetasi berubah seiring ketinggian gunung.</li>
+            <li><strong>Biotik</strong>: makhluk hidup, termasuk manusia, yang dapat menyebarkan atau memusnahkan spesies.</li>
+          </ul>
+
+          <h2 id="indonesia">B. Persebaran Fauna di Indonesia</h2>
+          <p>
+            Pada zaman es, sebagian Indonesia barat menyatu dengan Asia (Paparan Sunda) dan Indonesia timur menyatu
+            dengan Australia (Paparan Sahul). Akibatnya, fauna Indonesia dibagi oleh <strong>Garis Wallace</strong>
+            dan <strong>Garis Weber</strong>:
+          </p>
+          <div class="table-wrap">
+            <table>
+              <caption>Tiga kelompok fauna Indonesia</caption>
+              <thead><tr><th scope="col">Tipe</th><th scope="col">Wilayah</th><th scope="col">Contoh fauna</th></tr></thead>
+              <tbody>
+                <tr><td>Asiatis</td><td>Sumatra, Jawa, Kalimantan, Bali (barat Garis Wallace)</td><td>Harimau, gajah, badak, orangutan, banyak mamalia besar</td></tr>
+                <tr><td>Peralihan (Wallacea)</td><td>Sulawesi, Nusa Tenggara, Maluku (antara Garis Wallace dan Weber)</td><td>Anoa, babirusa, komodo, maleo, tarsius</td></tr>
+                <tr><td>Australis</td><td>Papua dan pulau sekitarnya (timur Garis Weber)</td><td>Kanguru pohon, kasuari, cenderawasih, mamalia berkantung</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Banyak spesies di Wallacea bersifat <strong>endemik</strong>, artinya hanya ditemukan di wilayah tersebut.
+            Flora Indonesia barat dan timur sebagian besar tergolong dalam kawasan flora <strong>Malesiana</strong>,
+            dengan ciri hutan hujan tropis yang lebat.
+          </p>
+
+
+
+
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xi-02-1 (diagram/animasi/grafik/video) -->
+          <section class="media peta-titik" id="media-xi02-fauna" aria-labelledby="xi02-fauna-judul"
+            data-legenda='{"wallace": {"warna": "#c0392b", "label": "Garis Wallace", "garis": true, "putus": true}, "weber": {"warna": "#1e6091", "label": "Garis Weber", "garis": true, "putus": true}, "asiatis": {"warna": "#e67e22", "label": "Fauna Asiatis"}, "peralihan": {"warna": "#8e44ad", "label": "Fauna peralihan"}, "australis": {"warna": "#16a085", "label": "Fauna Australis"}}'>
+            <span class="media-label">🗺️ Peta Interaktif</span>
+            <h3 id="xi02-fauna-judul">Garis Wallace, Garis Weber, dan Contoh Fauna Endemik</h3>
+            <p>Perhatikan bahwa fauna Asiatis berada di barat Garis Wallace, fauna Australis di timur Garis Weber, dan fauna peralihan di antara keduanya (kawasan Wallacea).</p>
+            <div class="peta-container" role="region" aria-label="Garis Wallace, Garis Weber, dan Contoh Fauna Endemik"></div>
+            <div class="peta-toolbar"><button type="button" class="btn btn-outline peta-reset" hidden>🔄 Tampilkan semua</button></div>
+            <p class="box box-info peta-pesan" role="status" hidden></p>
+            <!-- ===== EDIT DI SINI: peta Google My Maps karya siswa. Ganti nilai mid=... bila memakai peta lain.
+                 Agar tampil, peta harus dibagikan "Siapa saja yang memiliki link dapat melihat". ===== -->
+            <div class="mymaps">
+              <h4>🧑‍🎓 Peta Karya Siswa MAN 3 Bogor (Google My Maps)</h4>
+              <p>Peta ini disusun siswa MAN 3 Bogor dan <strong>diperbarui langsung (real-time)</strong> setiap kali siswa menambahkan titik di Google My Maps. Bandingkan isinya dengan peta di atas.</p>
+              <div class="mymaps-frame">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1x07ncWO6lmR-N19ohZEETiKfo4uGd3w&amp;ehbc=2E312F" title="Peta Google My Maps karya siswa MAN 3 Bogor tentang persebaran fauna" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <p class="video-sumber">Peta tidak muncul? <a href="https://www.google.com/maps/d/viewer?mid=1x07ncWO6lmR-N19ohZEETiKfo4uGd3w" rel="noopener" target="_blank">Buka peta di Google My Maps</a> (membutuhkan internet).</p>
+            </div>
+            <noscript><p class="box box-info">⚠️ JavaScript nonaktif. Data tetap dapat dibaca pada tabel berikut.</p></noscript>
+            <!-- ===== EDIT DI SINI: data peta. Titik: data-lat & data-lng. Garis: data-garis="lat,lng; lat,lng; ...".
+                 Urutan kolom jangan diubah. ===== -->
+            <div class="table-wrap">
+              <table class="peta-tabel">
+                <caption>Contoh fauna endemik dan lokasi pelestariannya (posisi garis disederhanakan)</caption>
+                <thead><tr><th scope="col">Nama</th><th scope="col">Lokasi</th><th scope="col">Kelompok</th><th scope="col">Tipe</th><th scope="col">Keterangan</th></tr></thead>
+                <tbody>
+                  <tr data-garis="-10.6,115.75; -8.6,115.75; -7.0,116.6; -4.5,117.9; -1.5,118.5; 1.5,119.5; 4.0,120.5; 5.4,123.5; 5.8,127.0" data-jenis="wallace">
+                    <td>Garis Wallace</td><td>Selat Lombok – Selat Makassar – Laut Sulawesi</td><td>Batas barat</td><td>Garis khayal</td><td>Memisahkan fauna Asiatis di barat dengan fauna peralihan di timurnya.</td>
+                  </tr>
+                  <tr data-garis="-11.5,129.3; -7.5,132.2; -4.0,131.2; -1.0,129.7; 2.5,129.3" data-jenis="weber">
+                    <td>Garis Weber</td><td>Laut Banda – timur Maluku</td><td>Batas timur</td><td>Garis khayal</td><td>Memisahkan fauna peralihan di barat dengan fauna Australis (Papua dan sekitarnya) di timurnya.</td>
+                  </tr>
+                  <tr data-lat="-2.85" data-lng="111.95" data-jenis="asiatis">
+                    <td>Orangutan kalimantan</td><td>TN Tanjung Puting, Kalimantan Tengah</td><td>Kera besar</td><td>Asiatis</td><td>Kera besar penghuni hutan hujan tropis dataran rendah; terancam oleh hilangnya hutan.</td>
+                  </tr>
+                  <tr data-lat="-2.0" data-lng="101.5" data-jenis="asiatis">
+                    <td>Harimau sumatra</td><td>TN Kerinci Seblat, Jambi–Sumatra Barat</td><td>Mamalia besar</td><td>Asiatis</td><td>Subspesies harimau yang hanya tersisa di Pulau Sumatra.</td>
+                  </tr>
+                  <tr data-lat="-4.93" data-lng="105.78" data-jenis="asiatis">
+                    <td>Gajah sumatra</td><td>TN Way Kambas, Lampung</td><td>Mamalia besar</td><td>Asiatis</td><td>Mamalia besar khas fauna Asiatis; ada pusat pelatihan dan konservasi gajah.</td>
+                  </tr>
+                  <tr data-lat="-6.75" data-lng="105.33" data-jenis="asiatis">
+                    <td>Badak jawa</td><td>TN Ujung Kulon, Banten</td><td>Mamalia besar</td><td>Asiatis</td><td>Badak bercula satu yang populasinya sangat kecil dan hanya tersisa di Ujung Kulon.</td>
+                  </tr>
+                  <tr data-lat="-1.45" data-lng="120.2" data-jenis="peralihan">
+                    <td>Anoa</td><td>TN Lore Lindu, Sulawesi Tengah</td><td>Mamalia</td><td>Peralihan</td><td>Kerbau kerdil endemik Sulawesi.</td>
+                  </tr>
+                  <tr data-lat="0.55" data-lng="123.85" data-jenis="peralihan">
+                    <td>Maleo</td><td>TN Bogani Nani Wartabone, Gorontalo–Sulawesi Utara</td><td>Burung</td><td>Peralihan</td><td>Burung endemik Sulawesi yang mengubur telurnya di pasir panas.</td>
+                  </tr>
+                  <tr data-lat="1.55" data-lng="125.17" data-jenis="peralihan">
+                    <td>Tarsius</td><td>Cagar Alam Tangkoko, Sulawesi Utara</td><td>Primata kecil</td><td>Peralihan</td><td>Primata mungil bermata besar yang aktif pada malam hari.</td>
+                  </tr>
+                  <tr data-lat="-8.55" data-lng="119.48" data-jenis="peralihan">
+                    <td>Komodo</td><td>TN Komodo, Nusa Tenggara Timur</td><td>Reptil</td><td>Peralihan</td><td>Kadal terbesar di dunia, endemik Pulau Komodo, Rinca, dan sekitarnya.</td>
+                  </tr>
+                  <tr data-lat="-1.1" data-lng="133.9" data-jenis="australis">
+                    <td>Cenderawasih</td><td>Pegunungan Arfak, Papua Barat</td><td>Burung</td><td>Australis</td><td>Burung dengan bulu indah yang menjadi ikon fauna Papua.</td>
+                  </tr>
+                  <tr data-lat="-4.6" data-lng="137.9" data-jenis="australis">
+                    <td>Kanguru pohon</td><td>TN Lorentz, Papua</td><td>Mamalia berkantung</td><td>Australis</td><td>Kanguru yang hidup di pohon; ciri fauna Australis adalah mamalia berkantung.</td>
+                  </tr>
+                  <tr data-lat="-8.6" data-lng="140.6" data-jenis="australis">
+                    <td>Kasuari</td><td>TN Wasur, Merauke</td><td>Burung</td><td>Australis</td><td>Burung besar yang tidak dapat terbang.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="peta-sumber">Peta dasar: garis pantai Natural Earth; saat online ditambah © Kontributor OpenStreetMap.</p>
+          </section>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xi-02-2 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-xi02-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: video pilihan guru (YouTube Shorts). Ganti data-video-id bila perlu. ===== -->
+            <div class="video-lite video-vertikal" data-video-id="NCMomesoKpo" data-judul="Video singkat Garis Wallace dan Weber">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/shorts/NCMomesoKpo" rel="noopener">YouTube Shorts</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Video singkat pilihan guru</strong> — tentang persebaran fauna Indonesia dan Garis Wallace–Weber.</figcaption>
+            <p class="video-sumber">Sumber: YouTube Shorts ·
+              <a class="video-tautan" href="https://www.youtube.com/shorts/NCMomesoKpo" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="dunia">C. Bioma Dunia</h2>
+          <p><strong>Bioma</strong> adalah komunitas makhluk hidup yang luas dengan iklim khas:</p>
+          <ul>
+            <li><strong>Hutan hujan tropis</strong>: curah hujan tinggi, pohon tinggi berlapis (Amazon, Kongo, Indonesia).</li>
+            <li><strong>Sabana</strong>: padang rumput dengan pohon jarang (Afrika, Nusa Tenggara Timur).</li>
+            <li><strong>Gurun</strong>: curah hujan sangat rendah, tumbuhan kaktus (Sahara).</li>
+            <li><strong>Stepa/padang rumput</strong> di daerah beriklim sedang (Amerika Utara, Asia Tengah).</li>
+            <li><strong>Hutan gugur</strong>: pohon menggugurkan daun saat musim dingin (Eropa, Amerika Utara).</li>
+            <li><strong>Taiga</strong>: hutan pohon berdaun jarum (Kanada, Rusia).</li>
+            <li><strong>Tundra</strong>: dingin, didominasi lumut dan lumut kerak (sekitar Kutub Utara).</li>
+          </ul>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xi-02-3 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-xi02-bioma">
+            <span class="media-label">🖼️ Diagram</span>
+            <svg viewBox="0 0 600 320" role="img" aria-labelledby="xi02-bioma-j xi02-bioma-d">
+              <title id="xi02-bioma-j">Pola umum sebaran bioma dunia menurut lintang</title>
+              <desc id="xi02-bioma-d">Dari khatulistiwa ke kutub: hutan hujan tropis, sabana, gurun, stepa, hutan gugur, taiga, tundra, dan es kutub.</desc>
+              <defs><marker id="pn-xi02" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-garis)"/></marker></defs>
+              <rect x="90" y="270" width="300" height="30" style="fill:#2d6a4f" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="290" style="fill:#fff;font-size:14px;font-weight:600">Hutan hujan tropis</text><rect x="90" y="240" width="300" height="30" style="fill:#a3b55b" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="260" style="fill:#1f2933;font-size:14px;font-weight:600">Sabana</text><rect x="90" y="210" width="300" height="30" style="fill:#e9c46a" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="230" style="fill:#1f2933;font-size:14px;font-weight:600">Gurun</text><rect x="90" y="165" width="300" height="45" style="fill:#d4b483" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="192" style="fill:#1f2933;font-size:14px;font-weight:600">Stepa / padang rumput</text><rect x="90" y="135" width="300" height="30" style="fill:#7aa95c" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="155" style="fill:#1f2933;font-size:14px;font-weight:600">Hutan gugur</text><rect x="90" y="102" width="300" height="33" style="fill:#3a6b5a" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="124" style="fill:#fff;font-size:14px;font-weight:600">Taiga (hutan konifer)</text><rect x="90" y="75" width="300" height="27" style="fill:#b7c4c9" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="94" style="fill:#1f2933;font-size:14px;font-weight:600">Tundra</text><rect x="90" y="30" width="300" height="45" style="fill:#eef3f6" stroke="var(--warna-permukaan)" stroke-width="1"/><text x="102" y="58" style="fill:#1f2933;font-size:14px;font-weight:600">Es kutub</text><line class="garis-tipis" x1="80" y1="300.0" x2="90" y2="300.0"/><text class="t-kecil t-kanan" x="76" y="304.0">0°</text><line class="garis-tipis" x1="80" y1="229.5" x2="90" y2="229.5"/><text class="t-kecil t-kanan" x="76" y="233.5">23,5°</text><line class="garis-tipis" x1="80" y1="210.0" x2="90" y2="210.0"/><text class="t-kecil t-kanan" x="76" y="214.0">30°</text><line class="garis-tipis" x1="80" y1="100.5" x2="90" y2="100.5"/><text class="t-kecil t-kanan" x="76" y="104.5">66,5°</text><line class="garis-tipis" x1="80" y1="30.0" x2="90" y2="30.0"/><text class="t-kecil t-kanan" x="76" y="34.0">90°</text>
+              <path class="garis" d="M440,290 V30" marker-end="url(#pn-xi02)"/><text x="452" y="160" class="t-kecil">makin ke kutub:</text>
+              <text x="452" y="178" class="t-kecil">suhu makin rendah</text>
+              <rect x="390" y="270" width="8" height="30" class="f-aksen"/><text x="404" y="292" class="t-kecil t-tebal" style="fill:var(--svg-aksen)">← Indonesia</text>
+              <text class="t-kecil" x="90" y="316">Lintang (berlaku serupa di belahan bumi utara dan selatan)</text>
+            </svg>
+            <figcaption>Sebaran bioma terutama dipengaruhi <strong>iklim</strong> (suhu dan curah hujan) yang berubah menurut lintang. Indonesia (0–11°) berada di zona <strong>hutan hujan tropis</strong>, dengan sabana di Nusa Tenggara yang lebih kering. Batas antarbioma pada diagram adalah <strong>pola umum yang disederhanakan</strong>; ketinggian tempat dan jarak dari laut juga berpengaruh.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="pelestarian">D. Ancaman dan Pelestarian</h2>
+          <p>
+            Keanekaragaman hayati terancam oleh alih fungsi hutan, perburuan liar, perdagangan satwa, pencemaran,
+            spesies invasif, dan perubahan iklim. Pelestarian dilakukan secara <strong>in situ</strong> (di habitat
+            aslinya, misalnya taman nasional, cagar alam, suaka margasatwa) dan <strong>ex situ</strong> (di luar
+            habitat aslinya, misalnya kebun raya, kebun binatang, dan bank benih).
+          </p>
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Persebaran flora dan fauna dipengaruhi faktor iklim, edafik, fisiografi, dan biotik.</li>
+            <li>Garis Wallace dan Weber membagi fauna Indonesia menjadi tipe Asiatis, peralihan (Wallacea), dan Australis.</li>
+            <li>Wilayah Wallacea kaya akan spesies endemik seperti anoa, babirusa, dan komodo.</li>
+            <li>Bioma dunia meliputi hutan hujan tropis, sabana, gurun, stepa, hutan gugur, taiga, dan tundra.</li>
+            <li>Pelestarian dilakukan secara in situ (di habitat asli) dan ex situ (di luar habitat asli).</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="xi-02" data-pembanding="xi-02-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>1. Perbedaan jenis tumbuhan di kaki dan puncak gunung terutama dipengaruhi oleh faktor …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s1" value="a"> Edafik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s1" value="b"> Fisiografi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s1" value="c"> Biotik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s1" value="d"> Antropogenik</label></li>
+            </ul>
+            <p class="quiz-feedback">Ketinggian tempat termasuk faktor <strong>fisiografi</strong>, yang memengaruhi suhu dan jenis vegetasi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Garis yang memisahkan fauna Asiatis dengan fauna peralihan, melewati Selat Lombok dan Selat Makassar, adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s2" value="a"> Garis Wallace</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s2" value="b"> Garis Weber</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s2" value="c"> Garis Lydekker</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s2" value="d"> Garis khatulistiwa</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Garis Wallace</strong> membentang di Selat Lombok dan Selat Makassar.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Anoa dan babirusa adalah fauna endemik yang hidup di …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s3" value="a"> Sumatra</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s3" value="b"> Kalimantan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s3" value="c"> Sulawesi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s3" value="d"> Papua</label></li>
+            </ul>
+            <p class="quiz-feedback">Anoa dan babirusa adalah fauna peralihan yang endemik <strong>Sulawesi</strong> (dan sekitarnya).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>4. Bioma yang ditandai hutan pohon berdaun jarum dan musim dingin panjang, seperti di Kanada dan Rusia, adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s4" value="a"> Tundra</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s4" value="b"> Stepa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s4" value="c"> Sabana</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s4" value="d"> Taiga</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Taiga</strong> didominasi pohon konifer berdaun jarum; tundra lebih dingin dan hanya ditumbuhi lumut.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>5. Penangkaran badak sumatra di luar hutan alaminya merupakan contoh pelestarian …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s5" value="a"> In situ</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s5" value="b"> Rehabilitasi lahan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s5" value="c"> Reboisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s5" value="d"> Ex situ</label></li>
+            </ul>
+            <p class="quiz-feedback">Pelestarian di luar habitat aslinya disebut <strong>ex situ</strong>.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>6. Garis Weber memisahkan fauna peralihan dengan fauna …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s6" value="a"> Australis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s6" value="b"> Asiatis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s6" value="c"> Oriental</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s6" value="d"> Eropa</label></li>
+            </ul>
+            <p class="quiz-feedback">Garis <strong>Weber</strong> membatasi fauna peralihan (Wallacea) dengan fauna Australis di Papua.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>7. Persamaan fauna Kalimantan dengan fauna di Asia daratan terjadi karena pada zaman es kedua wilayah menyatu dalam …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s7" value="a"> Paparan Sahul</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s7" value="b"> Paparan Sunda</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s7" value="c"> Wallacea</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s7" value="d"> Sirkum Pasifik</label></li>
+            </ul>
+            <p class="quiz-feedback">Indonesia barat dahulu menyatu dengan Asia di <strong>Paparan Sunda</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>8. Padang rumput dengan pohon yang tumbuh jarang, seperti di Nusa Tenggara Timur, disebut bioma …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s8" value="a"> stepa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s8" value="b"> taiga</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s8" value="c"> sabana</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s8" value="d"> tundra</label></li>
+            </ul>
+            <p class="quiz-feedback">Padang rumput tropis dengan pohon jarang disebut <strong>sabana</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>9. Kebun Raya Bogor yang mengoleksi tumbuhan dari berbagai daerah merupakan contoh pelestarian …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s9" value="a"> ex situ</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s9" value="b"> in situ</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s9" value="c"> suaka margasatwa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s9" value="d"> cagar alam</label></li>
+            </ul>
+            <p class="quiz-feedback">Pelestarian di luar habitat asli disebut <strong>ex situ</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>10. Faktor persebaran flora dan fauna yang berkaitan dengan tekstur dan kesuburan tanah disebut faktor …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi02-s10" value="a"> klimatik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s10" value="b"> fisiografi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s10" value="c"> biotik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi02-s10" value="d"> edafik</label></li>
+            </ul>
+            <p class="quiz-feedback">Faktor tanah disebut faktor <strong>edafik</strong>.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Kartu Profil Satwa Endemik Indonesia</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara individu.</p>
+          <ol>
+            <li>Pilih satu satwa endemik Indonesia (misalnya anoa, maleo, cenderawasih, atau orangutan tapanuli).</li>
+            <li>Cari informasi dari sumber tepercaya (KLHK, IUCN Red List, taman nasional): habitat, persebaran, status konservasi, dan ancaman.</li>
+            <li>Tandai wilayah persebarannya pada peta Indonesia dan tentukan tipe faunanya (Asiatis, peralihan, atau Australis).</li>
+            <li>Usulkan dua upaya pelestarian (in situ dan ex situ) yang realistis.</li>
+          </ol>
+          <p><strong>Produk:</strong> Infografis satu halaman (poster digital atau kertas A4) dengan peta persebaran dan daftar sumber.</p>
+          <p><strong>Kriteria penilaian:</strong> akurasi informasi dan sumber, ketepatan peta persebaran, kesesuaian upaya pelestarian, dan desain infografis.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="xi-02" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="xi-01-posisi-strategis.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Posisi Strategis Indonesia</span>
+          </a>
+          <a href="xi-03-mitigasi-adaptasi.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Mitigasi dan Adaptasi Kebencanaan</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+  <!-- Peta interaktif: Leaflet lokal, data peta dasar, lalu skrip peta -->
+  <script src="../js/vendor/leaflet/leaflet.js"></script>
+  <script src="../js/peta-dasar-data.js"></script>
+  <script src="../js/peta-dasar.js"></script>
+  <script src="../js/peta-titik.js"></script>
+</body>
+</html>

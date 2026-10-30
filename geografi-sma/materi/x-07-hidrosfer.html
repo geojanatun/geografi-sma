@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Dinamika Hidrosfer dan Dampaknya — Kelas X | Geografi SMA</title>
+  <meta name="description" content="Modul 7 Geografi Kelas X (Fase E): Perjalanan air dalam siklus hidrologi, perairan darat dan laut, serta upaya menjaga ketersediaannya. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-x.html -->
+<body data-modul="x-07" data-kelas="x">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html" aria-current="page">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Dinamika Hidrosfer dan Dampaknya</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas X · Kelompok B · Modul 7</span>
+          <h1>🌊 Dinamika Hidrosfer dan Dampaknya</h1>
+          <p class="subtitle">
+            Perjalanan air dalam siklus hidrologi, perairan darat dan laut, serta upaya menjaga ketersediaannya.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase E</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Proses/fenomena yang memengaruhi lingkungan fisik</span> — Menggunakan informasi tentang proses alam untuk menjelaskan perubahan lingkungan fisik di wilayah tertentu.</li>
+            <li><strong>Elemen 4: Cara mitigasi dan adaptasi terhadap bencana alam</strong><br><span class="cp-sub">Bencana geologis/ hidroklimatologis</span> — Menganalisis ragam risiko dan faktor penyebab bencana alam.</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 2.3</span> Peserta didik mampu memanfaatkan informasi proses alam (tenaga endogen/eksogen) untuk menjelaskan perubahan lingkungan fisik di wilayah tertentu.</li>
+            <li><span class="atp-kode atp-pendukung">ATP 4.1 · pendukung</span> Peserta didik mampu menganalisis ragam risiko, sebaran, dan faktor penyebab bencana geologis maupun hidroklimatologis di Indonesia.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>menjelaskan proses siklus hidrologi beserta jenisnya;</li>
+            <li>mengidentifikasi jenis perairan darat dan karakteristik perairan laut;</li>
+            <li>menganalisis dampak dinamika hidrosfer dan upaya konservasi sumber daya air.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#judul-3d-hidrosfer">Model 3D</a></li>
+            <li><a href="#siklus">Siklus Hidrologi</a></li>
+            <li><a href="#darat">Perairan Darat</a></li>
+            <li><a href="#laut">Perairan Laut</a></li>
+            <li><a href="#dampak">Dampak dan Konservasi</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="x-07-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Lapisan air yang menyelimuti bumi disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-p1" value="a"> hidrosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p1" value="b"> atmosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p1" value="c"> litosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p1" value="d"> pedosfer</label></li>
+            </ul>
+            <p class="quiz-feedback">Hidrosfer mencakup air di laut, sungai, danau, air tanah, dan es.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>2. Penguapan air dari permukaan laut, danau, dan sungai disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-p2" value="a"> kondensasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p2" value="b"> presipitasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p2" value="c"> evaporasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p2" value="d"> infiltrasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Evaporasi adalah penguapan air permukaan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>3. Wilayah yang dibatasi punggung bukit dan menampung air hujan lalu mengalirkannya ke sungai disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-p3" value="a"> daerah aliran sungai (DAS)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p3" value="b"> delta</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p3" value="c"> estuari</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p3" value="d"> meander</label></li>
+            </ul>
+            <p class="quiz-feedback">DAS adalah wilayah tangkapan air hujan yang dialirkan melalui satu sistem sungai.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>4. Naik turunnya permukaan air laut secara berkala disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-p4" value="a"> arus laut</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p4" value="b"> pasang surut</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p4" value="c"> gelombang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p4" value="d"> tsunami</label></li>
+            </ul>
+            <p class="quiz-feedback">Pasang surut dipengaruhi gaya tarik Bulan dan Matahari.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>5. Waduk Jatiluhur termasuk danau …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-p5" value="a"> tektonik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p5" value="b"> buatan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p5" value="c"> vulkanik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-p5" value="d"> karst</label></li>
+            </ul>
+            <p class="quiz-feedback">Jatiluhur adalah waduk atau danau buatan.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- MODEL3D-MULAI -->
+        <!-- ===== EDIT DI SINI: model 3D modul ini (file di folder 3d/) ===== -->
+        <section class="model-3d" aria-labelledby="judul-3d-hidrosfer">
+          <div class="model-3d-kepala">
+            <span class="model-ikon" aria-hidden="true">🌊</span>
+            <div>
+              <span class="media-label">🧊 Model 3D Interaktif</span>
+              <h2 id="judul-3d-hidrosfer" class="box-title">Hidrosfer 3D</h2>
+            </div>
+          </div>
+          <p>Daerah aliran sungai dari hulu ke muara, siklus hidrologi beranimasi, zona laut, air tanah, dan simulasi hutan gundul.</p>
+          <ul class="model-fitur"><li>Siklus hidrologi</li><li>DAS hulu–hilir</li><li>Zona laut</li></ul>
+          <div class="model-aksi">
+            <button type="button" class="btn btn-primary" data-muat-3d="../3d/hidrosfer.html?embed=1" aria-controls="bingkai-3d-hidrosfer">▶ Tampilkan di halaman ini</button>
+            <a class="btn btn-outline" href="../3d/hidrosfer.html">⛶ Buka layar penuh</a>
+          </div>
+          <div class="model-3d-bingkai" id="bingkai-3d-hidrosfer" hidden></div>
+          <noscript><p><a href="../3d/hidrosfer.html">Buka model 3D</a></p></noscript>
+        </section>
+        <!-- MODEL3D-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="siklus">A. Siklus Hidrologi</h2>
+          <p>
+            Siklus hidrologi adalah perputaran air di bumi yang tidak pernah berhenti. Prosesnya meliputi
+            <strong>evaporasi</strong> (penguapan air permukaan), <strong>transpirasi</strong> (penguapan dari tumbuhan),
+            <strong>kondensasi</strong> (pengembunan menjadi awan), <strong>presipitasi</strong> (hujan),
+            <strong>infiltrasi</strong> (peresapan ke dalam tanah), dan <strong>limpasan permukaan</strong>
+            (<em>run off</em>) menuju sungai dan laut.
+          </p>
+          <ul>
+            <li><strong>Siklus pendek</strong>: air laut menguap, membentuk awan, lalu hujan turun kembali di laut.</li>
+            <li><strong>Siklus sedang</strong>: awan terbawa angin ke daratan, hujan turun di darat, lalu air mengalir kembali ke laut melalui sungai.</li>
+            <li><strong>Siklus panjang</strong>: uap air membentuk kristal es atau salju di pegunungan tinggi, mencair, lalu mengalir kembali ke laut.</li>
+          </ul>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-07-1 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-x07-siklus">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 600 360" role="img" aria-labelledby="x07-siklus-j x07-siklus-d">
+              <title id="x07-siklus-j">Siklus hidrologi</title>
+              <desc id="x07-siklus-d">Air laut menguap, tumbuhan bertranspirasi, uap air mengembun menjadi awan, awan terbawa angin ke daratan, turun sebagai hujan, meresap ke tanah, mengalir sebagai air tanah dan sungai kembali ke laut.</desc>
+              <defs><marker id="pn-x07" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-air)"/></marker><marker id="pn-x07g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-garis)"/></marker><marker id="pn-x07d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-laut-dalam)"/></marker></defs>
+              <rect class="f-langit" x="0" y="0" width="600" height="360"/>
+              <path class="f-tanah" d="M232,252 L300,248 L380,170 L460,112 L540,168 L600,196 V360 H232 Z"/>
+              <rect class="f-air-muda" x="232" y="318" width="368" height="42" opacity=".85"/>
+              <rect class="f-air" x="0" y="250" width="234" height="110"/>
+              <circle class="f-matahari" cx="56" cy="52" r="26"/>
+              <rect class="f-tanah-gelap" x="326" y="196" width="7" height="22"/><circle class="f-vegetasi" cx="330" cy="188" r="17"/>
+              <path class="alir" d="M80,244 C72,215 88,190 80,150" style="fill:none;stroke:var(--svg-air);stroke-width:2.5" marker-end="url(#pn-x07)"/><path class="alir" d="M135,244 C127,215 143,190 135,150" style="fill:none;stroke:var(--svg-air);stroke-width:2.5" marker-end="url(#pn-x07)"/><path class="alir" d="M190,244 C182,215 198,190 190,150" style="fill:none;stroke:var(--svg-air);stroke-width:2.5" marker-end="url(#pn-x07)"/>
+              <path class="alir" d="M334,170 C330,150 338,140 334,122" style="fill:none;stroke:var(--svg-vegetasi);stroke-width:2.5" marker-end="url(#pn-x07)"/>
+              <g><ellipse class="f-awan" cx="140" cy="100" rx="56" ry="22"/><ellipse class="f-awan" cx="170" cy="86" rx="34" ry="20"/></g>
+              <path class="alir" d="M206,92 H362" style="fill:none;stroke:var(--svg-garis);stroke-width:2" marker-end="url(#pn-x07g)"/>
+              <g class="geser"><ellipse class="f-awan" cx="440" cy="82" rx="64" ry="22"/><ellipse class="f-awan" cx="470" cy="68" rx="36" ry="20"/></g>
+              <line class="jatuh " x1="400" y1="96" x2="396" y2="110" style="stroke:var(--svg-air);stroke-width:2.5;stroke-linecap:round"/><line class="jatuh tunda-2" x1="420" y1="96" x2="416" y2="110" style="stroke:var(--svg-air);stroke-width:2.5;stroke-linecap:round"/><line class="jatuh tunda-1" x1="440" y1="96" x2="436" y2="110" style="stroke:var(--svg-air);stroke-width:2.5;stroke-linecap:round"/><line class="jatuh tunda-3" x1="460" y1="96" x2="456" y2="110" style="stroke:var(--svg-air);stroke-width:2.5;stroke-linecap:round"/><line class="jatuh tunda-2" x1="480" y1="96" x2="476" y2="110" style="stroke:var(--svg-air);stroke-width:2.5;stroke-linecap:round"/><line class="jatuh " x1="500" y1="96" x2="496" y2="110" style="stroke:var(--svg-air);stroke-width:2.5;stroke-linecap:round"/>
+              <path class="alir" d="M455,140 C440,200 380,232 300,247 L236,252" style="fill:none;stroke:var(--svg-air);stroke-width:4"/>
+              <path class="alir" d="M500,200 V296" style="fill:none;stroke:var(--svg-air);stroke-width:2.5" marker-end="url(#pn-x07)"/>
+              <path class="alir" d="M560,214 V296" style="fill:none;stroke:var(--svg-air);stroke-width:2.5" marker-end="url(#pn-x07)"/>
+              <path class="alir" d="M590,340 H244" style="fill:none;stroke:var(--svg-garis);stroke-width:2.5" marker-end="url(#pn-x07g)"/>
+              <circle class="nomor" cx="28" cy="160" r="11"/><text class="nomor-teks" x="28" y="164.5">1</text><text x="44" y="165">Evaporasi</text>
+              <circle class="nomor" cx="300" cy="122" r="11"/><text class="nomor-teks" x="300" y="126.5">2</text><text class="t-kanan" x="286" y="127">Transpirasi</text>
+              <circle class="nomor" cx="92" cy="54" r="11"/><text class="nomor-teks" x="92" y="58.5">3</text><text x="108" y="59">Kondensasi</text>
+              <circle class="nomor" cx="262" cy="72" r="11"/><text class="nomor-teks" x="262" y="76.5">4</text><text x="278" y="77">Adveksi</text>
+              <circle class="nomor" cx="528" cy="112" r="11"/><text class="nomor-teks" x="528" y="116.5">5</text><text x="544" y="117" class="t-kecil">Hujan</text>
+              <circle class="nomor" cx="466" cy="264" r="11"/><text class="nomor-teks" x="466" y="268.5">6</text><text x="452" y="269" class="t-kecil t-kanan">Infiltrasi</text>
+              <circle class="nomor" cx="316" cy="270" r="11"/><text class="nomor-teks" x="316" y="274.5">7</text><text x="332" y="275" class="t-kecil">Limpasan</text>
+              <circle class="nomor" cx="258" cy="330" r="11"/><text class="nomor-teks" x="258" y="334.5">8</text><text x="274" y="335" class="t-kecil">Aliran air tanah</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>① evaporasi dari laut, ② transpirasi dari tumbuhan, ③ kondensasi membentuk awan, ④ adveksi (awan terbawa angin ke daratan), ⑤ presipitasi (hujan), ⑥ infiltrasi ke dalam tanah, ⑦ limpasan permukaan menuju sungai, ⑧ aliran air tanah kembali ke laut. Gambar ini menunjukkan <strong>siklus sedang</strong>.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="darat">B. Perairan Darat</h2>
+          <p>
+            <strong>Sungai</strong> mengalir dalam suatu <a href="../glosarium.html?cari=das">Daerah Aliran Sungai (DAS)</a>
+            yang dibagi menjadi hulu (arus deras, lembah berbentuk V), tengah, dan hilir (arus lambat, terjadi
+            sedimentasi dan meander). Pola aliran sungai antara lain dendritik (seperti cabang pohon), radial
+            sentrifugal (menyebar dari puncak gunung), trellis, dan rektangular.
+          </p>
+          <p>
+            <strong>Danau</strong> dibedakan menurut proses terjadinya: danau tektonik (Singkarak, Poso), danau
+            vulkanik (Kelimutu), danau vulkanik-tektonik (Toba), dan danau buatan atau waduk (Jatiluhur).
+            <strong>Air tanah</strong> terdiri atas air tanah dangkal (freatik), yang diambil melalui sumur gali, dan
+            air tanah dalam yang tersimpan di <a href="../glosarium.html?cari=akuifer">akuifer</a>; air tanah dalam
+            yang memancar sendiri disebut air artesis.
+          </p>
+
+
+
+
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-07-2 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x07-pola">
+            <span class="media-label">🖼️ Diagram</span>
+            <div class="media-grid">
+              <figure><svg viewBox="0 0 160 160" role="img" aria-label="Dendritik"><rect x="2" y="2" width="156" height="156" rx="12" class="kotak"/><path style="fill:none;stroke:var(--svg-air);stroke-width:3;stroke-linecap:round;stroke-linejoin:round" d="M80,150 C78,110 84,80 80,20"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M80,110 L45,80 L25,60 M45,80 L40,50 M80,90 L115,62 L135,45 M115,62 L118,35 M80,60 L55,35 M80,55 L104,30 M80,130 L120,110"/></svg><figcaption><strong>Dendritik</strong></figcaption></figure><figure><svg viewBox="0 0 160 160" role="img" aria-label="Radial sentrifugal"><rect x="2" y="2" width="156" height="156" rx="12" class="kotak"/><circle cx="80" cy="80" r="16" style="fill:var(--svg-tanah-gelap)"/><circle cx="80" cy="80" r="34" style="fill:none;stroke:var(--svg-garis);stroke-dasharray:3 4"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="98.0" y1="80.0" x2="146.0" y2="80.0"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="92.7" y1="92.7" x2="126.7" y2="126.7"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="80.0" y1="98.0" x2="80.0" y2="146.0"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="67.3" y1="92.7" x2="33.3" y2="126.7"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="62.0" y1="80.0" x2="14.0" y2="80.0"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="67.3" y1="67.3" x2="33.3" y2="33.3"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="80.0" y1="62.0" x2="80.0" y2="14.0"/><line style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" x1="92.7" y1="67.3" x2="126.7" y2="33.3"/></svg><figcaption><strong>Radial sentrifugal</strong></figcaption></figure><figure><svg viewBox="0 0 160 160" role="img" aria-label="Trellis"><rect x="2" y="2" width="156" height="156" rx="12" class="kotak"/><path style="fill:none;stroke:var(--svg-air);stroke-width:3;stroke-linecap:round;stroke-linejoin:round" d="M80,15 V150"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M80,30 H30"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M80,55 H130"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M80,80 H30"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M80,105 H130"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M80,130 H30"/><g style="stroke:var(--svg-garis);stroke-width:1;stroke-dasharray:3 4"><line x1="18" y1="42" x2="142" y2="42"/><line x1="18" y1="67" x2="142" y2="67"/><line x1="18" y1="92" x2="142" y2="92"/><line x1="18" y1="117" x2="142" y2="117"/></g></svg><figcaption><strong>Trellis</strong></figcaption></figure><figure><svg viewBox="0 0 160 160" role="img" aria-label="Rektangular"><rect x="2" y="2" width="156" height="156" rx="12" class="kotak"/><path style="fill:none;stroke:var(--svg-air);stroke-width:3;stroke-linecap:round;stroke-linejoin:round" d="M20,28 H70 V78 H118 V142"/><path style="fill:none;stroke:var(--svg-air);stroke-width:2;stroke-linecap:round" d="M70,48 H120 M70,62 H34 M118,108 H64 M118,124 H146"/></svg><figcaption><strong>Rektangular</strong></figcaption></figure>
+            </div>
+            <figcaption><strong>Pola aliran sungai.</strong> Dendritik menyerupai cabang pohon dan umum di batuan yang seragam; radial sentrifugal menyebar dari puncak gunung (garis putus-putus = kontur); trellis memiliki anak sungai yang sejajar dan tegak lurus sungai utama di daerah lipatan; rektangular berbelok siku-siku mengikuti retakan atau patahan batuan.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI x-07-3 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-x07-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="5Jiszrj2jtg" data-judul="Daerah Aliran Sungai atau DAS itu apa sih?">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=5Jiszrj2jtg" rel="noopener">YouTube: Daerah Aliran Sungai atau DAS itu apa sih?</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Daerah Aliran Sungai atau DAS itu apa sih?</strong> — penjelasan singkat tentang DAS dan pentingnya pengelolaan DAS untuk mencegah banjir, longsor, dan kekeringan.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>Kementerian Kehutanan RI</strong> (2021) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=5Jiszrj2jtg" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="laut">C. Perairan Laut</h2>
+          <p>Berdasarkan kedalamannya, laut dibagi menjadi beberapa zona:</p>
+          <ul>
+            <li><strong>Litoral</strong>: daerah pasang surut, kadang tergenang dan kadang kering;</li>
+            <li><strong>Neritik</strong>: kedalaman 0–200 m, masih tertembus sinar matahari dan kaya ikan serta terumbu karang;</li>
+            <li><strong>Batial</strong>: ± 200–2.000 m, cahaya mulai berkurang;</li>
+            <li><strong>Abisal</strong>: lebih dari ± 2.000 m, gelap dan bersuhu rendah.</li>
+          </ul>
+          <p>Air laut bergerak dalam bentuk gelombang, arus, dan pasang surut (akibat gaya tarik Bulan dan Matahari).</p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-07-4 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x07-zona">
+            <span class="media-label">🖼️ Diagram</span>
+            <svg viewBox="0 0 600 310" role="img" aria-labelledby="x07-zona-j x07-zona-d">
+              <title id="x07-zona-j">Zona laut berdasarkan kedalaman</title>
+              <desc id="x07-zona-d">Penampang laut dari pantai ke laut dalam: zona litoral di pantai, neritik sampai kedalaman 200 meter, batial 200 sampai 2.000 meter, dan abisal lebih dari 2.000 meter.</desc>
+              <defs></defs>
+              <rect class="f-langit" x="0" y="0" width="600" height="40"/>
+              <path class="f-air-muda" d="M40,40 H600 V250 L330,230 L220,80 L60,48 Z"/>
+              <path class="f-air" opacity=".55" d="M220,80 H600 V250 L330,230 Z"/>
+              <path class="f-laut-dalam" opacity=".6" d="M330,230 H600 V250 Z"/>
+              <path class="f-tanah" d="M0,28 L40,40 L60,48 L220,80 L330,230 L600,250 V310 H0 Z"/>
+              <line class="garis-tipis" x1="220" y1="80" x2="600" y2="80" stroke-dasharray="6 5"/>
+              <line class="garis-tipis" x1="330" y1="230" x2="600" y2="230" stroke-dasharray="6 5"/>
+              <text class="t-kecil t-kanan" x="594" y="54">0 m</text>
+              <text class="t-kecil t-kanan" x="594" y="96">± 200 m (batas tembus cahaya)</text>
+              <text class="t-kecil t-kanan" x="594" y="224">± 2.000 m</text>
+              <line class="garis-tipis" x1="60" y1="48" x2="60" y2="268" stroke-dasharray="4 4"/>
+              <line class="garis-tipis" x1="220" y1="80" x2="220" y2="268" stroke-dasharray="4 4"/>
+              <line class="garis-tipis" x1="330" y1="230" x2="330" y2="268" stroke-dasharray="4 4"/>
+              <text class="t-tebal" x="10" y="20">Litoral ↘</text>
+              <text class="t-tengah t-tebal" x="140" y="286">Neritik</text><text class="t-tengah t-kecil" x="140" y="302">0–200 m</text>
+              <text class="t-tengah t-tebal" x="275" y="286">Batial</text><text class="t-tengah t-kecil" x="275" y="302">200–2.000 m</text>
+              <text class="t-tengah t-tebal" x="465" y="286">Abisal</text><text class="t-tengah t-kecil" x="465" y="302">&gt; 2.000 m</text>
+              <text x="110" y="62" style="font-size:16px">🐟 🪸</text>
+            </svg>
+            <figcaption>Zona <strong>neritik</strong> berada di atas paparan benua dan masih tertembus cahaya, sehingga kaya ikan dan terumbu karang. Kedalaman digambar <strong>tidak sesuai skala</strong>.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="dampak">D. Dampak dan Konservasi</h2>
+          <p>
+            Dinamika hidrosfer memberi manfaat berupa sumber air bersih, irigasi, pembangkit listrik tenaga air,
+            perikanan, dan transportasi. Dampak negatifnya antara lain banjir, kekeringan, abrasi, intrusi air laut,
+            dan <a href="../glosarium.html?cari=tsunami">tsunami</a>. Upaya konservasi air meliputi pembuatan sumur
+            resapan dan lubang biopori, reboisasi daerah hulu, menjaga sempadan sungai, serta menghemat penggunaan air.
+          </p>
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Siklus hidrologi meliputi evaporasi, transpirasi, kondensasi, presipitasi, infiltrasi, dan limpasan permukaan; terdiri atas siklus pendek, sedang, dan panjang.</li>
+            <li>DAS terbagi menjadi hulu, tengah, dan hilir dengan karakteristik aliran yang berbeda.</li>
+            <li>Danau dapat terbentuk karena proses tektonik, vulkanik, gabungan keduanya, atau buatan manusia.</li>
+            <li>Zona laut berdasarkan kedalaman: litoral, neritik, batial, dan abisal.</li>
+            <li>Konservasi air dilakukan dengan sumur resapan, biopori, reboisasi hulu, dan penghematan air.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="x-07" data-pembanding="x-07-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Proses meresapnya air hujan ke dalam tanah melalui pori-pori tanah disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s1" value="a"> Infiltrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s1" value="b"> Evaporasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s1" value="c"> Kondensasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s1" value="d"> Presipitasi</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Infiltrasi</strong> adalah peresapan air ke dalam tanah; evaporasi adalah penguapan dan kondensasi adalah pengembunan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>2. Uap air dari laut terbawa angin ke daratan, turun sebagai hujan, lalu mengalir kembali ke laut melalui sungai. Proses ini disebut siklus …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s2" value="a"> Pendek</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s2" value="b"> Panjang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s2" value="c"> Tertutup</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s2" value="d"> Sedang</label></li>
+            </ul>
+            <p class="quiz-feedback">Hujan turun di daratan lalu kembali ke laut melalui sungai: ciri <strong>siklus sedang</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>3. Danau Toba di Sumatra Utara terbentuk akibat letusan dahsyat gunung api purba dan proses tektonik, sehingga tergolong danau …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s3" value="a"> Tektonik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s3" value="b"> Vulkanik-tektonik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s3" value="c"> Karst</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s3" value="d"> Buatan</label></li>
+            </ul>
+            <p class="quiz-feedback">Toba adalah kaldera hasil letusan gunung api purba yang dipengaruhi pula oleh aktivitas tektonik: danau <strong>vulkanik-tektonik</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Zona laut dengan kedalaman 0–200 m yang kaya ikan dan terumbu karang karena masih tertembus sinar matahari adalah zona …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s4" value="a"> Litoral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s4" value="b"> Batial</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s4" value="c"> Neritik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s4" value="d"> Abisal</label></li>
+            </ul>
+            <p class="quiz-feedback">Zona <strong>neritik</strong> mendapat cukup cahaya sehingga plankton dan terumbu karang tumbuh subur.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>5. Upaya yang paling tepat untuk menambah cadangan air tanah di kawasan permukiman padat adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s5" value="a"> Menutup halaman dengan semen</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s5" value="b"> Membuat lubang biopori dan sumur resapan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s5" value="c"> Memperbanyak sumur bor dalam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s5" value="d"> Meluruskan saluran air</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Biopori dan sumur resapan</strong> memperbesar infiltrasi sehingga air hujan tersimpan sebagai air tanah.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>6. Pengembunan uap air menjadi titik-titik air yang membentuk awan disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s6" value="a"> evaporasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s6" value="b"> transpirasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s6" value="c"> kondensasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s6" value="d"> presipitasi</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Kondensasi</strong> adalah pengembunan uap air menjadi awan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>7. Pola aliran sungai yang menyebar dari puncak gunung ke segala arah disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s7" value="a"> dendritik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s7" value="b"> radial sentrifugal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s7" value="c"> trellis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s7" value="d"> rektangular</label></li>
+            </ul>
+            <p class="quiz-feedback">Aliran yang menyebar dari puncak disebut <strong>radial sentrifugal</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>8. Sungai bagian hulu dicirikan oleh …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s8" value="a"> arus lambat dan banyak meander</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s8" value="b"> banyak sedimentasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s8" value="c"> arus deras dan lembah berbentuk V</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s8" value="d"> lembah lebar berbentuk U</label></li>
+            </ul>
+            <p class="quiz-feedback">Di hulu, kemiringan besar membuat arus <strong>deras</strong> dan mengikis dasar sungai sehingga lembah berbentuk V.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>9. Air tanah dalam yang memancar sendiri ke permukaan tanpa dipompa disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s9" value="a"> air freatik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s9" value="b"> air tanah dangkal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s9" value="c"> air limpasan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s9" value="d"> air artesis</label></li>
+            </ul>
+            <p class="quiz-feedback">Air tanah dalam yang memancar sendiri disebut <strong>air artesis</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>10. Masuknya air laut ke dalam air tanah di daerah pesisir akibat pengambilan air tanah berlebihan disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x07-s10" value="a"> intrusi air laut</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s10" value="b"> abrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s10" value="c"> sedimentasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x07-s10" value="d"> rob</label></li>
+            </ul>
+            <p class="quiz-feedback">Pengambilan air tanah berlebihan menurunkan muka air tanah sehingga air laut masuk: <strong>intrusi air laut</strong>.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Membuat Lubang Biopori dan Uji Resapan</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berkelompok (4–5 orang) dengan izin dan pendampingan guru.</p>
+          <ol>
+            <li>Pilih dua titik di halaman madrasah atau rumah: tanah biasa dan tanah yang diberi lubang biopori (diameter ± 10 cm, kedalaman ± 80–100 cm, diisi sampah organik).</li>
+            <li>Siramkan 5 liter air di setiap titik dan catat waktu sampai air meresap seluruhnya.</li>
+            <li>Ulangi pengukuran setelah 2 minggu, ketika sampah organik di dalam biopori mulai terurai.</li>
+            <li>Bandingkan hasilnya dalam tabel dan jelaskan hubungannya dengan infiltrasi serta pencegahan genangan.</li>
+          </ol>
+          <p><strong>Produk:</strong> Laporan singkat dengan foto proses, tabel waktu resapan, dan kesimpulan.</p>
+          <p><strong>Kriteria penilaian:</strong> ketepatan prosedur, ketelitian pengukuran, kebenaran analisis infiltrasi, dan kerja sama kelompok.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="x-07" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="x-06-atmosfer.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Dinamika Atmosfer dan Dampaknya</span>
+          </a>
+          <a href="../kelas-x.html" class="next">
+            <span class="nav-dir">Selesai semua modul? →</span>
+            <span class="nav-title">Kembali ke Daftar Modul Kelas X</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>

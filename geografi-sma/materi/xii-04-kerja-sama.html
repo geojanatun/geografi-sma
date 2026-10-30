@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Kerja Sama Antarwilayah — Kelas XII | Geografi SMA</title>
+  <meta name="description" content="Modul 4 Geografi Kelas XII (Fase F): Negara dan daerah saling bekerja sama untuk memenuhi kebutuhan yang tidak bisa dipenuhi sendiri. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Leaflet 1.9.4 (pustaka peta) disimpan di dalam website: js/vendor/leaflet/
+       Tidak memakai CDN, sehingga tidak terblokir jaringan sekolah dan tetap jalan tanpa internet. -->
+  <link rel="stylesheet" href="../js/vendor/leaflet/leaflet.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-xii.html -->
+<body data-modul="xii-04" data-kelas="xii">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html" aria-current="page">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Kerja Sama Antarwilayah</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas XII · Modul 4</span>
+          <h1>🤝 Kerja Sama Antarwilayah</h1>
+          <p class="subtitle">
+            Negara dan daerah saling bekerja sama untuk memenuhi kebutuhan yang tidak bisa dipenuhi sendiri.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase F</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Faktor yang berpengaruh dalam lingkungan sosial</span> — Menerapkan indikator-indikator keberhasilan Pembangunan untuk pengembangan wilayah</li>
+            <li><strong>Elemen 3: Interaksi antargejala fisik alam dan manusia dan pengaruhnya terhadap kehidupan</strong><br><span class="cp-sub">Posisi strategis Indonesia dan pengaruhnya bagi kehidupan ekonomi, sosial, budaya</span> — Menjelaskan posisi geografis Indonesia.</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+          <p class="cp-note">ℹ️ Modul ini bersifat <strong>pengayaan</strong>: tidak termasuk ATP Geografi TKA, tetapi memperkuat pemahaman ATP 3.1 dan 2.1.</p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode atp-pendukung">ATP 3.1 · pendukung</span> Peserta didik mampu menjelaskan posisi strategis Indonesia secara geografis/astronomis serta pengaruhnya bagi kehidupan ekonomi, sosial, dan budaya.</li>
+            <li><span class="atp-kode atp-pendukung">ATP 2.1 · pendukung</span> Peserta didik mampu menerapkan indikator-indikator keberhasilan pembangunan (IPM, pertumbuhan ekonomi, kelestarian lingkungan) dalam pengembangan wilayah.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>membedakan karakteristik negara maju dan negara berkembang berdasarkan indikator pembangunan;</li>
+            <li>menjelaskan bentuk-bentuk kerja sama antarwilayah dan contohnya;</li>
+            <li>menganalisis manfaat dan tantangan kerja sama antarwilayah bagi Indonesia.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#negara">Negara Maju dan Negara Berkembang</a></li>
+            <li><a href="#bentuk">Bentuk Kerja Sama</a></li>
+            <li><a href="#dalam-negeri">Kerja Sama Antardaerah di Indonesia</a></li>
+            <li><a href="#dampak">Manfaat dan Tantangan</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="xii-04-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>1. Organisasi kerja sama negara-negara di kawasan Asia Tenggara adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-p1" value="a"> APEC</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p1" value="b"> Uni Eropa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p1" value="c"> OPEC</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p1" value="d"> ASEAN</label></li>
+            </ul>
+            <p class="quiz-feedback">ASEAN = Association of Southeast Asian Nations.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Kerja sama yang dilakukan oleh dua negara disebut kerja sama …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-p2" value="a"> regional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p2" value="b"> bilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p2" value="c"> multilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p2" value="d"> internasional</label></li>
+            </ul>
+            <p class="quiz-feedback">Bilateral = dua pihak.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>3. Kota tempat kantor Sekretariat ASEAN berada adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-p3" value="a"> Jakarta</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p3" value="b"> Bangkok</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p3" value="c"> Kuala Lumpur</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p3" value="d"> Singapura</label></li>
+            </ul>
+            <p class="quiz-feedback">Sekretariat ASEAN berada di Jakarta.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>4. Negara yang pendapatan per kapitanya tinggi dan banyak menguasai teknologi disebut negara …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-p4" value="a"> berkembang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p4" value="b"> maju</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p4" value="c"> terbelakang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p4" value="d"> agraris</label></li>
+            </ul>
+            <p class="quiz-feedback">Negara maju dicirikan pendapatan per kapita dan penguasaan teknologi yang tinggi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Hari jadi ASEAN diperingati setiap tanggal …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-p5" value="a"> 8 Agustus</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p5" value="b"> 17 Agustus</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p5" value="c"> 1 Juni</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-p5" value="d"> 24 Oktober</label></li>
+            </ul>
+            <p class="quiz-feedback">ASEAN didirikan pada 8 Agustus 1967.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="negara">A. Negara Maju dan Negara Berkembang</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Ciri umum negara maju dan berkembang</caption>
+              <thead><tr><th scope="col">Aspek</th><th scope="col">Negara maju</th><th scope="col">Negara berkembang</th></tr></thead>
+              <tbody>
+                <tr><td>Pendapatan per kapita</td><td>Tinggi</td><td>Rendah hingga menengah</td></tr>
+                <tr><td>Mata pencaharian utama</td><td>Industri dan jasa</td><td>Masih banyak di sektor pertanian</td></tr>
+                <tr><td>IPM dan angka harapan hidup</td><td>Tinggi</td><td>Relatif lebih rendah</td></tr>
+                <tr><td>Pertumbuhan penduduk</td><td>Rendah</td><td>Relatif tinggi</td></tr>
+                <tr><td>Penguasaan teknologi</td><td>Tinggi; pengekspor barang industri</td><td>Berkembang; banyak mengekspor bahan mentah</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Perbedaan potensi inilah yang mendorong terjadinya kerja sama antarwilayah dan antarnegara.</p>
+
+          <h2 id="bentuk">B. Bentuk Kerja Sama</h2>
+          <ul>
+            <li><strong>Bilateral</strong>: antara dua negara, misalnya kerja sama perdagangan Indonesia–Jepang (IJEPA).</li>
+            <li><strong>Regional</strong>: antarnegara dalam satu kawasan, misalnya ASEAN.</li>
+            <li><strong>Multilateral</strong>: melibatkan banyak negara lintas kawasan, misalnya APEC, G20, OKI, dan WTO.</li>
+          </ul>
+          <p>
+            <strong>ASEAN</strong> didirikan pada 8 Agustus 1967 melalui Deklarasi Bangkok oleh Indonesia, Malaysia,
+            Filipina, Singapura, dan Thailand. Anggotanya terus bertambah dan Timor-Leste resmi menjadi anggota ke-11
+            pada KTT ASEAN di Kuala Lumpur, Oktober 2025. Sejak 2015 berlaku <strong>Masyarakat Ekonomi ASEAN (MEA)</strong>
+            yang memperlancar arus barang, jasa, investasi, dan tenaga kerja terampil.
+          </p>
+          <p>
+            Ada pula kerja sama <strong>segitiga pertumbuhan</strong> di kawasan perbatasan: IMS-GT (Indonesia–Malaysia–Singapura,
+            termasuk Batam), IMT-GT (Indonesia–Malaysia–Thailand), dan BIMP-EAGA (Brunei–Indonesia–Malaysia–Filipina).
+          </p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xii-04-1 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-xii04-bentuk">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 600 245" role="img" aria-labelledby="xii04-bentuk-j xii04-bentuk-d">
+              <title id="xii04-bentuk-j">Tiga bentuk kerja sama antarnegara</title>
+              <desc id="xii04-bentuk-d">Tiga panel. Bilateral: dua lingkaran negara terhubung satu garis. Regional: Indonesia di tengah terhubung ke lima negara satu kawasan. Multilateral: Indonesia terhubung ke banyak negara lintas benua. Garis penghubung beranimasi seperti arus.</desc>
+              <defs></defs>
+              <rect class="kotak" x="10" y="20" width="180" height="210" rx="12"/><line x1="55" y1="120" x2="145" y2="120" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0s" repeatCount="indefinite"/></line><circle cx="55" cy="120" r="17" style="fill:var(--warna-primer);stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="55" y="125" style="fill:#fff;font-size:12px">ID</text><circle cx="145" cy="120" r="17" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="145" y="125" style="fill:#fff;font-size:12px">JP</text><text class="t-tengah t-tebal" x="100" y="50">Bilateral</text><text class="t-tengah t-kecil" x="100" y="70">2 negara</text><text class="t-tengah t-kecil" x="100" y="190">contoh: IJEPA</text><text class="t-tengah t-kecil" x="100" y="208">(Indonesia–Jepang)</text><rect class="kotak" x="210" y="20" width="180" height="210" rx="12"/><circle cx="300" cy="128" r="74" style="fill:var(--svg-langit);stroke:var(--svg-garis);stroke-dasharray:5 4"/><line x1="300" y1="128" x2="300.0" y2="76.0" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.0s" repeatCount="indefinite"/></line><line x1="300" y1="128" x2="349.454938847348" y2="111.93111629250274" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.2s" repeatCount="indefinite"/></line><line x1="300" y1="128" x2="330.56483311920863" y2="170.06888370749726" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.4s" repeatCount="indefinite"/></line><line x1="300" y1="128" x2="269.4351668807914" y2="170.06888370749726" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.6000000000000001s" repeatCount="indefinite"/></line><line x1="300" y1="128" x2="250.545061152652" y2="111.93111629250274" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.8s" repeatCount="indefinite"/></line><circle cx="300" cy="76" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="300" y="81" style="fill:#fff;font-size:12px">TH</text><circle cx="349" cy="112" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="349" y="117" style="fill:#fff;font-size:12px">PH</text><circle cx="331" cy="170" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="331" y="175" style="fill:#fff;font-size:12px">SG</text><circle cx="269" cy="170" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="269" y="175" style="fill:#fff;font-size:12px">MY</text><circle cx="251" cy="112" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="251" y="117" style="fill:#fff;font-size:12px">VN</text><circle cx="300" cy="128" r="17" style="fill:var(--warna-primer);stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="300" y="133" style="fill:#fff;font-size:12px">ID</text><text class="t-tengah t-tebal" x="300" y="44">Regional</text><text class="t-tengah t-kecil" x="300" y="222">contoh: ASEAN</text><rect class="kotak" x="410" y="20" width="180" height="210" rx="12"/><line x1="500" y1="72" x2="544" y2="88" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.0s" repeatCount="indefinite"/></line><line x1="544" y1="88" x2="562" y2="128" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.15s" repeatCount="indefinite"/></line><line x1="562" y1="128" x2="544" y2="168" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.3s" repeatCount="indefinite"/></line><line x1="544" y1="168" x2="500" y2="184" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.44999999999999996s" repeatCount="indefinite"/></line><line x1="500" y1="184" x2="456" y2="168" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.6s" repeatCount="indefinite"/></line><line x1="456" y1="168" x2="438" y2="128" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.75s" repeatCount="indefinite"/></line><line x1="438" y1="128" x2="456" y2="88" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.8999999999999999s" repeatCount="indefinite"/></line><line x1="456" y1="88" x2="500" y2="72" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="1.05s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="500" y2="72" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.0s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="544" y2="88" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.1s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="562" y2="128" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.2s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="544" y2="168" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.30000000000000004s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="500" y2="184" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.4s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="456" y2="168" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.5s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="438" y2="128" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.6000000000000001s" repeatCount="indefinite"/></line><line x1="500" y1="128" x2="456" y2="88" style="stroke:var(--svg-aksen);stroke-width:3" stroke-dasharray="6 5"><animate attributeName="stroke-dashoffset" values="22;0" dur="1s" begin="0.7000000000000001s" repeatCount="indefinite"/></line><circle cx="500" cy="72" r="17" style="fill:#8e44ad;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="500" y="77" style="fill:#fff;font-size:12px">US</text><circle cx="544" cy="88" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="544" y="93" style="fill:#fff;font-size:12px">BR</text><circle cx="562" cy="128" r="17" style="fill:#e9a03b;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="562" y="133" style="fill:#fff;font-size:12px">ZA</text><circle cx="544" cy="168" r="17" style="fill:#c0392b;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="544" y="173" style="fill:#fff;font-size:12px">IN</text><circle cx="500" cy="184" r="17" style="fill:#8e44ad;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="500" y="189" style="fill:#fff;font-size:12px">CN</text><circle cx="456" cy="168" r="17" style="fill:#2a9d8f;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="456" y="173" style="fill:#fff;font-size:12px">DE</text><circle cx="438" cy="128" r="17" style="fill:#e9a03b;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="438" y="133" style="fill:#fff;font-size:12px">AU</text><circle cx="456" cy="88" r="17" style="fill:#c0392b;stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="456" y="93" style="fill:#fff;font-size:12px">SA</text><circle cx="500" cy="128" r="17" style="fill:var(--warna-primer);stroke:var(--warna-permukaan);stroke-width:2"/><text class="t-tengah t-tebal" x="500" y="133" style="fill:#fff;font-size:12px">ID</text><text class="t-tengah t-tebal" x="500" y="44">Multilateral</text><text class="t-tengah t-kecil" x="500" y="222">contoh: G20, APEC, WTO</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>Makin banyak negara yang terlibat, makin luas pasar dan isu yang dibahas, tetapi kesepakatan juga makin sulit dicapai. Kode negara: ID Indonesia, JP Jepang, TH Thailand, PH Filipina, SG Singapura, MY Malaysia, VN Vietnam, US Amerika Serikat, BR Brasil, ZA Afrika Selatan, IN India, CN Tiongkok, DE Jerman, AU Australia, SA Arab Saudi.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xii-04-2 (diagram/animasi/grafik/video) -->
+          <section class="media peta-titik" id="media-xii04-asean" aria-labelledby="xii04-asean-judul"
+            data-legenda='{"pendiri": {"warna": "#1e6091", "label": "Anggota pendiri (1967)"}, "baru": {"warna": "#2a9d8f", "label": "Anggota bergabung kemudian"}, "segitiga": {"warna": "#e76f51", "label": "Segitiga pertumbuhan", "garis": true, "putus": true}}'>
+            <span class="media-label">🗺️ Peta Interaktif</span>
+            <h3 id="xii04-asean-judul">Peta Interaktif: Negara Anggota ASEAN dan Segitiga Pertumbuhan</h3>
+            <p>Klik titik ibu kota untuk melihat tahun bergabung. Garis putus-putus menunjukkan kawasan kerja sama segitiga pertumbuhan.</p>
+            <div class="peta-container" role="region" aria-label="Peta Interaktif: Negara Anggota ASEAN dan Segitiga Pertumbuhan"></div>
+            <div class="peta-toolbar"><button type="button" class="btn btn-outline peta-reset" hidden>🔄 Tampilkan semua</button></div>
+            <p class="box box-info peta-pesan" role="status" hidden></p>
+            <noscript><p class="box box-info">⚠️ JavaScript nonaktif. Data tetap dapat dibaca pada tabel berikut.</p></noscript>
+            <!-- ===== EDIT DI SINI: data peta. Titik: data-lat & data-lng. Garis: data-garis="lat,lng; lat,lng; ...".
+                 Urutan kolom jangan diubah. ===== -->
+            <div class="table-wrap">
+              <table class="peta-tabel">
+                <caption>Anggota ASEAN beserta tahun bergabung, dan tiga segitiga pertumbuhan (letak garis perkiraan)</caption>
+                <thead><tr><th scope="col">Nama</th><th scope="col">Ibu kota / wilayah</th><th scope="col">Bergabung</th><th scope="col">Status</th><th scope="col">Keterangan</th></tr></thead>
+                <tbody>
+                  <tr data-lat="-6.18" data-lng="106.83" data-jenis="pendiri">
+                    <td>Indonesia</td><td>Jakarta</td><td>8 Agustus 1967</td><td>Anggota pendiri</td><td>Penanda tangan Deklarasi Bangkok; Jakarta juga menjadi lokasi Sekretariat ASEAN.</td>
+                  </tr>
+                  <tr data-lat="3.14" data-lng="101.69" data-jenis="pendiri">
+                    <td>Malaysia</td><td>Kuala Lumpur</td><td>8 Agustus 1967</td><td>Anggota pendiri</td><td>Penanda tangan Deklarasi Bangkok; tuan rumah KTT ASEAN Oktober 2025.</td>
+                  </tr>
+                  <tr data-lat="14.6" data-lng="120.98" data-jenis="pendiri">
+                    <td>Filipina</td><td>Manila</td><td>8 Agustus 1967</td><td>Anggota pendiri</td><td>Penanda tangan Deklarasi Bangkok.</td>
+                  </tr>
+                  <tr data-lat="1.29" data-lng="103.85" data-jenis="pendiri">
+                    <td>Singapura</td><td>Singapura</td><td>8 Agustus 1967</td><td>Anggota pendiri</td><td>Penanda tangan Deklarasi Bangkok.</td>
+                  </tr>
+                  <tr data-lat="13.75" data-lng="100.5" data-jenis="pendiri">
+                    <td>Thailand</td><td>Bangkok</td><td>8 Agustus 1967</td><td>Anggota pendiri</td><td>Tempat ditandatanganinya Deklarasi Bangkok.</td>
+                  </tr>
+                  <tr data-lat="4.94" data-lng="114.95" data-jenis="baru">
+                    <td>Brunei Darussalam</td><td>Bandar Seri Begawan</td><td>7 Januari 1984</td><td>Anggota ke-6</td><td>Bergabung tidak lama setelah merdeka penuh pada 1984.</td>
+                  </tr>
+                  <tr data-lat="21.03" data-lng="105.85" data-jenis="baru">
+                    <td>Vietnam</td><td>Hanoi</td><td>28 Juli 1995</td><td>Anggota ke-7</td><td>Bergabung pada 1995.</td>
+                  </tr>
+                  <tr data-lat="17.97" data-lng="102.6" data-jenis="baru">
+                    <td>Laos</td><td>Vientiane</td><td>23 Juli 1997</td><td>Anggota ke-8</td><td>Bergabung bersama Myanmar pada 1997.</td>
+                  </tr>
+                  <tr data-lat="19.76" data-lng="96.08" data-jenis="baru">
+                    <td>Myanmar</td><td>Naypyidaw</td><td>23 Juli 1997</td><td>Anggota ke-9</td><td>Bergabung bersama Laos pada 1997.</td>
+                  </tr>
+                  <tr data-lat="11.56" data-lng="104.92" data-jenis="baru">
+                    <td>Kamboja</td><td>Phnom Penh</td><td>30 April 1999</td><td>Anggota ke-10</td><td>Bergabung pada 1999.</td>
+                  </tr>
+                  <tr data-lat="-8.56" data-lng="125.57" data-jenis="baru">
+                    <td>Timor-Leste</td><td>Dili</td><td>Oktober 2025</td><td>Anggota ke-11</td><td>Resmi menjadi anggota ke-11 pada KTT ASEAN di Kuala Lumpur, Oktober 2025.</td>
+                  </tr>
+                  <tr data-garis="1.46,103.76; 1.35,103.82; 1.1,104.05; 1.46,103.76" data-jenis="segitiga">
+                    <td>IMS-GT</td><td>Johor – Singapura – Kepulauan Riau (Batam)</td><td>sejak 1989</td><td>Segitiga pertumbuhan</td><td>Indonesia–Malaysia–Singapura; Batam berkembang sebagai kawasan industri.</td>
+                  </tr>
+                  <tr data-garis="3.59,98.67; 5.41,100.33; 7.01,100.47; 3.59,98.67" data-jenis="segitiga">
+                    <td>IMT-GT</td><td>Sumatra bagian utara – Malaysia utara – Thailand selatan</td><td>sejak 1993</td><td>Segitiga pertumbuhan</td><td>Indonesia–Malaysia–Thailand; contoh kota: Medan, Penang, Hat Yai.</td>
+                  </tr>
+                  <tr data-garis="4.94,114.95; 7.07,125.61; 1.47,124.84; -1.24,116.85; 4.94,114.95" data-jenis="segitiga">
+                    <td>BIMP-EAGA</td><td>Brunei – Kalimantan & Sulawesi – Sabah/Sarawak – Mindanao</td><td>sejak 1994</td><td>Segitiga pertumbuhan</td><td>Brunei–Indonesia–Malaysia–Filipina; contoh kota: Bandar Seri Begawan, Davao, Manado, Balikpapan.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="peta-sumber">Peta dasar: garis pantai Natural Earth; saat online ditambah © Kontributor OpenStreetMap.</p>
+          </section>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xii-04-3 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-xii04-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="oCzTRCBIFbM" data-judul="Sejarah ASEAN, Organisasi Asia Tenggara yang Dibentuk pada 8 Agustus 1967">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=oCzTRCBIFbM" rel="noopener">YouTube: Sejarah ASEAN, Organisasi Asia Tenggara yang Dibentuk pada 8 Agustus 1967</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Sejarah ASEAN, Organisasi Asia Tenggara yang Dibentuk pada 8 Agustus 1967</strong> — Ringkasan sejarah berdirinya ASEAN, tujuan, dan perkembangan anggotanya. Cocokkan informasinya dengan peta anggota ASEAN di atas.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>Tribunnews</strong> (2023) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=oCzTRCBIFbM" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="dalam-negeri">C. Kerja Sama Antardaerah di Indonesia</h2>
+          <p>
+            Kerja sama juga terjadi antardaerah, misalnya pengelolaan transportasi dan sampah di kawasan Jabodetabek,
+            kerja sama pengelolaan DAS lintas kabupaten, atau daerah penghasil beras yang memasok daerah lain.
+            Kerja sama ini mempercepat pembangunan, mengatasi masalah lintas batas, dan meningkatkan efisiensi.
+          </p>
+
+          <h2 id="dampak">D. Manfaat dan Tantangan</h2>
+          <p>
+            <strong>Manfaat</strong>: pasar ekspor makin luas, masuknya investasi dan alih teknologi, kemudahan
+            memperoleh barang yang tidak diproduksi sendiri, serta terjaganya stabilitas kawasan. <strong>Tantangan</strong>:
+            persaingan produk dan tenaga kerja asing, ketergantungan pada negara lain, serta ancaman bagi industri
+            dalam negeri yang belum siap bersaing. Karena itu, peningkatan kualitas SDM dan daya saing produk lokal
+            menjadi kunci.
+          </p>
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Negara maju dan berkembang dibedakan dari pendapatan per kapita, mata pencaharian, IPM, pertumbuhan penduduk, dan teknologi.</li>
+            <li>Bentuk kerja sama: bilateral (dua negara), regional (satu kawasan), dan multilateral (banyak negara lintas kawasan).</li>
+            <li>ASEAN didirikan 8 Agustus 1967 melalui Deklarasi Bangkok; Timor-Leste menjadi anggota ke-11 pada 2025; MEA berlaku sejak 2015.</li>
+            <li>Segitiga pertumbuhan IMS-GT, IMT-GT, dan BIMP-EAGA mendorong pembangunan kawasan perbatasan.</li>
+            <li>Kerja sama membuka pasar dan investasi, tetapi menuntut peningkatan daya saing SDM dan produk dalam negeri.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="xii-04" data-pembanding="xii-04-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Berikut ini yang merupakan ciri negara berkembang adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s1" value="a"> Banyak mengekspor bahan mentah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s1" value="b"> Pertumbuhan penduduk rendah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s1" value="c"> Sebagian besar penduduk bekerja di sektor jasa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s1" value="d"> IPM sangat tinggi</label></li>
+            </ul>
+            <p class="quiz-feedback">Negara berkembang umumnya masih <strong>mengekspor bahan mentah</strong> dan mengimpor barang industri.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>2. Kerja sama ekonomi antara Indonesia dan Jepang melalui IJEPA termasuk kerja sama …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s2" value="a"> Regional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s2" value="b"> Multilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s2" value="c"> Bilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s2" value="d"> Segitiga pertumbuhan</label></li>
+            </ul>
+            <p class="quiz-feedback">Kerja sama yang melibatkan dua negara disebut kerja sama <strong>bilateral</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>3. ASEAN didirikan melalui …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s3" value="a"> Deklarasi Djuanda 1957</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s3" value="b"> Deklarasi Bangkok 1967</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s3" value="c"> Konferensi Asia Afrika 1955</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s3" value="d"> Deklarasi Bogor 1994</label></li>
+            </ul>
+            <p class="quiz-feedback">ASEAN berdiri pada 8 Agustus 1967 melalui <strong>Deklarasi Bangkok</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>4. Kerja sama segitiga pertumbuhan yang melibatkan Batam (Indonesia), Johor (Malaysia), dan Singapura adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s4" value="a"> IMT-GT</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s4" value="b"> BIMP-EAGA</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s4" value="c"> APEC</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s4" value="d"> IMS-GT</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>IMS-GT</strong> (Indonesia–Malaysia–Singapore Growth Triangle) dikenal juga sebagai Sijori.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>5. Dampak negatif yang mungkin dirasakan Indonesia akibat berlakunya Masyarakat Ekonomi ASEAN adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s5" value="a"> Pasar ekspor makin luas</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s5" value="b"> Masuknya investasi asing</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s5" value="c"> Harga barang impor makin murah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s5" value="d"> Persaingan tenaga kerja terampil makin ketat</label></li>
+            </ul>
+            <p class="quiz-feedback">MEA membuka arus tenaga kerja terampil sehingga <strong>persaingan tenaga kerja</strong> makin ketat.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>6. Keanggotaan Indonesia dalam G20 dan WTO merupakan contoh kerja sama …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s6" value="a"> multilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s6" value="b"> bilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s6" value="c"> regional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s6" value="d"> antardaerah</label></li>
+            </ul>
+            <p class="quiz-feedback">G20 dan WTO melibatkan banyak negara lintas kawasan: kerja sama <strong>multilateral</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>7. Negara yang menjadi anggota ke-11 ASEAN pada tahun 2025 adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s7" value="a"> Papua Nugini</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s7" value="b"> Brunei Darussalam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s7" value="c"> Kamboja</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s7" value="d"> Timor-Leste</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Timor-Leste</strong> resmi menjadi anggota ke-11 pada KTT ASEAN di Kuala Lumpur, Oktober 2025.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>8. Kerja sama segitiga pertumbuhan yang melibatkan Sumatra bagian utara, Malaysia utara, dan Thailand selatan adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s8" value="a"> IMS-GT</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s8" value="b"> BIMP-EAGA</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s8" value="c"> MEA</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s8" value="d"> IMT-GT</label></li>
+            </ul>
+            <p class="quiz-feedback">Indonesia–Malaysia–Thailand Growth Triangle = <strong>IMT-GT</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>9. Pengelolaan transportasi dan sampah bersama antara DKI Jakarta dan kota-kota di sekitarnya merupakan contoh kerja sama …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s9" value="a"> bilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s9" value="b"> antardaerah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s9" value="c"> multilateral</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s9" value="d"> regional ASEAN</label></li>
+            </ul>
+            <p class="quiz-feedback">Kerja sama di dalam negeri antara pemerintah daerah disebut kerja sama <strong>antardaerah</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>10. Upaya paling tepat agar Indonesia mampu bersaing dalam Masyarakat Ekonomi ASEAN adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii04-s10" value="a"> menutup pasar dari produk negara lain</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s10" value="b"> mengurangi ekspor</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s10" value="c"> meningkatkan kualitas SDM dan daya saing produk lokal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii04-s10" value="d"> membatasi pendidikan vokasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Kunci menghadapi persaingan adalah <strong>kualitas SDM dan daya saing produk</strong>.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Profil Produk Ekspor Daerahku</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berkelompok (3–4 orang).</p>
+          <ol>
+            <li>Cari satu komoditas atau produk unggulan daerahmu yang diekspor atau dipasarkan ke daerah lain (data BPS, dinas perdagangan, atau wawancara pelaku usaha).</li>
+            <li>Petakan alur produk tersebut: dari lokasi produksi hingga daerah atau negara tujuan.</li>
+            <li>Identifikasi bentuk kerja sama yang mendukungnya (antardaerah, bilateral, ASEAN, atau multilateral).</li>
+            <li>Analisis manfaat dan tantangan yang dihadapi produsen lokal.</li>
+            <li>Rumuskan dua strategi agar produk tersebut lebih berdaya saing.</li>
+          </ol>
+          <p><strong>Produk:</strong> Presentasi (maksimal 8 slide) dengan peta alur produk dan analisis.</p>
+          <p><strong>Kriteria penilaian:</strong> akurasi data, ketepatan peta alur, ketepatan identifikasi bentuk kerja sama, dan kualitas strategi yang diusulkan.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="xii-04" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="xii-03-desa-kota.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Interaksi Desa-Kota dan Pemerataan Pembangunan</span>
+          </a>
+          <a href="../kelas-xii.html" class="next">
+            <span class="nav-dir">Selesai semua modul? →</span>
+            <span class="nav-title">Kembali ke Daftar Modul Kelas XII</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+  <!-- Peta interaktif: Leaflet lokal, data peta dasar, lalu skrip peta -->
+  <script src="../js/vendor/leaflet/leaflet.js"></script>
+  <script src="../js/peta-dasar-data.js"></script>
+  <script src="../js/peta-dasar.js"></script>
+  <script src="../js/peta-titik.js"></script>
+</body>
+</html>

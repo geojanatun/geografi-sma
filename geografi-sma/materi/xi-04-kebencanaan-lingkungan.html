@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Kebencanaan dan Lingkungan Hidup — Kelas XI | Geografi SMA</title>
+  <meta name="description" content="Modul 4 Geografi Kelas XI (Fase F): Hubungan kerusakan lingkungan dengan bencana, serta jalan menuju pembangunan berkelanjutan. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-xi.html -->
+<body data-modul="xi-04" data-kelas="xi">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <li><a href="../kelas-xi.html" aria-current="page">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Kebencanaan dan Lingkungan Hidup</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas XI · Modul 4</span>
+          <h1>🌱 Kebencanaan dan Lingkungan Hidup</h1>
+          <p class="subtitle">
+            Hubungan kerusakan lingkungan dengan bencana, serta jalan menuju pembangunan berkelanjutan.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase F</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 1: Wilayah tempat tinggal dan lingkungan sekitar</strong><br><span class="cp-sub">Keterkaitan antara karakteristik wilayah fisik dan sosial (kependudukan)</span> — Menganalisis keterkaitan antara karakteristik wilayah fisik dan sosial (kependudukan) terhadap daya dukung lingkungan;</li>
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Proses/fenomena yang memengaruhi lingkungan fisik</span> — Menganalisis peranan manusia dalam mengubah lingkungan fisik</li>
+            <li><strong>Elemen 3: Interaksi antargejala fisik alam dan manusia dan pengaruhnya terhadap kehidupan</strong><br><span class="cp-sub">Potensi Sumber Daya Alam Indonesia terhadap dinamika kehidupan</span> — Menganalisis pengelolaan SDA secara berkelanjutan</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 2.4</span> Peserta didik mampu menganalisis dampak aktivitas manusia (deforestasi, alih fungsi lahan) terhadap perubahan lingkungan fisik.</li>
+            <li><span class="atp-kode">ATP 3.3</span> Peserta didik mampu menganalisis konsep dan praktik pengelolaan SDA yang berprinsip pada pembangunan berkelanjutan (sustainable development).</li>
+            <li><span class="atp-kode atp-pendukung">ATP 1.4 · pendukung</span> Peserta didik mampu menganalisis keterkaitan antara karakteristik fisik-sosial kependudukan terhadap kemampuan daya dukung lingkungan.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>menganalisis bentuk dan penyebab kerusakan lingkungan hidup;</li>
+            <li>menjelaskan hubungan antara kerusakan lingkungan dan meningkatnya risiko bencana;</li>
+            <li>mengusulkan upaya pelestarian lingkungan berdasarkan prinsip pembangunan berkelanjutan.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#kerusakan">Kerusakan Lingkungan Hidup</a></li>
+            <li><a href="#hubungan">Kerusakan Lingkungan Memperbesar Risiko Bencana</a></li>
+            <li><a href="#berkelanjutan">Pembangunan Berkelanjutan</a></li>
+            <li><a href="#pelestarian">Upaya Pelestarian</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="xi-04-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>1. Penebangan hutan secara besar-besaran disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-p1" value="a"> reboisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p1" value="b"> deforestasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p1" value="c"> reklamasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p1" value="d"> konservasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Deforestasi adalah hilangnya hutan akibat penebangan atau alih fungsi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Menanam kembali hutan yang gundul disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-p2" value="a"> deforestasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p2" value="b"> reboisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p2" value="c"> urbanisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p2" value="d"> sedimentasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Reboisasi adalah penanaman kembali hutan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>3. Masuknya zat berbahaya ke lingkungan sehingga kualitasnya menurun disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-p3" value="a"> pelapukan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p3" value="b"> erosi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p3" value="c"> konservasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p3" value="d"> pencemaran</label></li>
+            </ul>
+            <p class="quiz-feedback">Pencemaran menurunkan kualitas air, udara, atau tanah.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Prinsip 3R dalam pengelolaan sampah adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-p4" value="a"> reduce, remove, repair</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p4" value="b"> reuse, replace, rebuild</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p4" value="c"> reduce, reuse, recycle</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p4" value="d"> recycle, refill, repair</label></li>
+            </ul>
+            <p class="quiz-feedback">3R = reduce (mengurangi), reuse (memakai ulang), recycle (mendaur ulang).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>5. Gas yang paling banyak dihasilkan pembakaran bahan bakar fosil dan memicu efek rumah kaca adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-p5" value="a"> oksigen (O₂)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p5" value="b"> nitrogen (N₂)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p5" value="c"> karbon dioksida (CO₂)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-p5" value="d"> argon (Ar)</label></li>
+            </ul>
+            <p class="quiz-feedback">CO₂ dari pembakaran bahan bakar fosil adalah gas rumah kaca utama.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="kerusakan">A. Kerusakan Lingkungan Hidup</h2>
+          <p>
+            Kerusakan lingkungan dapat disebabkan oleh <strong>faktor alam</strong> (letusan gunung api, gempa,
+            badai) dan <strong>faktor manusia</strong>. Kerusakan akibat manusia antara lain:
+          </p>
+          <ul>
+            <li><strong>Deforestasi</strong>: penebangan dan alih fungsi hutan untuk perkebunan, tambang, atau permukiman.</li>
+            <li><strong>Pencemaran air</strong>: limbah industri, rumah tangga, dan pestisida masuk ke sungai dan laut.</li>
+            <li><strong>Pencemaran udara</strong>: emisi kendaraan, industri, dan pembakaran lahan.</li>
+            <li><strong>Pencemaran tanah</strong>: sampah plastik dan bahan kimia yang sulit terurai.</li>
+            <li><strong>Eksploitasi berlebihan</strong>: penambangan pasir liar, pengambilan air tanah berlebih, dan penangkapan ikan dengan bom.</li>
+          </ul>
+
+          <h2 id="hubungan">B. Kerusakan Lingkungan Memperbesar Risiko Bencana</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Contoh hubungan kerusakan lingkungan dan bencana</caption>
+              <thead><tr><th scope="col">Kerusakan lingkungan</th><th scope="col">Bencana yang dipicu atau diperparah</th></tr></thead>
+              <tbody>
+                <tr><td>Hutan gundul di daerah hulu</td><td>Banjir bandang dan tanah longsor karena air hujan langsung menjadi limpasan</td></tr>
+                <tr><td>Rusaknya hutan mangrove</td><td><a href="../glosarium.html?cari=abrasi">Abrasi</a> dan meningkatnya dampak gelombang tinggi serta tsunami</td></tr>
+                <tr><td>Pengeringan lahan gambut</td><td>Kebakaran hutan dan lahan serta kabut asap</td></tr>
+                <tr><td>Pengambilan air tanah berlebihan</td><td>Penurunan muka tanah dan banjir rob di kota pesisir</td></tr>
+                <tr><td>Saluran tersumbat sampah</td><td>Banjir dan genangan di perkotaan</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Perubahan iklim akibat meningkatnya gas rumah kaca juga membuat bencana hidrometeorologi, seperti banjir,
+            kekeringan, dan cuaca ekstrem, makin sering terjadi.
+          </p>
+
+
+
+
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xi-04-1 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-xi04-hutan">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 600 320" role="img" aria-labelledby="xi04-hutan-j xi04-hutan-d">
+              <title id="xi04-hutan-j">Perbandingan lereng berhutan dan lereng gundul saat hujan</title>
+              <desc id="xi04-hutan-d">Dua lereng diguyur hujan. Di lereng berhutan, air banyak meresap ke tanah dan limpasan kecil. Di lereng gundul, air sedikit meresap, limpasan besar membawa tanah, dan sungai di bawahnya meluap.</desc>
+              <defs><marker id="pn-xi04a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-air)"/></marker><marker id="pn-xi04b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-tanah-gelap)"/></marker></defs>
+              <rect class="f-langit" x="0" y="0" width="290" height="320"/><rect class="f-langit" x="310" y="0" width="290" height="320"/>
+              <ellipse class="f-awan" cx="145" cy="30" rx="110" ry="18"/><ellipse class="f-awan" cx="455" cy="30" rx="110" ry="18"/>
+              <line class="jatuh " x1="50" y1="40" x2="46" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-1" x1="76" y1="40" x2="72" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-2" x1="102" y1="40" x2="98" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-3" x1="128" y1="40" x2="124" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh " x1="154" y1="40" x2="150" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-1" x1="180" y1="40" x2="176" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-2" x1="206" y1="40" x2="202" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-3" x1="232" y1="40" x2="228" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh " x1="360" y1="40" x2="356" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-1" x1="386" y1="40" x2="382" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-2" x1="412" y1="40" x2="408" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-3" x1="438" y1="40" x2="434" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh " x1="464" y1="40" x2="460" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-1" x1="490" y1="40" x2="486" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-2" x1="516" y1="40" x2="512" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/><line class="jatuh tunda-3" x1="542" y1="40" x2="538" y2="54" style="stroke:var(--svg-air);stroke-width:2;stroke-linecap:round"/>
+              <polygon class="f-tanah" points="0,140 290,230 290,320 0,320"/>
+              <polygon class="f-tanah" points="310,140 600,230 600,320 310,320"/>
+              <rect class="f-tanah-gelap" x="28" y="123" width="4" height="18"/><circle class="f-vegetasi" cx="30" cy="119" r="13"/><rect class="f-tanah-gelap" x="73" y="137" width="4" height="18"/><circle class="f-vegetasi" cx="75" cy="133" r="13"/><rect class="f-tanah-gelap" x="118" y="151" width="4" height="18"/><circle class="f-vegetasi" cx="120" cy="147" r="13"/><rect class="f-tanah-gelap" x="163" y="165" width="4" height="18"/><circle class="f-vegetasi" cx="165" cy="161" r="13"/><rect class="f-tanah-gelap" x="208" y="179" width="4" height="18"/><circle class="f-vegetasi" cx="210" cy="175" r="13"/><rect class="f-tanah-gelap" x="347" y="146" width="6" height="7"/><rect class="f-tanah-gelap" x="407" y="165" width="6" height="7"/><rect class="f-tanah-gelap" x="467" y="184" width="6" height="7"/>
+              <rect class="f-air" x="250" y="226" width="40" height="8"/>
+              <rect class="f-air" x="560" y="226" width="40" height="8"><animate attributeName="y" values="226;206;206;226" keyTimes="0;.5;.8;1" dur="6s" repeatCount="indefinite"/>
+                <animate attributeName="height" values="8;28;28;8" keyTimes="0;.5;.8;1" dur="6s" repeatCount="indefinite"/></rect>
+              <path class="alir" d="M45,162 v40" style="stroke:var(--svg-air);stroke-width:2.5;fill:none" marker-end="url(#pn-xi04a)"/><path class="alir" d="M100,179 v40" style="stroke:var(--svg-air);stroke-width:2.5;fill:none" marker-end="url(#pn-xi04a)"/><path class="alir" d="M155,196 v40" style="stroke:var(--svg-air);stroke-width:2.5;fill:none" marker-end="url(#pn-xi04a)"/><path class="alir" d="M210,213 v40" style="stroke:var(--svg-air);stroke-width:2.5;fill:none" marker-end="url(#pn-xi04a)"/>
+              <path class="alir" d="M60,156 L240,211" style="stroke:var(--svg-air);stroke-width:1.5;fill:none"/>
+              <path class="alir" d="M430,185 v16" style="stroke:var(--svg-air);stroke-width:2;fill:none"/>
+              <path class="alir" d="M330,142 L550,210" style="stroke:var(--svg-tanah-gelap);stroke-width:5;fill:none" marker-end="url(#pn-xi04b)"/><path class="alir" d="M360,144 L545,201" style="stroke:var(--svg-tanah-gelap);stroke-width:4;fill:none" marker-end="url(#pn-xi04b)"/><path class="alir" d="M340,153 L520,209" style="stroke:var(--svg-tanah-gelap);stroke-width:3;fill:none" marker-end="url(#pn-xi04b)"/>
+              <text class="t-tengah t-tebal" x="145" y="78">🌳 Lereng berhutan</text>
+              <text class="t-tengah t-tebal" x="455" y="78">🪵 Lereng gundul</text>
+              <rect x="8" y="261" width="246" height="42" rx="8" style="fill:var(--warna-permukaan);fill-opacity:.92;stroke:var(--svg-vegetasi);stroke-width:1.5"/>
+              <text x="16" y="278" style="font-size:13px;font-weight:700;fill:var(--warna-sekunder)">air banyak meresap (infiltrasi)</text>
+              <text x="16" y="295" style="font-size:13px;font-weight:700;fill:var(--warna-sekunder)">→ air tanah terisi, sungai stabil</text>
+              <rect x="318" y="261" width="246" height="42" rx="8" style="fill:var(--warna-permukaan);fill-opacity:.92;stroke:var(--salah-teks);stroke-width:1.5"/>
+              <text x="326" y="278" style="font-size:13px;font-weight:700;fill:var(--salah-teks)">limpasan besar membawa tanah</text>
+              <text x="326" y="295" style="font-size:13px;font-weight:700;fill:var(--salah-teks)">→ erosi, longsor, sungai meluap</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>Akar dan serasah hutan memperlambat aliran air dan membantu air meresap ke dalam tanah. Tanpa hutan, air hujan langsung menjadi <strong>limpasan permukaan</strong> yang deras dan membawa tanah, sehingga memicu <strong>banjir bandang dan longsor</strong>. Inilah contoh kerusakan lingkungan yang memperbesar risiko bencana.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xi-04-2 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-xi04-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="A5ZAgErGg6g" data-judul="Berkenalan dengan Hutan Mangrove, Pelindung Kawasan Pesisir">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=A5ZAgErGg6g" rel="noopener">YouTube: Berkenalan dengan Hutan Mangrove, Pelindung Kawasan Pesisir</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Berkenalan dengan Hutan Mangrove, Pelindung Kawasan Pesisir</strong> — fungsi fisik, biologis, dan ekonomi hutan mangrove, termasuk perannya menahan abrasi.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>Lindungi Hutan</strong> (2023) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=A5ZAgErGg6g" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="berkelanjutan">C. Pembangunan Berkelanjutan</h2>
+          <p>
+            <strong>Pembangunan berkelanjutan</strong> adalah pembangunan yang memenuhi kebutuhan generasi sekarang tanpa
+            mengorbankan kemampuan generasi mendatang memenuhi kebutuhannya (Laporan Brundtland, 1987). Pembangunan ini
+            menyeimbangkan tiga pilar: <strong>ekonomi, sosial, dan lingkungan</strong>. Secara global, prinsip ini
+            dirumuskan dalam 17 <strong>Tujuan Pembangunan Berkelanjutan</strong> (SDGs) dengan target tahun 2030.
+          </p>
+          <p>
+            Pembangunan harus memperhatikan <strong>daya dukung</strong> dan <strong>daya tampung</strong> lingkungan.
+            Di Indonesia, rencana usaha yang berdampak penting wajib dilengkapi <strong>AMDAL</strong> (Analisis
+            Mengenai Dampak Lingkungan).
+          </p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xi-04-3 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-xi04-pilar">
+            <span class="media-label">🖼️ Diagram</span>
+            <svg viewBox="0 0 560 380" role="img" aria-labelledby="xi04-pilar-j xi04-pilar-d">
+              <title id="xi04-pilar-j">Tiga pilar pembangunan berkelanjutan</title>
+              <desc id="xi04-pilar-d">Tiga lingkaran beririsan: ekonomi, sosial, dan lingkungan. Irisan ketiganya adalah pembangunan berkelanjutan.</desc>
+              <defs></defs>
+              <circle cx="205" cy="140" r="110" style="fill:#e9a23b;fill-opacity:.28;stroke:#e9a23b;stroke-width:2"/>
+              <circle cx="355" cy="140" r="110" style="fill:var(--warna-primer);fill-opacity:.22;stroke:var(--warna-primer);stroke-width:2"/>
+              <circle cx="280" cy="262" r="110" style="fill:var(--svg-vegetasi);fill-opacity:.28;stroke:var(--svg-vegetasi);stroke-width:2"/>
+              <text class="t-tengah t-tebal" x="160" y="104">💰 Ekonomi</text><text class="t-tengah t-kecil" x="160" y="124">pertumbuhan,</text><text class="t-tengah t-kecil" x="160" y="140">lapangan kerja</text>
+              <text class="t-tengah t-tebal" x="400" y="104">👥 Sosial</text><text class="t-tengah t-kecil" x="400" y="124">pendidikan,</text><text class="t-tengah t-kecil" x="400" y="140">kesehatan, keadilan</text>
+              <text class="t-tengah t-tebal" x="280" y="318">🌿 Lingkungan</text><text class="t-tengah t-kecil" x="280" y="338">kelestarian sumber daya</text>
+              <text class="t-tengah t-tebal" x="280" y="190" style="font-size:12px">Berkelanjutan</text>
+            </svg>
+            <figcaption>Pembangunan disebut <strong>berkelanjutan</strong> bila ketiga pilar seimbang, yaitu di irisan tengah. Pembangunan yang hanya mengejar ekonomi tanpa memperhatikan lingkungan akan merugikan generasi mendatang.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="pelestarian">D. Upaya Pelestarian</h2>
+          <p>
+            Upaya pelestarian meliputi reboisasi dan penghijauan, rehabilitasi mangrove, terasering di lahan miring,
+            pengolahan limbah sebelum dibuang, penerapan 3R (<em>reduce, reuse, recycle</em>), penggunaan energi
+            terbarukan, serta penegakan hukum lingkungan. Peran sederhana siswa: membawa botol minum sendiri, memilah
+            sampah, dan ikut kegiatan penanaman pohon.
+          </p>
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Kerusakan lingkungan disebabkan faktor alam dan manusia, seperti deforestasi, pencemaran, dan eksploitasi berlebihan.</li>
+            <li>Kerusakan lingkungan memperbesar risiko bencana: hutan gundul memicu banjir dan longsor, mangrove rusak memicu abrasi.</li>
+            <li>Perubahan iklim meningkatkan frekuensi bencana hidrometeorologi.</li>
+            <li>Pembangunan berkelanjutan menyeimbangkan pilar ekonomi, sosial, dan lingkungan, dirumuskan dalam 17 SDGs.</li>
+            <li>Pelestarian dilakukan melalui reboisasi, rehabilitasi mangrove, 3R, AMDAL, dan penegakan hukum lingkungan.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="xi-04" data-pembanding="xi-04-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Banjir bandang di daerah hilir sering diperparah oleh kerusakan lingkungan berupa …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s1" value="a"> Penggundulan hutan di daerah hulu</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s1" value="b"> Rehabilitasi mangrove</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s1" value="c"> Pembuatan terasering</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s1" value="d"> Pembuatan sumur resapan</label></li>
+            </ul>
+            <p class="quiz-feedback">Tanpa hutan, air hujan di hulu langsung menjadi limpasan permukaan sehingga debit sungai melonjak (<strong>hutan gundul</strong>).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Rusaknya hutan mangrove di pesisir utara Jawa paling berkaitan dengan meningkatnya bencana …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s2" value="a"> Kekeringan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s2" value="b"> Abrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s2" value="c"> Gempa bumi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s2" value="d"> Letusan gunung api</label></li>
+            </ul>
+            <p class="quiz-feedback">Mangrove meredam energi gelombang. Bila rusak, garis pantai mudah terkikis (<strong>abrasi</strong>).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>3. Penurunan muka tanah di beberapa kota pesisir Indonesia terutama dipicu oleh …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s3" value="a"> Reboisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s3" value="b"> Sedimentasi delta</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s3" value="c"> Pembangunan sabo dam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s3" value="d"> Pengambilan air tanah berlebihan</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Pengambilan air tanah berlebihan</strong> membuat lapisan tanah memadat dan turun, sehingga banjir rob meluas.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Pembangunan yang memenuhi kebutuhan masa kini tanpa mengorbankan kebutuhan generasi mendatang disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s4" value="a"> Pembangunan ekonomi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s4" value="b"> Industrialisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s4" value="c"> Pembangunan berkelanjutan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s4" value="d"> Urbanisasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Definisi ini berasal dari Laporan Brundtland (1987) tentang <strong>pembangunan berkelanjutan</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>5. Dokumen kajian dampak lingkungan yang wajib dimiliki rencana usaha berdampak penting di Indonesia adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s5" value="a"> SDGs</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s5" value="b"> UNCLOS</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s5" value="c"> AMDAL</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s5" value="d"> RPJMN</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>AMDAL</strong> (Analisis Mengenai Dampak Lingkungan) mengkaji dampak penting rencana usaha terhadap lingkungan.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>6. Kebakaran hutan dan kabut asap di Sumatra dan Kalimantan sering diperparah oleh …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s6" value="a"> pembuatan terasering</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s6" value="b"> pengeringan lahan gambut</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s6" value="c"> penanaman mangrove</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s6" value="d"> pembuatan sumur resapan</label></li>
+            </ul>
+            <p class="quiz-feedback">Gambut yang dikeringkan sangat mudah terbakar dan sulit dipadamkan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>7. Banjir rob yang makin sering di kota pesisir berkaitan dengan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s7" value="a"> meningkatnya luas hutan di hulu</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s7" value="b"> penanaman mangrove di pesisir</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s7" value="c"> penurunan muka tanah akibat pengambilan air tanah berlebihan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s7" value="d"> berkurangnya curah hujan</label></li>
+            </ul>
+            <p class="quiz-feedback">Pengambilan air tanah berlebihan menyebabkan <strong>penurunan muka tanah</strong>, sehingga air laut mudah menggenangi daratan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>8. Tiga pilar pembangunan berkelanjutan adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s8" value="a"> politik, budaya, dan agama</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s8" value="b"> ekonomi, sosial, dan lingkungan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s8" value="c"> industri, pertanian, dan jasa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s8" value="d"> pusat, provinsi, dan daerah</label></li>
+            </ul>
+            <p class="quiz-feedback">Pembangunan berkelanjutan menyeimbangkan pilar <strong>ekonomi, sosial, dan lingkungan</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>9. Tujuan Pembangunan Berkelanjutan (SDGs) terdiri atas 17 tujuan dengan target tahun …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s9" value="a"> 2025</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s9" value="b"> 2045</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s9" value="c"> 2050</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s9" value="d"> 2030</label></li>
+            </ul>
+            <p class="quiz-feedback">SDGs memiliki 17 tujuan dengan target tahun <strong>2030</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>10. Upaya mengurangi erosi di lahan pertanian yang miring adalah membuat …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xi04-s10" value="a"> terasering</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s10" value="b"> saluran beton</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s10" value="c"> lahan terbuka</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xi04-s10" value="d"> kolam ikan</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Terasering</strong> memperlambat aliran air di lereng sehingga erosi berkurang.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Audit Lingkungan dan Aksi Nyata di Madrasah</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berkelompok (4–5 orang) selama dua minggu.</p>
+          <ol>
+            <li>Amati lingkungan madrasah: pengelolaan sampah, penggunaan air dan listrik, serta ruang hijau. Dokumentasikan dengan foto.</li>
+            <li>Identifikasi dua masalah lingkungan dan kaitkan dengan potensi bencana atau risikonya (misalnya saluran tersumbat → genangan).</li>
+            <li>Rancang satu aksi nyata berbasis 3R atau penghijauan, lengkap dengan jadwal dan pembagian tugas.</li>
+            <li>Laksanakan aksi tersebut dan ukur hasilnya (misalnya berat sampah terpilah atau jumlah tanaman).</li>
+            <li>Hubungkan aksimu dengan salah satu tujuan SDGs.</li>
+          </ol>
+          <p><strong>Produk:</strong> Laporan audit dan dokumentasi aksi (video 2–3 menit atau poster).</p>
+          <p><strong>Kriteria penilaian:</strong> ketepatan identifikasi masalah, keterkaitan dengan risiko bencana, keterlaksanaan aksi, dan refleksi terhadap SDGs.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="xi-04" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="xi-03-mitigasi-adaptasi.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Mitigasi dan Adaptasi Kebencanaan</span>
+          </a>
+          <a href="xi-05-kependudukan.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Dinamika Kependudukan</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>

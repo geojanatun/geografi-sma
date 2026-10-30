@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Interaksi Desa-Kota dan Pemerataan Pembangunan — Kelas XII | Geografi SMA</title>
+  <meta name="description" content="Modul 3 Geografi Kelas XII (Fase F): Desa dan kota saling membutuhkan. Bagaimana interaksinya terjadi, apa dampaknya, dan bagaimana pembangunan diratakan. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-xii.html -->
+<body data-modul="xii-03" data-kelas="xii">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html" aria-current="page">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Interaksi Desa-Kota dan Pemerataan Pembangunan</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas XII · Modul 3</span>
+          <h1>🏙️ Interaksi Desa-Kota dan Pemerataan Pembangunan</h1>
+          <p class="subtitle">
+            Desa dan kota saling membutuhkan. Bagaimana interaksinya terjadi, apa dampaknya, dan bagaimana pembangunan diratakan.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase F</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 1: Wilayah tempat tinggal dan lingkungan sekitar</strong><br><span class="cp-sub">Konsep dan teori dasar mengenai dinamika kependudukan</span> — Menganalisis konsep dan teori dasar mengenai dinamika kependudukan pada suatu wilayah tempat tinggal</li>
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Faktor yang berpengaruh dalam lingkungan sosial</span> — Menganalisis konsep dinamika kependudukan dan faktor-faktor yang mempengaruhinya</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 2.2</span> Peserta didik mampu menganalisis faktor sosial, budaya, dan ekonomi yang memicu perubahan dinamika kependudukan dan struktur sosial.</li>
+            <li><span class="atp-kode atp-pendukung">ATP 1.3 · pendukung</span> Peserta didik mampu menguraikan implikasi teori dinamika kependudukan terhadap penataan ruang dan kebutuhan fasilitas wilayah.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>membandingkan karakteristik dan struktur ruang desa serta kota;</li>
+            <li>menganalisis faktor dan kekuatan interaksi desa-kota dengan teori Ullman dan model gravitasi;</li>
+            <li>mengevaluasi dampak interaksi desa-kota serta upaya pemerataan pembangunan.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#desa-kota">Karakteristik Desa dan Kota</a></li>
+            <li><a href="#interaksi">Interaksi Desa-Kota</a></li>
+            <li><a href="#dampak">Dampak Interaksi</a></li>
+            <li><a href="#pemerataan">Pemerataan Pembangunan</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="xii-03-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Pusat kegiatan bisnis di tengah kota disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-p1" value="a"> CBD (Central Business District)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p1" value="b"> hinterland</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p1" value="c"> suburban</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p1" value="d"> rural</label></li>
+            </ul>
+            <p class="quiz-feedback">CBD adalah pusat perdagangan dan perkantoran kota.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Mata pencaharian sebagian besar penduduk desa adalah di bidang …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-p2" value="a"> pertanian</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p2" value="b"> perbankan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p2" value="c"> industri berat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p2" value="d"> teknologi informasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Penduduk desa umumnya bekerja di sektor pertanian.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Kawasan permukiman yang berkembang di pinggiran kota disebut daerah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-p3" value="a"> CBD</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p3" value="b"> hulu</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p3" value="c"> suburban</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p3" value="d"> pedalaman</label></li>
+            </ul>
+            <p class="quiz-feedback">Suburban adalah kawasan pinggiran kota.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>4. Hubungan timbal balik antara desa dan kota disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-p4" value="a"> deforestasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p4" value="b"> sedimentasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p4" value="c"> abrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p4" value="d"> interaksi desa-kota</label></li>
+            </ul>
+            <p class="quiz-feedback">Desa dan kota saling berhubungan dan saling memengaruhi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>5. Ciri kehidupan sosial masyarakat kota adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-p5" value="a"> homogen dan gotong royong kuat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p5" value="b"> heterogen dan individualistis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p5" value="c"> seluruhnya petani</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-p5" value="d"> jumlah penduduk sedikit</label></li>
+            </ul>
+            <p class="quiz-feedback">Masyarakat kota beragam (heterogen) dan cenderung individualistis.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="desa-kota">A. Karakteristik Desa dan Kota</h2>
+          <p>
+            Menurut Bintarto, <strong>desa</strong> adalah perwujudan geografis akibat interaksi faktor fisiografis,
+            sosial, ekonomi, politik, dan kultural setempat. Unsur desa meliputi daerah, penduduk, dan tata kehidupan.
+            Berdasarkan tingkat perkembangannya, desa dikelompokkan menjadi desa swadaya (tradisional), swakarya
+            (peralihan), dan swasembada (maju).
+          </p>
+          <p>
+            <strong>Kota</strong> dicirikan oleh kepadatan penduduk tinggi, kegiatan nonpertanian (industri, perdagangan,
+            jasa), heterogenitas sosial, dan kelengkapan fasilitas. Struktur ruang kota dijelaskan beberapa teori:
+          </p>
+          <ul>
+            <li><strong>Konsentris (Burgess)</strong>: kota tumbuh membentuk lingkaran-lingkaran dari pusat (CBD) ke arah luar.</li>
+            <li><strong>Sektoral (Hoyt)</strong>: kota berkembang membentuk sektor-sektor yang mengikuti jalur transportasi.</li>
+            <li><strong>Inti ganda (Harris dan Ullman)</strong>: kota memiliki beberapa pusat kegiatan.</li>
+          </ul>
+
+
+
+
+          <!-- MEDIA-MULAI xii-03-1 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="pilih" id="media-xii03-struktur">
+            <span class="media-label">🖼️ Diagram Interaktif</span>
+            <h3>Tiga Teori Struktur Ruang Kota</h3>
+            <p>Klik setiap teori dan bandingkan susunan zonanya. Nomor pada gambar sesuai dengan keterangan di sebelah kanan.</p>
+            <div class="media-kontrol"><button type="button" class="pilih" data-pilih="konsentris" aria-pressed="true">Konsentris (Burgess)</button><button type="button" class="pilih" data-pilih="sektoral" aria-pressed="false">Sektoral (Hoyt)</button><button type="button" class="pilih" data-pilih="inti" aria-pressed="false">Inti ganda (Harris–Ullman)</button></div>
+            <figure class="media" data-tampil="konsentris">
+              <svg viewBox="0 0 680 370" role="img" aria-label="Diagram struktur ruang kota teori Konsentris (Burgess)"><circle cx="190" cy="185" r="170" fill="#d9e2ec" stroke="#fff" stroke-width="1.5"/><circle cx="190" cy="185" r="135" fill="#a3c76a" stroke="#fff" stroke-width="1.5"/><circle cx="190" cy="185" r="100" fill="#f6c344" stroke="#fff" stroke-width="1.5"/><circle cx="190" cy="185" r="65" fill="#e9a07a" stroke="#fff" stroke-width="1.5"/><circle cx="190" cy="185" r="30" fill="#c0392b" stroke="#fff" stroke-width="1.5"/><text x="190" y="37" class="t-tengah t-tebal" style="fill:#1f2933;font-size:14px">5</text><text x="190" y="72" class="t-tengah t-tebal" style="fill:#1f2933;font-size:14px">4</text><text x="190" y="107" class="t-tengah t-tebal" style="fill:#1f2933;font-size:14px">3</text><text x="190" y="142" class="t-tengah t-tebal" style="fill:#1f2933;font-size:14px">2</text><text x="190" y="191" class="t-tengah t-tebal" style="fill:#fff">1</text><rect x="395" y="40" width="22" height="22" rx="4" fill="#c0392b" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="56" style="font-size:13.5px">1 CBD</text><rect x="395" y="74" width="22" height="22" rx="4" fill="#e9a07a" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="90" style="font-size:13.5px">2 Zona peralihan</text><rect x="395" y="108" width="22" height="22" rx="4" fill="#f6c344" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="124" style="font-size:13.5px">3 Perumahan pekerja</text><rect x="395" y="142" width="22" height="22" rx="4" fill="#a3c76a" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="158" style="font-size:13.5px">4 Perumahan kelas atas</text><rect x="395" y="176" width="22" height="22" rx="4" fill="#d9e2ec" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="192" style="font-size:13.5px">5 Komuter</text></svg>
+              <figcaption><strong>Konsentris (Burgess):</strong> Kota tumbuh seperti <strong>lingkaran</strong> dari pusat (CBD) ke luar. Makin jauh dari pusat, kawasan makin lengang dan penghuninya umumnya lebih mampu. Contoh mirip: kota-kota lama di dataran yang rata.</figcaption>
+            </figure>
+            <figure class="media" data-tampil="sektoral" hidden>
+              <svg viewBox="0 0 680 370" role="img" aria-label="Diagram struktur ruang kota teori Sektoral (Hoyt)"><circle cx="190" cy="185" r="160" fill="#f6c344" stroke="#fff"/><path d="M190,185 L190.0,25.0 A160,160 0 0 1 303.1,71.9 Z" fill="#f6c344" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L303.1,71.9 A160,160 0 0 1 350.0,185.0 Z" fill="#e9a07a" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L350.0,185.0 A160,160 0 0 1 303.1,298.1 Z" fill="#9ad0f5" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L303.1,298.1 A160,160 0 0 1 190.0,345.0 Z" fill="#f6c344" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L190.0,345.0 A160,160 0 0 1 76.9,298.1 Z" fill="#a3c76a" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L76.9,298.1 A160,160 0 0 1 30.0,185.0 Z" fill="#f6c344" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L30.0,185.0 A160,160 0 0 1 76.9,71.9 Z" fill="#9ad0f5" stroke="#fff" stroke-width="1.5"/><path d="M190,185 L76.9,71.9 A160,160 0 0 1 190.0,25.0 Z" fill="#e9a07a" stroke="#fff" stroke-width="1.5"/><circle cx="190" cy="185" r="32" fill="#c0392b" stroke="#fff" stroke-width="1.5"/><path d="M190,25 L190,345" style="stroke:#52606d;stroke-width:5;stroke-dasharray:12 6"/><text x="200" y="40" style="font-size:12px;fill:#1f2933;font-weight:700">jalan / rel</text><rect x="395" y="40" width="22" height="22" rx="4" fill="#c0392b" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="56" style="font-size:13.5px">1 CBD</text><rect x="395" y="74" width="22" height="22" rx="4" fill="#e9a07a" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="90" style="font-size:13.5px">2 Industri ringan / grosir</text><rect x="395" y="108" width="22" height="22" rx="4" fill="#f6c344" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="124" style="font-size:13.5px">3 Perumahan kelas bawah</text><rect x="395" y="142" width="22" height="22" rx="4" fill="#9ad0f5" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="158" style="font-size:13.5px">4 Perumahan kelas menengah</text><rect x="395" y="176" width="22" height="22" rx="4" fill="#a3c76a" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="192" style="font-size:13.5px">5 Perumahan kelas atas</text></svg>
+              <figcaption><strong>Sektoral (Hoyt):</strong> Kota berkembang membentuk <strong>sektor (irisan)</strong> yang memanjang mengikuti jalur transportasi seperti jalan raya dan rel kereta. Kawasan sejenis cenderung mengelompok dalam satu irisan.</figcaption>
+            </figure>
+            <figure class="media" data-tampil="inti" hidden>
+              <svg viewBox="0 0 680 370" role="img" aria-label="Diagram struktur ruang kota teori Inti ganda (Harris–Ullman)"><rect x="30" y="25" width="320" height="320" rx="14" fill="#f6c344" stroke="#fff"/><rect x="130" y="110" width="80" height="70" rx="8" fill="#c0392b" stroke="#fff" stroke-width="1.5"/><text x="170.0" y="151.0" class="t-tengah t-tebal" style="fill:#1f2933">1</text><rect x="40" y="40" width="85" height="60" rx="8" fill="#e9a07a" stroke="#fff" stroke-width="1.5"/><text x="82.5" y="76.0" class="t-tengah t-tebal" style="fill:#1f2933">2</text><rect x="215" y="40" width="125" height="75" rx="8" fill="#9ad0f5" stroke="#fff" stroke-width="1.5"/><text x="277.5" y="83.5" class="t-tengah t-tebal" style="fill:#1f2933">4</text><rect x="230" y="200" width="110" height="70" rx="8" fill="#a3c76a" stroke="#fff" stroke-width="1.5"/><text x="285.0" y="241.0" class="t-tengah t-tebal" style="fill:#1f2933">5</text><rect x="40" y="250" width="120" height="85" rx="8" fill="#7b8794" stroke="#fff" stroke-width="1.5"/><text x="100.0" y="298.5" class="t-tengah t-tebal" style="fill:#1f2933">6</text><rect x="180" y="280" width="70" height="55" rx="8" fill="#e9a07a" stroke="#fff" stroke-width="1.5"/><text x="215.0" y="313.5" class="t-tengah t-tebal" style="fill:#1f2933">7</text><rect x="260" y="280" width="80" height="55" rx="8" fill="#b18ad9" stroke="#fff" stroke-width="1.5"/><text x="300.0" y="313.5" class="t-tengah t-tebal" style="fill:#1f2933">9</text><rect x="40" y="150" width="70" height="70" rx="8" fill="#9ad0f5" stroke="#fff" stroke-width="1.5"/><text x="75.0" y="191.0" class="t-tengah t-tebal" style="fill:#1f2933">8</text><rect x="395" y="40" width="22" height="22" rx="4" fill="#c0392b" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="56" style="font-size:13.5px">1 CBD</text><rect x="395" y="74" width="22" height="22" rx="4" fill="#e9a07a" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="90" style="font-size:13.5px">2 / 7 Industri</text><rect x="395" y="108" width="22" height="22" rx="4" fill="#f6c344" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="124" style="font-size:13.5px">3 Perumahan kelas bawah</text><rect x="395" y="142" width="22" height="22" rx="4" fill="#9ad0f5" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="158" style="font-size:13.5px">4 / 8 Perumahan menengah</text><rect x="395" y="176" width="22" height="22" rx="4" fill="#a3c76a" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="192" style="font-size:13.5px">5 Perumahan kelas atas</text><rect x="395" y="210" width="22" height="22" rx="4" fill="#7b8794" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="226" style="font-size:13.5px">6 Industri berat</text><rect x="395" y="244" width="22" height="22" rx="4" fill="#b18ad9" stroke="var(--svg-garis)" stroke-width=".8"/><text x="425" y="260" style="font-size:13.5px">9 Pusat bisnis pinggiran</text></svg>
+              <figcaption><strong>Inti ganda (Harris–Ullman):</strong> Kota memiliki <strong>beberapa pusat kegiatan</strong>, misalnya pusat bisnis lama, kawasan industri, dan pusat bisnis baru di pinggiran. Pola ini mirip kota besar modern seperti Jakarta dengan banyak pusat perbelanjaan dan perkantoran.</figcaption>
+            </figure>
+          </div>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="interaksi">B. Interaksi Desa-Kota</h2>
+          <p>
+            Menurut Edward Ullman, <a href="../glosarium.html?cari=interaksi">interaksi keruangan</a> dipengaruhi tiga faktor:
+          </p>
+          <ul>
+            <li><strong>Komplementaritas wilayah</strong>: wilayah saling melengkapi, misalnya desa memasok pangan dan kota menyediakan barang industri serta jasa.</li>
+            <li><strong>Kesempatan antara</strong> (<em>intervening opportunity</em>): adanya wilayah lain yang dapat memenuhi kebutuhan sehingga melemahkan interaksi.</li>
+            <li><strong>Kemudahan perpindahan</strong> (<em>transferability</em>): jarak, biaya, dan sarana transportasi.</li>
+          </ul>
+          <p>
+            Kekuatan interaksi dua wilayah dapat diperkirakan dengan <strong>model gravitasi</strong>:
+            <strong>I = k × (PA × PB) ÷ d²</strong>. Interaksi makin kuat jika jumlah penduduk makin besar, dan makin
+            lemah jika jarak makin jauh.
+          </p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xii-03-2 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-xii03-interaksi">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 600 260" role="img" aria-labelledby="xii03-interaksi-j xii03-interaksi-d">
+              <title id="xii03-interaksi-j">Arus barang dan orang dalam interaksi desa–kota</title>
+              <desc id="xii03-interaksi-d">Dua kotak, desa di kiri dan kota di kanan. Ikon beras, sayur, dan pekerja bergerak dari desa ke kota; ikon ponsel, uang, dan traktor bergerak dari kota ke desa.</desc>
+              <defs><marker id="pn-xii03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-garis)"/></marker></defs>
+              <rect x="15" y="40" width="180" height="170" rx="14" style="fill:var(--svg-vegetasi);fill-opacity:.25;stroke:var(--svg-vegetasi);stroke-width:2"/><rect x="405" y="40" width="180" height="170" rx="14" style="fill:var(--svg-batu);fill-opacity:.3;stroke:var(--svg-garis);stroke-width:2"/><text class="t-tengah" x="105" y="95" style="font-size:40px">🌾🏡</text><text class="t-tengah t-tebal" x="105" y="135">DESA</text><text class="t-tengah t-kecil" x="105" y="160">pertanian, lahan luas</text><text class="t-tengah" x="495" y="95" style="font-size:40px">🏙️🏭</text><text class="t-tengah t-tebal" x="495" y="135">KOTA</text><text class="t-tengah t-kecil" x="495" y="160">industri, jasa, fasilitas</text><path d="M200,95 H400" style="stroke:var(--svg-garis);stroke-width:2;fill:none" marker-end="url(#pn-xii03)"/><path d="M400,155 H200" style="stroke:var(--svg-garis);stroke-width:2;fill:none" marker-end="url(#pn-xii03)"/><text class="t-tengah t-kecil" x="300" y="80">pangan · tenaga kerja</text><text class="t-tengah t-kecil" x="300" y="182">barang · modal · teknologi</text><text style="font-size:20px" opacity="0">🍚<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" begin="0s" repeatCount="indefinite"/><animateMotion dur="6s" begin="0s" repeatCount="indefinite" path="M205,104 H375"/></text><text style="font-size:20px" opacity="0">🥬<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" begin="2s" repeatCount="indefinite"/><animateMotion dur="6s" begin="2s" repeatCount="indefinite" path="M205,104 H375"/></text><text style="font-size:20px" opacity="0">👷<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" begin="4s" repeatCount="indefinite"/><animateMotion dur="6s" begin="4s" repeatCount="indefinite" path="M205,104 H375"/></text><text style="font-size:20px" opacity="0">📱<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" begin="1s" repeatCount="indefinite"/><animateMotion dur="6s" begin="1s" repeatCount="indefinite" path="M375,164 H205"/></text><text style="font-size:20px" opacity="0">💰<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" begin="3s" repeatCount="indefinite"/><animateMotion dur="6s" begin="3s" repeatCount="indefinite" path="M375,164 H205"/></text><text style="font-size:20px" opacity="0">🚜<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.9;1" dur="6s" begin="5s" repeatCount="indefinite"/><animateMotion dur="6s" begin="5s" repeatCount="indefinite" path="M375,164 H205"/></text><text class="t-tengah t-tebal" x="300" y="245">Komplementaritas: desa dan kota saling melengkapi</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>Desa mengirim <strong>pangan, bahan baku, dan tenaga kerja</strong>, sedangkan kota mengirim <strong>barang industri, modal, teknologi, dan informasi</strong>. Arus ini makin lancar bila <strong>kemudahan perpindahan</strong> (jalan, kendaraan, biaya) makin baik.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xii-03-3 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="gravitasi" id="media-xii03-gravitasi">
+            <span class="media-label">🧮 Alat Interaktif</span>
+            <h3>Kalkulator Model Gravitasi</h3>
+            <p>I = P<sub>A</sub> × P<sub>B</sub> ÷ d² (konstanta k dianggap 1). Bandingkan kekuatan interaksi kota A dengan kota B dan dengan kota C. Angka awal hanya contoh.</p>
+            <div class="widget-baris tiga">
+              <div><label for="xii03-pa">Penduduk kota A</label><input type="number" id="xii03-pa" name="pa" value="50000" min="1" step="1" inputmode="numeric"></div>
+              <div><label for="xii03-pb">Penduduk kota B</label><input type="number" id="xii03-pb" name="pb" value="40000" min="1" step="1" inputmode="numeric"></div>
+              <div><label for="xii03-dab">Jarak A–B (km)</label><input type="number" id="xii03-dab" name="dab" value="20" min="1" step="any" inputmode="decimal"></div>
+              <div><label for="xii03-pc">Penduduk kota C</label><input type="number" id="xii03-pc" name="pc" value="90000" min="1" step="1" inputmode="numeric"></div>
+              <div><label for="xii03-dac">Jarak A–C (km)</label><input type="number" id="xii03-dac" name="dac" value="40" min="1" step="any" inputmode="decimal"></div>
+            </div>
+            <p class="widget-hasil" aria-live="polite">I(A–B) = 5.000.000 · I(A–C) = 2.812.500 · Interaksi A–B lebih kuat.</p>
+            <p class="widget-noscript">Aktifkan JavaScript agar kalkulator dapat menghitung otomatis.</p>
+          </div>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="dampak">C. Dampak Interaksi</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Dampak interaksi desa-kota</caption>
+              <thead><tr><th scope="col">Bagi desa</th><th scope="col">Bagi kota</th></tr></thead>
+              <tbody>
+                <tr><td>(+) Masuknya teknologi, informasi, dan modal; jalan dan sarana membaik</td><td>(+) Pasokan bahan pangan dan tenaga kerja terpenuhi</td></tr>
+                <tr><td>(−) Berkurangnya tenaga kerja muda; lahan pertanian beralih fungsi</td><td>(−) <a href="../glosarium.html?cari=urbanisasi">Urbanisasi</a> berlebihan: permukiman kumuh, kemacetan, pengangguran</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Interaksi juga memunculkan <strong>suburbanisasi</strong> (perkembangan permukiman di pinggiran kota) dan
+            kawasan <strong>desa-kota</strong> (<em>urban fringe</em>) yang bercirikan campuran sifat desa dan kota.
+          </p>
+
+
+          <!-- MEDIA-MULAI xii-03-4 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-xii03-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="xTZgj0sXnOk" data-judul="Urbanisasi Pasca Lebaran: Jakarta Tetap Jadi Magnet Pendatang">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=xTZgj0sXnOk" rel="noopener">YouTube: Urbanisasi Pasca Lebaran: Jakarta Tetap Jadi Magnet Pendatang</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Urbanisasi Pasca Lebaran: Jakarta Tetap Jadi Magnet Pendatang</strong> — Liputan arus pendatang ke Jakarta setelah Lebaran 2026. Diskusikan: faktor penarik apa yang membuat Jakarta tetap didatangi, dan dampaknya bagi kota maupun desa asal.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>METRO TV</strong> (2026) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=xTZgj0sXnOk" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="pemerataan">D. Pemerataan Pembangunan</h2>
+          <p>
+            Upaya pemerataan antara lain: <strong>Dana Desa</strong> untuk infrastruktur dan pemberdayaan ekonomi,
+            pengembangan BUMDes, konsep <strong>agropolitan</strong> (kota pertanian yang tumbuh di kawasan perdesaan),
+            pembangunan jalan dan internet ke daerah terpencil, serta pengembangan kota kecil dan menengah agar
+            penduduk tidak terkonsentrasi di kota besar.
+          </p>
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Desa dan kota memiliki karakteristik berbeda; desa diklasifikasikan menjadi swadaya, swakarya, dan swasembada.</li>
+            <li>Struktur ruang kota dijelaskan teori konsentris (Burgess), sektoral (Hoyt), dan inti ganda (Harris dan Ullman).</li>
+            <li>Interaksi menurut Ullman dipengaruhi komplementaritas wilayah, kesempatan antara, dan kemudahan perpindahan.</li>
+            <li>Model gravitasi: interaksi berbanding lurus dengan jumlah penduduk dan berbanding terbalik dengan kuadrat jarak.</li>
+            <li>Pemerataan pembangunan dilakukan melalui Dana Desa, BUMDes, agropolitan, dan peningkatan aksesibilitas.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="xii-03" data-pembanding="xii-03-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>1. Desa yang sudah mampu memanfaatkan potensinya secara optimal, berorientasi pasar, dan memiliki sarana lengkap tergolong desa …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s1" value="a"> Swadaya</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s1" value="b"> Swakarya</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s1" value="c"> Tradisional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s1" value="d"> Swasembada</label></li>
+            </ul>
+            <p class="quiz-feedback">Desa <strong>swasembada</strong> adalah tingkat desa paling maju dalam klasifikasi ini.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Teori struktur ruang kota yang menyatakan kota berkembang membentuk sektor-sektor mengikuti jalur transportasi dikemukakan oleh …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s2" value="a"> Burgess</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s2" value="b"> Hoyt</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s2" value="c"> Harris dan Ullman</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s2" value="d"> Christaller</label></li>
+            </ul>
+            <p class="quiz-feedback">Teori sektoral dikemukakan oleh <strong>Homer Hoyt</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Desa A menghasilkan sayuran dan membutuhkan pupuk, sedangkan kota B menghasilkan pupuk dan membutuhkan sayuran. Faktor interaksi ini disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s3" value="a"> Kesempatan antara</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s3" value="b"> Kemudahan perpindahan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s3" value="c"> Komplementaritas wilayah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s3" value="d"> Aglomerasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Kedua wilayah saling melengkapi kebutuhan: <strong>komplementaritas wilayah</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>4. Menurut model gravitasi, jika jarak dua kota menjadi dua kali lipat sementara jumlah penduduk tetap, kekuatan interaksinya menjadi …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s4" value="a"> Seperempat kali</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s4" value="b"> Dua kali lipat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s4" value="c"> Setengah kali</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s4" value="d"> Tetap</label></li>
+            </ul>
+            <p class="quiz-feedback">Interaksi berbanding terbalik dengan kuadrat jarak: 1 ÷ 2² = <strong>¼ kali</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>5. Kawasan perdesaan yang dikembangkan menjadi pusat kegiatan agribisnis dengan fasilitas seperti kota disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s5" value="a"> Metropolitan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s5" value="b"> Agropolitan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s5" value="c"> Suburbanisasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s5" value="d"> Megapolitan</label></li>
+            </ul>
+            <p class="quiz-feedback">Konsep <strong>agropolitan</strong> menumbuhkan kota pertanian di kawasan perdesaan.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>6. Teori struktur kota yang menyatakan kota memiliki beberapa pusat kegiatan dikemukakan oleh …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s6" value="a"> Burgess</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s6" value="b"> Hoyt</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s6" value="c"> Christaller</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s6" value="d"> Harris dan Ullman</label></li>
+            </ul>
+            <p class="quiz-feedback">Teori inti ganda (multiple nuclei) dikemukakan <strong>Harris dan Ullman</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>7. Warga Desa A biasanya berbelanja ke Kota B. Setelah dibangun pasar besar di Kota C yang lebih dekat, warga beralih ke Kota C. Konsep Ullman yang sesuai adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s7" value="a"> komplementaritas wilayah</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s7" value="b"> kemudahan perpindahan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s7" value="c"> aglomerasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s7" value="d"> kesempatan antara</label></li>
+            </ul>
+            <p class="quiz-feedback">Adanya wilayah lain yang dapat memenuhi kebutuhan melemahkan interaksi A–B: <strong>kesempatan antara</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>8. Desa yang masih tradisional, terikat adat, dan bergantung pada alam tergolong desa …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s8" value="a"> swadaya</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s8" value="b"> swakarya</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s8" value="c"> swasembada</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s8" value="d"> agropolitan</label></li>
+            </ul>
+            <p class="quiz-feedback">Desa tradisional disebut desa <strong>swadaya</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>9. Kota A (60.000 jiwa) dan kota B (40.000 jiwa) berjarak 20 km. Dengan model gravitasi I = PA × PB ÷ d², kekuatan interaksinya adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s9" value="a"> 120.000.000</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s9" value="b"> 3.000.000</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s9" value="c"> 6.000.000</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s9" value="d"> 12.000.000</label></li>
+            </ul>
+            <p class="quiz-feedback">I = 60.000 × 40.000 ÷ 20² = 2.400.000.000 ÷ 400 = <strong>6.000.000</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>10. Dampak negatif interaksi desa-kota bagi desa adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii03-s10" value="a"> masuknya teknologi pertanian</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s10" value="b"> berkurangnya tenaga kerja muda di sektor pertanian</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s10" value="c"> jalan desa membaik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii03-s10" value="d"> informasi pasar lebih mudah diperoleh</label></li>
+            </ul>
+            <p class="quiz-feedback">Banyak pemuda pindah ke kota sehingga desa <strong>kekurangan tenaga kerja muda</strong>.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Survei Interaksi Desa-Kota di Sekitarku</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berkelompok (3–4 orang).</p>
+          <ol>
+            <li>Wawancarai 5–10 pedagang di pasar tradisional terdekat: dari mana barang dagangan berasal dan ke mana dijual.</li>
+            <li>Wawancarai 5 warga yang bekerja atau bersekolah di kota lain: moda transportasi, waktu tempuh, dan biaya.</li>
+            <li>Petakan aliran barang dan orang dengan anak panah (ketebalan panah menunjukkan besarnya aliran).</li>
+            <li>Analisis faktor interaksi menurut Ullman yang paling berpengaruh.</li>
+            <li>Tuliskan dampak positif dan negatif yang kamu temukan, serta satu usulan pemerataan.</li>
+          </ol>
+          <p><strong>Produk:</strong> Peta aliran interaksi dan laporan hasil survei (2–3 halaman).</p>
+          <p><strong>Kriteria penilaian:</strong> kelengkapan data survei, ketepatan peta aliran, ketepatan analisis faktor Ullman, dan relevansi usulan.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="xii-03" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="xii-02-kewilayahan.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Kewilayahan dan Pembangunan</span>
+          </a>
+          <a href="xii-04-kerja-sama.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Kerja Sama Antarwilayah</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>

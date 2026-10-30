@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Dinamika Atmosfer dan Dampaknya — Kelas X | Geografi SMA</title>
+  <meta name="description" content="Modul 6 Geografi Kelas X (Fase E): Lapisan udara, cuaca dan iklim, serta fenomena atmosfer yang memengaruhi kehidupan di Indonesia. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-x.html -->
+<body data-modul="x-06" data-kelas="x">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html" aria-current="page">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Dinamika Atmosfer dan Dampaknya</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas X · Kelompok B · Modul 6</span>
+          <h1>☁️ Dinamika Atmosfer dan Dampaknya</h1>
+          <p class="subtitle">
+            Lapisan udara, cuaca dan iklim, serta fenomena atmosfer yang memengaruhi kehidupan di Indonesia.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase E</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 4: Cara mitigasi dan adaptasi terhadap bencana alam</strong><br><span class="cp-sub">Bencana geologis/ hidroklimatologis</span> — Menganalisis ragam risiko dan faktor penyebab bencana alam.</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+          <p class="cp-note">ℹ️ Modul ini menjadi <strong>landasan</strong> bagi ATP 4.1 yang dibahas lebih lanjut di modul lain.</p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode atp-pendukung">ATP 4.1 · pendukung</span> Peserta didik mampu menganalisis ragam risiko, sebaran, dan faktor penyebab bencana geologis maupun hidroklimatologis di Indonesia.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>mendeskripsikan lapisan atmosfer beserta cirinya;</li>
+            <li>membedakan cuaca dan iklim serta menganalisis unsur-unsurnya;</li>
+            <li>menerapkan klasifikasi iklim dan menjelaskan dampak fenomena atmosfer seperti El Niño dan La Niña.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#judul-3d-atmosfer">Model 3D</a></li>
+            <li><a href="#lapisan">Lapisan Atmosfer</a></li>
+            <li><a href="#cuaca-iklim">Cuaca dan Iklim</a></li>
+            <li><a href="#klasifikasi">Klasifikasi Iklim</a></li>
+            <li><a href="#dampak">Fenomena Atmosfer dan Dampaknya</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="x-06-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>1. Lapisan udara yang menyelimuti bumi disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-p1" value="a"> hidrosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p1" value="b"> atmosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p1" value="c"> litosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p1" value="d"> biosfer</label></li>
+            </ul>
+            <p class="quiz-feedback">Atmosfer adalah lapisan udara yang menyelimuti bumi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Keadaan udara di suatu tempat yang sempit dalam waktu singkat disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-p2" value="a"> cuaca</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p2" value="b"> iklim</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p2" value="c"> musim</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p2" value="d"> angin</label></li>
+            </ul>
+            <p class="quiz-feedback">Cuaca berlaku untuk wilayah sempit dan waktu singkat; iklim adalah rata-rata cuaca jangka panjang.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Angin yang bertiup sekitar bulan Oktober–April dari Asia dan membawa hujan ke Indonesia adalah angin …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-p3" value="a"> muson timur</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p3" value="b"> pasat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p3" value="c"> muson barat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p3" value="d"> fohn</label></li>
+            </ul>
+            <p class="quiz-feedback">Muson barat melewati samudra sehingga membawa banyak uap air dan menyebabkan musim hujan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>4. Lapisan ozon yang menyerap sinar ultraviolet terdapat di lapisan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-p4" value="a"> stratosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p4" value="b"> troposfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p4" value="c"> mesosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p4" value="d"> eksosfer</label></li>
+            </ul>
+            <p class="quiz-feedback">Ozon terkonsentrasi di stratosfer.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>5. Sebagian besar wilayah Indonesia beriklim …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-p5" value="a"> subtropis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p5" value="b"> kutub</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p5" value="c"> tropis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-p5" value="d"> gurun</label></li>
+            </ul>
+            <p class="quiz-feedback">Indonesia terletak di sekitar khatulistiwa sehingga beriklim tropis.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- MODEL3D-MULAI -->
+        <!-- ===== EDIT DI SINI: model 3D modul ini (file di folder 3d/) ===== -->
+        <section class="model-3d" aria-labelledby="judul-3d-atmosfer">
+          <div class="model-3d-kepala">
+            <span class="model-ikon" aria-hidden="true">☁️</span>
+            <div>
+              <span class="media-label">🧊 Model 3D Interaktif</span>
+              <h2 id="judul-3d-atmosfer" class="box-title">Atmosfer 3D</h2>
+            </div>
+          </div>
+          <p>Tiga ruang: lima lapisan atmosfer, gunung dengan zona iklim Junghuhn dan hujan orografis, serta simulasi El Niño dan La Niña.</p>
+          <ul class="model-fitur"><li>Lapisan atmosfer</li><li>Rumus Braak & Junghuhn</li><li>El Niño & La Niña</li></ul>
+          <div class="model-aksi">
+            <button type="button" class="btn btn-primary" data-muat-3d="../3d/atmosfer.html?embed=1" aria-controls="bingkai-3d-atmosfer">▶ Tampilkan di halaman ini</button>
+            <a class="btn btn-outline" href="../3d/atmosfer.html">⛶ Buka layar penuh</a>
+          </div>
+          <div class="model-3d-bingkai" id="bingkai-3d-atmosfer" hidden></div>
+          <noscript><p><a href="../3d/atmosfer.html">Buka model 3D</a></p></noscript>
+        </section>
+        <!-- MODEL3D-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="lapisan">A. Lapisan Atmosfer</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Lapisan atmosfer dari bawah ke atas</caption>
+              <thead><tr><th scope="col">Lapisan</th><th scope="col">Ciri utama</th></tr></thead>
+              <tbody>
+                <tr><td>Troposfer</td><td>Tempat terjadinya cuaca; suhu turun ± 0,6 °C setiap naik 100 m. Lebih tebal di khatulistiwa (± 16 km) dibanding kutub (± 8 km).</td></tr>
+                <tr><td>Stratosfer</td><td>Mengandung lapisan ozon yang menyerap sinar ultraviolet; jalur terbang pesawat jet.</td></tr>
+                <tr><td>Mesosfer</td><td>Suhu terendah; meteor terbakar di lapisan ini.</td></tr>
+                <tr><td>Termosfer</td><td>Suhu sangat tinggi; terdapat ionosfer yang memantulkan gelombang radio.</td></tr>
+                <tr><td>Eksosfer</td><td>Lapisan terluar, peralihan ke ruang angkasa.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-06-1 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-x06-lapisan">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 690 462" role="img" aria-labelledby="x06-lapisan-j x06-lapisan-d">
+              <title id="x06-lapisan-j">Lapisan atmosfer beserta peristiwa di setiap lapisan dan pola suhunya</title>
+              <desc id="x06-lapisan-d">Lima lapisan atmosfer dari bawah: troposfer dengan awan dan hujan, stratosfer dengan pesawat dan lapisan ozon yang menghentikan sinar ultraviolet, mesosfer tempat meteor terbakar, termosfer tempat gelombang radio dipantulkan dan aurora, serta eksosfer dengan satelit. Di kanan, garis pola suhu turun, naik, turun, lalu naik lagi.</desc>
+              <defs></defs>
+              <rect x="80" y="20" width="450" height="80" style="fill:var(--warna-primer);fill-opacity:0.4"/><text class="t-tebal" x="318" y="50">Eksosfer</text><text class="t-kecil" x="318" y="70">batas luar, peralihan</text><text class="t-kecil" x="318" y="87">ke ruang angkasa</text><rect x="80" y="100" width="450" height="80" style="fill:var(--warna-primer);fill-opacity:0.3"/><text class="t-tebal" x="318" y="130">Termosfer</text><text class="t-kecil" x="318" y="150">ionosfer memantulkan</text><text class="t-kecil" x="318" y="167">gelombang radio; aurora</text><rect x="80" y="180" width="450" height="80" style="fill:var(--warna-primer);fill-opacity:0.22"/><text class="t-tebal" x="318" y="210">Mesosfer</text><text class="t-kecil" x="318" y="230">suhu terendah;</text><text class="t-kecil" x="318" y="247">meteor terbakar</text><rect x="80" y="260" width="450" height="80" style="fill:var(--warna-primer);fill-opacity:0.14"/><text class="t-tebal" x="318" y="290">Stratosfer</text><text class="t-kecil" x="318" y="310">lapisan ozon menyerap</text><text class="t-kecil" x="318" y="327">sinar ultraviolet (UV)</text><rect x="80" y="340" width="450" height="80" style="fill:var(--warna-primer);fill-opacity:0.06"/><text class="t-tebal" x="318" y="370">Troposfer</text><text class="t-kecil" x="318" y="390">tempat terjadinya cuaca</text><text class="t-kecil" x="318" y="407">(awan, hujan, angin)</text><line class="garis-tipis" x1="74" y1="420" x2="530" y2="420"/><text class="t-kecil t-kanan" x="70" y="424">0 km</text><line class="garis-tipis" x1="74" y1="340" x2="530" y2="340"/><text class="t-kecil t-kanan" x="70" y="344">± 12 km</text><line class="garis-tipis" x1="74" y1="260" x2="530" y2="260"/><text class="t-kecil t-kanan" x="70" y="264">± 50 km</text><line class="garis-tipis" x1="74" y1="180" x2="530" y2="180"/><text class="t-kecil t-kanan" x="70" y="184">± 80 km</text><line class="garis-tipis" x1="74" y1="100" x2="530" y2="100"/><text class="t-kecil t-kanan" x="70" y="104">± 500 km</text><line class="garis-tipis" x1="305" y1="20" x2="305" y2="420" stroke-dasharray="3 5"/>
+              <!-- Troposfer: gunung, awan berjalan, hujan -->
+              <polygon class="f-vegetasi" points="80,420 140,372 178,398 222,362 300,420"/>
+              <g><ellipse class="f-awan" cx="120" cy="356" rx="30" ry="11"/><ellipse class="f-awan" cx="136" cy="348" rx="18" ry="10"/>
+                <line class="jatuh" x1="110" y1="370" x2="107" y2="378" style="stroke:var(--svg-air);stroke-width:2"/>
+                <line class="jatuh tunda-1" x1="122" y1="370" x2="119" y2="378" style="stroke:var(--svg-air);stroke-width:2"/>
+                <line class="jatuh tunda-2" x1="134" y1="370" x2="131" y2="378" style="stroke:var(--svg-air);stroke-width:2"/>
+                <animateTransform attributeName="transform" type="translate" values="0 0;110 0;0 0" dur="16s" repeatCount="indefinite"/></g>
+              <!-- Stratosfer: lapisan ozon & pesawat -->
+              <rect x="80" y="300" width="225" height="12" style="fill:var(--svg-vegetasi);fill-opacity:.55"/>
+              <text class="t-kecil" x="86" y="296" style="fill:var(--svg-vegetasi);font-weight:700">lapisan ozon</text>
+              <text style="font-size:18px">✈️<animateMotion dur="10s" repeatCount="indefinite" path="M84,276 H276"/></text>
+              <!-- Matahari: sinar UV berhenti di ozon, cahaya tampak sampai ke bumi -->
+              <circle class="f-matahari" cx="282" cy="34" r="12"/>
+              <path class="alir" d="M262,48 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12 q-6,6 0,12 q6,6 0,12" style="fill:none;stroke:#8e44ad;stroke-width:2.2"/>
+              <text class="t-kecil" x="236" y="62" style="fill:#8e44ad;font-weight:700">UV</text>
+              <circle cx="262" cy="300" r="6" style="fill:#8e44ad"><animate attributeName="r" values="3;9;3" dur="1.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle>
+              <path class="alir" d="M287,48 V414" style="fill:none;stroke:var(--svg-matahari);stroke-width:2.2"/>
+              <!-- Mesosfer: meteor terbakar -->
+              <g opacity="0"><line x1="0" y1="0" x2="22" y2="-14" style="stroke:var(--svg-aksen);stroke-width:2.5;stroke-linecap:round"/>
+                <circle cx="0" cy="0" r="4" style="fill:var(--svg-matahari)"/>
+                <animateTransform attributeName="transform" type="translate" values="240 190;160 246" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.7;1" dur="3s" repeatCount="indefinite"/></g>
+              <!-- Termosfer: aurora & gelombang radio yang dipantulkan ionosfer -->
+              <path d="M90,128 q20,-10 40,0 t40,0 t40,0 t40,0" style="fill:none;stroke:#2ecc71;stroke-width:6;stroke-linecap:round">
+                <animate attributeName="opacity" values=".15;.7;.15" dur="4s" repeatCount="indefinite"/></path>
+              <path class="alir" d="M104,412 L150,160 L196,412" style="fill:none;stroke:#c0392b;stroke-width:2"/>
+              <path d="M100,420 L104,404 L108,420 Z M192,420 L196,404 L200,420 Z" style="fill:var(--svg-garis)"/>
+              <text class="t-kecil" x="156" y="174" style="fill:#c0392b;font-weight:700">radio</text>
+              <!-- Eksosfer: satelit -->
+              <text style="font-size:18px">🛰️<animateMotion dur="18s" repeatCount="indefinite" path="M90,70 H250" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear"/></text>
+              <!-- Grafik pola suhu dengan titik yang bergerak dari permukaan ke atas -->
+              <path d="M650,420 L570,340 L630,260 L545,180 L668,100 L672,24" style="fill:none;stroke:var(--svg-aksen);stroke-width:3"/>
+              <circle r="6" style="fill:var(--svg-aksen);stroke:var(--warna-permukaan);stroke-width:2">
+                <animateMotion dur="10s" repeatCount="indefinite" path="M650,420 L570,340 L630,260 L545,180 L668,100 L672,24"/></circle>
+              <text class="t-tebal t-tengah" x="608" y="14" style="font-size:13px">Pola suhu</text>
+              <line class="sumbu" x1="545" y1="436" x2="675" y2="436"/>
+              <text class="t-kecil" x="545" y="454">dingin</text><text class="t-kecil t-kanan" x="675" y="454">panas</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>Amati animasinya: <strong>awan dan hujan</strong> hanya terjadi di troposfer; <strong>sinar UV</strong> (ungu) terhenti di lapisan ozon, sedangkan cahaya tampak (kuning) sampai ke permukaan; <strong>meteor</strong> terbakar di mesosfer; <strong>gelombang radio</strong> dipantulkan ionosfer di termosfer sehingga bisa diterima di tempat yang jauh. Titik oranye di kanan menelusuri pola suhu dari permukaan ke atas: turun di troposfer, naik di stratosfer (ozon menyerap UV), turun di mesosfer, lalu naik di termosfer. Ketinggian digambar <strong>tidak sesuai skala</strong>.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="cuaca-iklim">B. Cuaca dan Iklim</h2>
+          <p>
+            <strong>Cuaca</strong> adalah keadaan udara di wilayah sempit dalam waktu singkat, sedangkan
+            <a href="../glosarium.html?cari=iklim">iklim</a> adalah rata-rata cuaca di wilayah luas dalam waktu lama
+            (± 30 tahun). Unsur cuaca dan iklim meliputi suhu, tekanan udara, kelembapan, angin, awan, dan
+            <a href="../glosarium.html?cari=curah">curah hujan</a>.
+          </p>
+          <p>
+            Indonesia dipengaruhi <strong>angin muson</strong>. Muson barat (± Oktober–April) bertiup dari Asia
+            melewati samudra sehingga membawa hujan; muson timur (± April–Oktober) bertiup dari Australia yang kering
+            sehingga menyebabkan kemarau. Jenis hujan di Indonesia antara lain hujan zenithal (konveksi),
+            <a href="../glosarium.html?cari=orografis">hujan orografis</a>, dan hujan frontal.
+          </p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-06-2 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="muson" data-aktif="barat" id="media-x06-muson">
+            <span class="media-label">🧭 Peta Interaktif</span>
+            <h3>Pergantian Angin Muson</h3>
+            <p>Pilih jenis muson untuk melihat arah angin dan daerah bertekanan tinggi (T) serta rendah (R). Angin selalu bertiup dari tekanan tinggi ke tekanan rendah.</p>
+            <div class="media-kontrol">
+              <button type="button" class="pilih" data-muson="barat" aria-pressed="true">🌧️ Muson barat (Okt–Apr)</button>
+              <button type="button" class="pilih" data-muson="timur" aria-pressed="false">☀️ Muson timur (Apr–Okt)</button>
+            </div>
+            <figure class="media">
+              <svg viewBox="0 0 560 330" role="img" aria-labelledby="x06-muson-j x06-muson-d">
+                <title id="x06-muson-j">Arah angin muson di Indonesia</title>
+                <desc id="x06-muson-d">Peta skematis Benua Asia di barat laut dan Benua Australia di tenggara dengan Indonesia di antaranya. Muson barat bertiup dari Asia ke Australia; muson timur bertiup dari Australia ke Asia.</desc>
+                <defs><marker id="pn-x06b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-air)"/></marker><marker id="pn-x06t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-aksen)"/></marker></defs>
+                <rect class="f-air-muda" x="0" y="0" width="560" height="330"/>
+                <path class="f-tanah" d="M0,0 H330 C310,40 260,58 200,66 C150,74 90,90 0,104 Z"/>
+                <path class="f-tanah" d="M300,330 C330,268 420,244 560,236 V330 Z"/>
+                <ellipse class="f-vegetasi" cx="150" cy="168" rx="46" ry="11" transform="rotate(-38 150 168)"/><ellipse class="f-vegetasi" cx="252" cy="162" rx="34" ry="28"/><ellipse class="f-vegetasi" cx="250" cy="212" rx="50" ry="8"/><ellipse class="f-vegetasi" cx="330" cy="172" rx="12" ry="28" transform="rotate(20 330 172)"/><ellipse class="f-vegetasi" cx="440" cy="196" rx="48" ry="17"/>
+                <line x1="0" y1="176" x2="560" y2="176" stroke="var(--svg-garis)" stroke-dasharray="8 6"/>
+                <text class="t-kecil" x="8" y="194">Khatulistiwa</text>
+                <text class="t-tebal" x="20" y="36">Benua Asia</text>
+                <text class="t-tebal t-kanan" x="548" y="318">Benua Australia</text>
+                <text class="t-kecil" x="20" y="300">Samudra Hindia</text>
+                <text class="t-kecil t-kanan" x="548" y="40">Samudra Pasifik</text>
+                <g class="muson-barat"><path d="M160,62 C132,120 132,170 190,222" style="fill:none;stroke:var(--svg-air);stroke-width:4" marker-end="url(#pn-x06b)"/><path d="M250,62 C222,120 222,170 280,222" style="fill:none;stroke:var(--svg-air);stroke-width:4" marker-end="url(#pn-x06b)"/><path d="M340,62 C312,120 312,170 370,222" style="fill:none;stroke:var(--svg-air);stroke-width:4" marker-end="url(#pn-x06b)"/><circle cx="250" cy="30" r="17" style="fill:var(--warna-permukaan);stroke:var(--svg-garis);stroke-width:1.5"/><text class="t-tengah t-tebal" x="250" y="35">T</text><circle cx="470" cy="282" r="17" style="fill:var(--warna-permukaan);stroke:var(--svg-garis);stroke-width:1.5"/><text class="t-tengah t-tebal" x="470" y="287">R</text></g>
+                <g class="muson-timur"><path d="M400,250 C330,215 305,175 330,118 C340,96 350,84 360,74" style="fill:none;stroke:var(--svg-aksen);stroke-width:4" marker-end="url(#pn-x06t)"/><path d="M470,250 C400,215 375,175 400,118 C410,96 420,84 430,74" style="fill:none;stroke:var(--svg-aksen);stroke-width:4" marker-end="url(#pn-x06t)"/><path d="M540,250 C470,215 445,175 470,118 C480,96 490,84 500,74" style="fill:none;stroke:var(--svg-aksen);stroke-width:4" marker-end="url(#pn-x06t)"/><circle cx="250" cy="30" r="17" style="fill:var(--warna-permukaan);stroke:var(--svg-garis);stroke-width:1.5"/><text class="t-tengah t-tebal" x="250" y="35">R</text><circle cx="470" cy="282" r="17" style="fill:var(--warna-permukaan);stroke:var(--svg-garis);stroke-width:1.5"/><text class="t-tengah t-tebal" x="470" y="287">T</text></g>
+              </svg>
+              <figcaption class="muson-barat"><strong>Muson barat (± Oktober–April):</strong> matahari berada di belahan bumi selatan. Asia bertekanan tinggi (T), Australia bertekanan rendah (R). Angin melewati samudra luas dan membawa banyak uap air → <strong>musim hujan</strong>.</figcaption>
+              <figcaption class="muson-timur"><strong>Muson timur (± April–Oktober):</strong> matahari berada di belahan bumi utara. Australia bertekanan tinggi (T), Asia bertekanan rendah (R). Angin berasal dari daratan Australia yang kering → <strong>musim kemarau</strong>.</figcaption>
+            </figure>
+            <p class="widget-noscript">JavaScript nonaktif: yang tampil hanya muson barat. Muson timur bertiup sebaliknya, dari Australia ke Asia, dan membawa musim kemarau.</p>
+          </div>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="klasifikasi">C. Klasifikasi Iklim</h2>
+          <ul>
+            <li><strong>Köppen</strong>: berdasarkan suhu dan curah hujan; tipe A (tropis), B (kering), C (sedang/hangat), D (dingin), E (kutub). Sebagian besar Indonesia bertipe A.</li>
+            <li><strong>Schmidt-Ferguson</strong>: berdasarkan nilai Q = (rata-rata bulan kering ÷ rata-rata bulan basah) × 100%. Bulan kering &lt; 60 mm, bulan basah &gt; 100 mm.</li>
+            <li><strong>Oldeman</strong>: berdasarkan jumlah bulan basah dan bulan kering berturut-turut; banyak dipakai di bidang pertanian.</li>
+            <li><strong>Junghuhn</strong>: berdasarkan ketinggian tempat; zona panas (0–700 m), sedang (700–1.500 m), sejuk (1.500–2.500 m), dan dingin (&gt; 2.500 m), beserta tanaman khasnya.</li>
+          </ul>
+
+
+
+
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-06-3 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x06-hujan">
+            <span class="media-label">📊 Grafik</span>
+            <svg viewBox="0 0 610 330" role="img" aria-labelledby="x06-hujan-j x06-hujan-d">
+              <title id="x06-hujan-j">Contoh grafik curah hujan bulanan pola monsunal</title>
+              <desc id="x06-hujan-d">Grafik batang curah hujan 12 bulan: tinggi pada November sampai April, rendah pada Juni sampai September. Delapan bulan basah, dua bulan lembap, dua bulan kering.</desc>
+              <defs></defs>
+              <line class="kisi" x1="56" y1="250.0" x2="544" y2="250.0"/><text class="t-kecil t-kanan" x="50" y="254.0">0</text><line class="kisi" x1="56" y1="187.1" x2="544" y2="187.1"/><text class="t-kecil t-kanan" x="50" y="191.1">100</text><line class="kisi" x1="56" y1="124.3" x2="544" y2="124.3"/><text class="t-kecil t-kanan" x="50" y="128.3">200</text><line class="kisi" x1="56" y1="61.4" x2="544" y2="61.4"/><text class="t-kecil t-kanan" x="50" y="65.4">300</text><rect class="batang-basah" x="67" y="61.4" width="26" height="188.6" rx="2"><title>Jan: 300 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="80" y="268">Jan</text><rect class="batang-basah" x="107" y="74.0" width="26" height="176.0" rx="2"><title>Feb: 280 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="120" y="268">Feb</text><rect class="batang-basah" x="147" y="86.6" width="26" height="163.4" rx="2"><title>Mar: 260 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="160" y="268">Mar</text><rect class="batang-basah" x="187" y="124.3" width="26" height="125.7" rx="2"><title>Apr: 200 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="200" y="268">Apr</text><rect class="batang-basah" x="227" y="168.3" width="26" height="81.7" rx="2"><title>Mei: 130 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="240" y="268">Mei</text><rect class="batang-lembap" x="267" y="199.7" width="26" height="50.3" rx="2"><title>Jun: 80 mm (bulan lembap)</title></rect><text class="t-tengah t-kecil" x="280" y="268">Jun</text><rect class="batang-kering" x="307" y="215.4" width="26" height="34.6" rx="2"><title>Jul: 55 mm (bulan kering)</title></rect><text class="t-tengah t-kecil" x="320" y="268">Jul</text><rect class="batang-kering" x="347" y="221.7" width="26" height="28.3" rx="2"><title>Agu: 45 mm (bulan kering)</title></rect><text class="t-tengah t-kecil" x="360" y="268">Agu</text><rect class="batang-lembap" x="387" y="199.7" width="26" height="50.3" rx="2"><title>Sep: 80 mm (bulan lembap)</title></rect><text class="t-tengah t-kecil" x="400" y="268">Sep</text><rect class="batang-basah" x="427" y="155.7" width="26" height="94.3" rx="2"><title>Okt: 150 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="440" y="268">Okt</text><rect class="batang-basah" x="467" y="105.4" width="26" height="144.6" rx="2"><title>Nov: 230 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="480" y="268">Nov</text><rect class="batang-basah" x="507" y="67.7" width="26" height="182.3" rx="2"><title>Des: 290 mm (bulan basah)</title></rect><text class="t-tengah t-kecil" x="520" y="268">Des</text><line class="ambang" x1="56" y1="187.1" x2="544" y2="187.1"/><line class="ambang" x1="56" y1="212.3" x2="544" y2="212.3"/><text class="t-kecil" x="550" y="191.1">100 mm</text><text class="t-kecil" x="550" y="216.3">60 mm</text><line class="sumbu" x1="56" y1="250" x2="544" y2="250"/><text class="t-kecil t-tengah" transform="translate(14 140) rotate(-90)">Curah hujan (mm)</text><rect class="batang-basah" x="60" y="292" width="14" height="14"/><text class="t-kecil" x="80" y="304">basah (&gt; 100 mm)</text><rect class="batang-lembap" x="220" y="292" width="14" height="14"/><text class="t-kecil" x="240" y="304">lembap (60–100 mm)</text><rect class="batang-kering" x="390" y="292" width="14" height="14"/><text class="t-kecil" x="410" y="304">kering (&lt; 60 mm)</text>
+            </svg>
+            <figcaption><strong>Data ilustrasi</strong> pola hujan monsunal yang umum di Jawa. Hitung tipe iklim Schmidt-Ferguson: 2 bulan kering dan 8 bulan basah, sehingga Q = (2 ÷ 8) × 100% = <strong>25% → tipe B (basah)</strong>. Garis putus-putus menandai batas bulan basah (100 mm) dan bulan kering (60 mm). Arahkan kursor ke batang untuk melihat angkanya.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI x-06-4 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="suhu" id="media-x06-suhu">
+            <span class="media-label">🧮 Alat Interaktif</span>
+            <h3>Kalkulator Suhu Berdasarkan Ketinggian</h3>
+            <p>Suhu udara turun sekitar 0,6 °C setiap naik 100 m. Coba hitung suhu di puncak gunung atau di kotamu.</p>
+            <div class="widget-baris tiga">
+              <div><label for="x06-ta">Suhu di tempat A (°C)</label><input type="number" id="x06-ta" name="suhu-a" value="30" step="0.1" inputmode="decimal"></div>
+              <div><label for="x06-ha">Ketinggian A (m dpl)</label><input type="number" id="x06-ha" name="tinggi-a" value="0" step="1" inputmode="numeric"></div>
+              <div><label for="x06-hb">Ketinggian B (m dpl)</label><input type="number" id="x06-hb" name="tinggi-b" value="1500" step="1" inputmode="numeric"></div>
+            </div>
+            <p class="widget-hasil" aria-live="polite">Perubahan suhu = (1.500 − 0) ÷ 100 × 0,6 = 9 °C<br><strong>Suhu di tempat B ≈ 21 °C</strong></p>
+            <p class="widget-noscript">Aktifkan JavaScript agar kalkulator dapat menghitung otomatis.</p>
+          </div>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="dampak">D. Fenomena Atmosfer dan Dampaknya</h2>
+          <p>
+            <strong>El Niño</strong> adalah memanasnya suhu permukaan laut di Pasifik bagian tengah dan timur, yang
+            di Indonesia biasanya menyebabkan kemarau panjang, kekeringan, dan meningkatnya kebakaran hutan.
+            <strong>La Niña</strong> adalah kebalikannya, sehingga curah hujan di Indonesia meningkat dan berpotensi
+            banjir. Selain itu, peningkatan gas rumah kaca memicu <strong>pemanasan global</strong> dan perubahan iklim
+            yang membuat cuaca ekstrem makin sering terjadi.
+          </p>
+
+
+
+
+
+          <!-- MEDIA-MULAI x-06-5 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-x06-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="jH9Mbi08Iww" data-judul="BMKG Jelaskan Perbedaan El Niño dan Musim Kemarau">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=jH9Mbi08Iww" rel="noopener">YouTube: BMKG Jelaskan Perbedaan El Niño dan Musim Kemarau</a>.</p></noscript>
+            </div>
+            <figcaption><strong>BMKG Jelaskan Perbedaan El Niño dan Musim Kemarau</strong> — penjelasan BMKG bahwa El Niño adalah fenomena iklim global yang berbeda dengan musim kemarau tahunan.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>Kompas.com</strong> (2026) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=jH9Mbi08Iww" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Atmosfer terdiri atas troposfer, stratosfer, mesosfer, termosfer, dan eksosfer; cuaca terjadi di troposfer.</li>
+            <li>Cuaca adalah keadaan udara sesaat di wilayah sempit; iklim adalah rata-rata cuaca jangka panjang di wilayah luas.</li>
+            <li>Muson barat membawa musim hujan dan muson timur membawa musim kemarau di Indonesia.</li>
+            <li>Klasifikasi iklim antara lain Köppen, Schmidt-Ferguson, Oldeman, dan Junghuhn.</li>
+            <li>El Niño cenderung menyebabkan kekeringan di Indonesia, sedangkan La Niña meningkatkan curah hujan.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="x-06" data-pembanding="x-06-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>1. Lapisan atmosfer tempat terjadinya peristiwa cuaca seperti hujan dan awan adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s1" value="a"> Stratosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s1" value="b"> Mesosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s1" value="c"> Termosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s1" value="d"> Troposfer</label></li>
+            </ul>
+            <p class="quiz-feedback">Hampir semua uap air ada di <strong>troposfer</strong>, sehingga cuaca terjadi di lapisan ini.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Suhu di kota A (ketinggian 0 m) adalah 30 °C. Berdasarkan gradien suhu 0,6 °C/100 m, suhu di kota B pada ketinggian 1.500 m adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s2" value="a"> 24 °C</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s2" value="b"> 21 °C</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s2" value="c"> 15 °C</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s2" value="d"> 9 °C</label></li>
+            </ul>
+            <p class="quiz-feedback">Penurunan suhu = 1.500 ÷ 100 × 0,6 = 9 °C, sehingga suhu = 30 − 9 = <strong>21 °C</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Suatu daerah memiliki rata-rata 3 bulan kering dan 6 bulan basah. Nilai Q menurut Schmidt-Ferguson adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s3" value="a"> 20%</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s3" value="b"> 33,3%</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s3" value="c"> 50%</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s3" value="d"> 200%</label></li>
+            </ul>
+            <p class="quiz-feedback">Q = (3 ÷ 6) × 100% = <strong>50%</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>4. Angin yang bertiup sekitar bulan April–Oktober dan menyebabkan musim kemarau di Indonesia adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s4" value="a"> Muson barat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s4" value="b"> Muson timur</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s4" value="c"> Angin pasat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s4" value="d"> Angin fohn</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Muson timur</strong> berasal dari Australia yang kering, sehingga membawa sedikit uap air.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>5. Fenomena yang menyebabkan kemarau panjang dan meningkatnya risiko kebakaran hutan di Indonesia adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s5" value="a"> La Niña</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s5" value="b"> Hujan orografis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s5" value="c"> Muson barat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s5" value="d"> El Niño</label></li>
+            </ul>
+            <p class="quiz-feedback">Saat <strong>El Niño</strong>, pembentukan awan bergeser ke Pasifik tengah-timur sehingga Indonesia lebih kering.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>6. Meteor yang masuk ke atmosfer umumnya terbakar di lapisan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s6" value="a"> mesosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s6" value="b"> troposfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s6" value="c"> stratosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s6" value="d"> eksosfer</label></li>
+            </ul>
+            <p class="quiz-feedback">Meteor terbakar di <strong>mesosfer</strong> karena gesekan dengan partikel udara.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>7. Lereng gunung yang menghadap datangnya angin lembap sering mengalami hujan. Jenis hujan ini adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s7" value="a"> hujan zenithal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s7" value="b"> hujan orografis</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s7" value="c"> hujan frontal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s7" value="d"> hujan buatan</label></li>
+            </ul>
+            <p class="quiz-feedback">Udara lembap yang naik di lereng gunung mendingin dan membentuk <strong>hujan orografis</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>8. Menurut Junghuhn, daerah pada ketinggian 700–1.500 m termasuk zona …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s8" value="a"> panas</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s8" value="b"> sejuk</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s8" value="c"> sedang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s8" value="d"> dingin</label></li>
+            </ul>
+            <p class="quiz-feedback">Zona Junghuhn: panas 0–700 m, <strong>sedang</strong> 700–1.500 m, sejuk 1.500–2.500 m, dingin &gt; 2.500 m.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>9. La Niña di Indonesia biasanya menyebabkan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s9" value="a"> kemarau panjang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s9" value="b"> kebakaran hutan meningkat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s9" value="c"> suhu laut Pasifik timur memanas</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s9" value="d"> curah hujan meningkat dan potensi banjir</label></li>
+            </ul>
+            <p class="quiz-feedback">La Niña kebalikan El Niño, sehingga curah hujan di Indonesia <strong>meningkat</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>10. Klasifikasi iklim yang banyak dipakai di bidang pertanian karena berdasarkan bulan basah dan kering berturut-turut adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x06-s10" value="a"> Köppen</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s10" value="b"> Junghuhn</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s10" value="c"> Oldeman</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x06-s10" value="d"> Schmidt-Ferguson</label></li>
+            </ul>
+            <p class="quiz-feedback">Klasifikasi <strong>Oldeman</strong> memakai bulan basah dan kering berturut-turut, cocok untuk pertanian.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Catatan Cuaca Harian Selama Dua Minggu</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara individu, lalu bandingkan hasilnya dalam kelompok.</p>
+          <ol>
+            <li>Setiap hari pada jam yang sama, catat suhu, kondisi awan, arah angin (amati bendera/pohon), dan ada tidaknya hujan selama 14 hari.</li>
+            <li>Bandingkan catatanmu dengan prakiraan cuaca BMKG (aplikasi Info BMKG atau situs bmkg.go.id).</li>
+            <li>Sajikan data dalam tabel dan grafik garis suhu harian.</li>
+            <li>Simpulkan apakah daerahmu sedang berada pada musim hujan, kemarau, atau pancaroba, dan kaitkan dengan angin muson.</li>
+          </ol>
+          <p><strong>Produk:</strong> Tabel dan grafik cuaca harian beserta kesimpulan (1 halaman).</p>
+          <p><strong>Kriteria penilaian:</strong> kelengkapan dan konsistensi data, ketepatan grafik, kesesuaian perbandingan dengan data BMKG, dan ketepatan kesimpulan.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="x-06" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="x-05-litosfer.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Dinamika Litosfer dan Dampaknya</span>
+          </a>
+          <a href="x-07-hidrosfer.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Dinamika Hidrosfer dan Dampaknya</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>

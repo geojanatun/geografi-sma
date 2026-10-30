@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Bumi sebagai Ruang Kehidupan — Kelas X | Geografi SMA</title>
+  <meta name="description" content="Modul 4 Geografi Kelas X (Fase E): Mengenal asal-usul bumi, geraknya dalam tata surya, dan lapisan-lapisan penyusunnya. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-x.html -->
+<body data-modul="x-04" data-kelas="x">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html" aria-current="page">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Bumi sebagai Ruang Kehidupan</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas X · Kelompok B · Modul 4</span>
+          <h1>🌍 Bumi sebagai Ruang Kehidupan</h1>
+          <p class="subtitle">
+            Mengenal asal-usul bumi, geraknya dalam tata surya, dan lapisan-lapisan penyusunnya.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 3 × 45 menit</li>
+            <li>📚 Fase E</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Proses/fenomena yang memengaruhi lingkungan fisik</span> — Menggunakan informasi tentang proses alam untuk menjelaskan perubahan lingkungan fisik di wilayah tertentu.</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+          <p class="cp-note">ℹ️ Modul ini menjadi <strong>landasan</strong> bagi ATP 2.3 yang dibahas lebih lanjut di modul lain.</p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode atp-pendukung">ATP 2.3 · pendukung</span> Peserta didik mampu memanfaatkan informasi proses alam (tenaga endogen/eksogen) untuk menjelaskan perubahan lingkungan fisik di wilayah tertentu.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>menjelaskan teori pembentukan tata surya dan perkembangan bumi menurut skala waktu geologi;</li>
+            <li>menganalisis dampak rotasi dan revolusi bumi terhadap kehidupan;</li>
+            <li>mendeskripsikan struktur lapisan bumi beserta karakteristiknya.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#judul-3d-bumi">Model 3D</a></li>
+            <li><a href="#tata-surya">Bumi dalam Tata Surya</a></li>
+            <li><a href="#rotasi">Rotasi Bumi</a></li>
+            <li><a href="#revolusi">Revolusi Bumi</a></li>
+            <li><a href="#lapisan">Struktur Lapisan Bumi</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="x-04-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>1. Bumi adalah planet ke- … dari Matahari.</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-p1" value="a"> tiga</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p1" value="b"> dua</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p1" value="c"> empat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p1" value="d"> lima</label></li>
+            </ul>
+            <p class="quiz-feedback">Urutannya: Merkurius, Venus, <strong>Bumi</strong>, Mars, dan seterusnya.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Perputaran bumi pada porosnya disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-p2" value="a"> revolusi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p2" value="b"> rotasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p2" value="c"> presesi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p2" value="d"> gravitasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Rotasi adalah perputaran bumi pada porosnya; revolusi adalah peredaran bumi mengelilingi Matahari.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Pergantian siang dan malam merupakan akibat dari …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-p3" value="a"> revolusi bumi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p3" value="b"> gerhana matahari</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p3" value="c"> rotasi bumi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p3" value="d"> pasang surut</label></li>
+            </ul>
+            <p class="quiz-feedback">Saat bumi berotasi, sebagian permukaannya menghadap Matahari (siang) dan sebagian membelakanginya (malam).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>4. Lapisan bumi yang paling luar dan paling tipis adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-p4" value="a"> mantel bumi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p4" value="b"> inti luar</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p4" value="c"> inti dalam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p4" value="d"> kerak bumi</label></li>
+            </ul>
+            <p class="quiz-feedback">Kerak bumi adalah lapisan terluar dan paling tipis.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Indonesia dibagi menjadi tiga zona waktu, yaitu …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-p5" value="a"> WIB, WITA, dan WIT</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p5" value="b"> WIB, WIT, dan GMT</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p5" value="c"> WITA, WIT, dan UTC</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-p5" value="d"> WIB, WITA, dan GMT</label></li>
+            </ul>
+            <p class="quiz-feedback">Indonesia memiliki Waktu Indonesia Barat, Tengah, dan Timur.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- MODEL3D-MULAI -->
+        <!-- ===== EDIT DI SINI: model 3D modul ini (file di folder 3d/) ===== -->
+        <section class="model-3d" aria-labelledby="judul-3d-bumi">
+          <div class="model-3d-kepala">
+            <span class="model-ikon" aria-hidden="true">🌍</span>
+            <div>
+              <span class="media-label">🧊 Model 3D Interaktif</span>
+              <h2 id="judul-3d-bumi" class="box-title">Bumi 3D</h2>
+            </div>
+          </div>
+          <p>Belah bumi untuk melihat lapisannya, putar rotasi untuk zona waktu, dan ikuti revolusi untuk pergantian musim.</p>
+          <ul class="model-fitur"><li>Belah Bumi</li><li>Rotasi & zona waktu</li><li>Revolusi & musim</li></ul>
+          <div class="model-aksi">
+            <button type="button" class="btn btn-primary" data-muat-3d="../3d/bumi.html?embed=1" aria-controls="bingkai-3d-bumi">▶ Tampilkan di halaman ini</button>
+            <a class="btn btn-outline" href="../3d/bumi.html">⛶ Buka layar penuh</a>
+          </div>
+          <div class="model-3d-bingkai" id="bingkai-3d-bumi" hidden></div>
+          <noscript><p><a href="../3d/bumi.html">Buka model 3D</a></p></noscript>
+        </section>
+        <!-- MODEL3D-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="tata-surya">A. Bumi dalam Tata Surya</h2>
+          <p>
+            Bumi adalah planet ketiga dari Matahari. Beberapa teori menjelaskan terbentuknya tata surya. Menurut
+            <strong>teori nebula</strong> (Kant dan Laplace), tata surya berasal dari kabut gas dan debu yang berputar,
+            memadat, lalu membentuk Matahari dan planet-planet. <strong>Teori planetesimal</strong> (Chamberlin dan
+            Moulton) menyebut planet terbentuk dari benda-benda padat kecil (planetesimal) yang saling bergabung.
+          </p>
+          <p>
+            Sejarah bumi dibagi dalam <strong>skala waktu geologi</strong>: Prakambrium, Paleozoikum (kehidupan laut
+            berkembang), Mesozoikum (zaman dinosaurus), dan Kenozoikum (mamalia berkembang; manusia muncul pada
+            periode Kuarter).
+          </p>
+
+          <h2 id="rotasi">B. Rotasi Bumi</h2>
+          <p>
+            <strong>Rotasi</strong> adalah perputaran bumi pada porosnya dari barat ke timur selama ± 23 jam 56 menit.
+            Dampaknya:
+          </p>
+          <ul>
+            <li>pergantian siang dan malam;</li>
+            <li>gerak semu harian Matahari (tampak terbit di timur, terbenam di barat);</li>
+            <li>perbedaan waktu: setiap 15° bujur berbeda 1 jam, sehingga Indonesia memiliki tiga zona waktu (WIB, WITA, WIT);</li>
+            <li>pembelokan arah angin dan arus laut (efek Coriolis);</li>
+            <li>bentuk bumi pepat di kutub dan menggembung di khatulistiwa.</li>
+          </ul>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-04-1 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="zona-waktu" id="media-x04-zona">
+            <span class="media-label">🧮 Alat Interaktif</span>
+            <h3>Simulasi Tiga Zona Waktu Indonesia</h3>
+            <p>Geser penggeser jam WIB. Setiap selisih 15° bujur sama dengan 1 jam.</p>
+            <label for="x04-jam">Jam di Jakarta (WIB)</label>
+            <input type="range" id="x04-jam" name="jam" min="0" max="23" step="1" value="7">
+            <div class="jam-zona" aria-live="polite">
+              <div><small>WIB · 105° BT</small><strong data-selisih="0">07.00</strong><small>Jakarta, Pontianak</small></div>
+              <div><small>WITA · 120° BT</small><strong data-selisih="1">08.00</strong><small>Makassar, Denpasar</small></div>
+              <div><small>WIT · 135° BT</small><strong data-selisih="2">09.00</strong><small>Ambon, Jayapura</small></div>
+            </div>
+            <p class="widget-noscript">Aktifkan JavaScript untuk menggeser jam. Ingat: WITA = WIB + 1 jam, WIT = WIB + 2 jam.</p>
+          </div>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="revolusi">C. Revolusi Bumi</h2>
+          <p>
+            <strong>Revolusi</strong> adalah peredaran bumi mengelilingi Matahari selama ± 365¼ hari dengan poros miring
+            23,5°. Dampaknya: gerak semu tahunan Matahari antara 23,5° LU dan 23,5° LS, pergantian musim di belahan bumi
+            utara dan selatan, perbedaan lama siang dan malam, serta terlihatnya rasi bintang yang berbeda sepanjang tahun.
+            Indonesia yang terletak di sekitar khatulistiwa mengalami panjang siang dan malam yang hampir sama sepanjang tahun.
+          </p>
+
+
+
+
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-04-2 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-x04-revolusi">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 560 320" role="img" aria-labelledby="x04-revolusi-j x04-revolusi-d">
+              <title id="x04-revolusi-j">Revolusi bumi dan pergantian posisi semu matahari</title>
+              <desc id="x04-revolusi-d">Bumi bergerak mengelilingi matahari pada lintasan elips dengan poros miring 23,5 derajat yang arahnya tetap. Empat posisi ditandai: 21 Maret, 21 Juni, 23 September, 22 Desember.</desc>
+              <defs></defs>
+              <path d="M480,170 A200,70 0 1,0 80,170 A200,70 0 1,0 480,170" class="garis-tipis" stroke-dasharray="5 5"/>
+              <circle class="f-matahari" cx="280" cy="170" r="32"/>
+              <text class="t-tengah t-tebal" x="280" y="175" style="fill:#5c3d00;font-size:13px">Matahari</text>
+              <g opacity="0.45"><circle class="f-air s-putih" cx="80" cy="170" r="14"/><line class="garis" x1="71.2" y1="190.2" x2="88.8" y2="149.8"/><text class="t-kecil" x="90.8" y="147.8">U</text></g><g opacity="0.45"><circle class="f-air s-putih" cx="480" cy="170" r="14"/><line class="garis" x1="471.2" y1="190.2" x2="488.8" y2="149.8"/><text class="t-kecil" x="490.8" y="147.8">U</text></g><g opacity="0.45"><circle class="f-air s-putih" cx="280" cy="100" r="14"/><line class="garis" x1="271.2" y1="120.2" x2="288.8" y2="79.8"/><text class="t-kecil" x="290.8" y="77.8">U</text></g><g opacity="0.45"><circle class="f-air s-putih" cx="280" cy="240" r="14"/><line class="garis" x1="271.2" y1="260.2" x2="288.8" y2="219.8"/><text class="t-kecil" x="290.8" y="217.8">U</text></g>
+              <text class="t-tengah t-tebal" x="80" y="215">± 21 Juni</text><text class="t-tengah t-kecil" x="80" y="232">Matahari di 23,5° LU</text>
+              <text class="t-tengah t-tebal" x="480" y="215">± 22 Desember</text><text class="t-tengah t-kecil" x="480" y="232">Matahari di 23,5° LS</text>
+              <text class="t-tengah" x="280" y="66"><tspan class="t-tebal">± 21 Maret</tspan> · Matahari di khatulistiwa</text>
+              <text class="t-tengah" x="280" y="286"><tspan class="t-tebal">± 23 September</tspan> · Matahari di khatulistiwa</text>
+              <g><g opacity="1.0"><circle class="f-air s-putih" cx="0" cy="0" r="15"/><line class="garis" x1="-9.2" y1="21.1" x2="9.2" y2="-21.1"/><text class="t-kecil" x="11.2" y="-23.1">U</text></g><animateMotion dur="16s" repeatCount="indefinite" path="M480,170 A200,70 0 1,0 80,170 A200,70 0 1,0 480,170"/></g>
+              <text class="t-kecil" x="12" y="20">Arah revolusi: berlawanan arah jarum jam (dilihat dari kutub utara)</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>Poros bumi selalu miring 23,5° ke arah yang sama. Akibatnya, sekitar 21 Juni belahan bumi utara lebih condong ke matahari dan sekitar 22 Desember belahan bumi selatan yang lebih condong. Inilah penyebab <strong>gerak semu tahunan matahari</strong> dan pergantian musim (posisi digambar secara skematis, tidak sesuai skala).</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI x-04-3 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-x04-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="QcKN-q_6yI4" data-judul="Rotasi dan Revolusi Bumi">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=QcKN-q_6yI4" rel="noopener">YouTube: Rotasi dan Revolusi Bumi</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Rotasi dan Revolusi Bumi</strong> — animasi singkat tentang rotasi dan revolusi bumi serta akibatnya.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>Gramedia</strong> (2025) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=QcKN-q_6yI4" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="lapisan">D. Struktur Lapisan Bumi</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Lapisan bumi dari luar ke dalam</caption>
+              <thead><tr><th scope="col">Lapisan</th><th scope="col">Ciri utama</th></tr></thead>
+              <tbody>
+                <tr><td>Kerak bumi</td><td>Paling tipis dan padat; kerak benua (± 30–70 km, granitik) dan kerak samudra (± 5–10 km, basaltik).</td></tr>
+                <tr><td>Mantel bumi</td><td>Lapisan paling tebal (± 2.900 km). Bagian atasnya, astenosfer, bersifat plastis tempat lempeng bergerak.</td></tr>
+                <tr><td>Inti luar</td><td>Berwujud cair, tersusun atas besi dan nikel; gerakannya membangkitkan medan magnet bumi.</td></tr>
+                <tr><td>Inti dalam</td><td>Padat karena tekanan sangat besar, meskipun suhunya sangat tinggi.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Gabungan kerak dan mantel paling atas yang kaku disebut <a href="../glosarium.html?cari=litosfer">litosfer</a>.
+            Litosfer inilah ruang hidup manusia beserta tanah, air, dan udara di sekitarnya.
+          </p>
+
+
+
+
+
+          <!-- MEDIA-MULAI x-04-4 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x04-lapisan">
+            <span class="media-label">🖼️ Diagram</span>
+            <svg viewBox="0 0 630 262" role="img" aria-labelledby="x04-lapisan-j x04-lapisan-d">
+              <title id="x04-lapisan-j">Penampang setengah bola lapisan bumi</title>
+              <desc id="x04-lapisan-d">Irisan setengah lingkaran bumi: kerak bumi paling luar dan tipis, mantel, inti luar cair, dan inti dalam padat.</desc>
+              <defs></defs>
+              <path class="f-tanah-gelap" d="M15,236 A200,200 0 0 1 415,236 Z" stroke="var(--svg-garis)" stroke-width="1"/><path class="f-magma" d="M21,236 A194,194 0 0 1 409,236 Z" stroke="var(--svg-garis)" stroke-width="1"/><path class="" style="fill:#f4a261" d="M106,236 A109,109 0 0 1 324,236 Z" stroke="var(--svg-garis)" stroke-width="1"/><path class="f-matahari" d="M177,236 A38,38 0 0 1 253,236 Z" stroke="var(--svg-garis)" stroke-width="1"/><circle cx="275.6" cy="49.6" r="3" style="fill:var(--svg-garis)"/><polyline class="garis-tipis" points="275.6,49.6 434,35 446,35"/><text class="t-tebal" x="452" y="40">Kerak bumi</text><text class="t-kecil" x="452" y="57">padat, tebal ± 5–70 km</text><circle cx="321.1" cy="129.9" r="3" style="fill:var(--svg-garis)"/><polyline class="garis-tipis" points="321.1,129.9 434,93 446,93"/><text class="t-tebal" x="452" y="98">Mantel</text><text class="t-kecil" x="452" y="115">tebal ± 2.900 km</text><circle cx="283.9" cy="199.4" r="3" style="fill:var(--svg-garis)"/><polyline class="garis-tipis" points="283.9,199.4 434,151 446,151"/><text class="t-tebal" x="452" y="156">Inti luar</text><text class="t-kecil" x="452" y="173">cair (besi dan nikel)</text><circle cx="234.6" cy="231.8" r="3" style="fill:var(--svg-garis)"/><polyline class="garis-tipis" points="234.6,231.8 434,207 446,207"/><text class="t-tebal" x="452" y="212">Inti dalam</text><text class="t-kecil" x="452" y="229">padat, sangat panas</text><line class="garis" x1="10" y1="236" x2="420" y2="236"/><text class="t-kecil t-tengah" x="215" y="256">pusat bumi (± 6.371 km dari permukaan)</text>
+            </svg>
+            <figcaption>Ketebalan setiap lapisan digambar mendekati perbandingan sebenarnya, kecuali <strong>kerak bumi yang diperbesar</strong> agar terlihat. Bandingkan dengan tabel lapisan bumi di atas.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Teori nebula dan planetesimal menjelaskan pembentukan tata surya; sejarah bumi dibagi dalam skala waktu geologi.</li>
+            <li>Rotasi bumi (± 23 jam 56 menit) menyebabkan siang-malam, perbedaan waktu 1 jam setiap 15° bujur, dan efek Coriolis.</li>
+            <li>Revolusi bumi (± 365¼ hari) dengan poros miring 23,5° menyebabkan gerak semu tahunan Matahari dan pergantian musim.</li>
+            <li>Lapisan bumi terdiri atas kerak, mantel, inti luar (cair), dan inti dalam (padat).</li>
+            <li>Litosfer (kerak dan mantel atas yang kaku) bergerak di atas astenosfer yang bersifat plastis.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="x-04" data-pembanding="x-04-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>1. Jakarta (WIB) menunjukkan pukul 07.00. Pada saat yang sama, waktu di Jayapura (WIT) adalah pukul …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s1" value="a"> 05.00</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s1" value="b"> 08.00</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s1" value="c"> 09.00</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s1" value="d"> 10.00</label></li>
+            </ul>
+            <p class="quiz-feedback">WIT lebih cepat 2 jam dari WIB karena berselisih ± 30° bujur (2 × 15°), sehingga pukul <strong>09.00</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>2. Berikut ini yang merupakan akibat revolusi bumi adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s2" value="a"> Pergantian siang dan malam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s2" value="b"> Perbedaan waktu antartempat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s2" value="c"> Pembelokan arah angin</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s2" value="d"> Gerak semu tahunan Matahari</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Gerak semu tahunan Matahari</strong> terjadi karena revolusi bumi dengan poros miring. Pilihan lain adalah akibat rotasi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>3. Teori yang menyatakan tata surya terbentuk dari kabut gas dan debu yang berputar lalu memadat adalah teori …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s3" value="a"> Nebula</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s3" value="b"> Planetesimal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s3" value="c"> Pasang surut</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s3" value="d"> Bintang kembar</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Teori nebula</strong> (Kant-Laplace) menjelaskan pembentukan tata surya dari kabut gas dan debu.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Lapisan bumi berwujud cair yang tersusun atas besi dan nikel serta membangkitkan medan magnet bumi adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s4" value="a"> Kerak bumi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s4" value="b"> Astenosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s4" value="c"> Inti luar</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s4" value="d"> Inti dalam</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Inti luar</strong> berwujud cair; pergerakan logam cairnya menimbulkan medan magnet bumi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>5. Lempeng-lempeng litosfer dapat bergerak karena berada di atas lapisan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s5" value="a"> Inti dalam yang padat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s5" value="b"> Kerak samudra</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s5" value="c"> Atmosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s5" value="d"> Astenosfer yang plastis</label></li>
+            </ul>
+            <p class="quiz-feedback">Lempeng bergerak di atas <strong>astenosfer</strong> yang bersifat plastis karena suhunya tinggi.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>6. Lama satu kali rotasi bumi adalah sekitar …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s6" value="a"> 23 jam 56 menit</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s6" value="b"> 24 jam 56 menit</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s6" value="c"> 12 jam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s6" value="d"> 365¼ hari</label></li>
+            </ul>
+            <p class="quiz-feedback">Satu kali rotasi berlangsung ± <strong>23 jam 56 menit</strong>; 365¼ hari adalah lama revolusi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>7. Setiap perbedaan 15° bujur menyebabkan perbedaan waktu …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s7" value="a"> 4 menit</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s7" value="b"> 15 menit</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s7" value="c"> 1 jam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s7" value="d"> 2 jam</label></li>
+            </ul>
+            <p class="quiz-feedback">360° ÷ 24 jam = 15° per jam, sehingga setiap 15° bujur berbeda <strong>1 jam</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>8. Mengapa panjang siang dan malam di Indonesia hampir sama sepanjang tahun?</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s8" value="a"> Indonesia negara kepulauan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s8" value="b"> Indonesia dilalui dua sirkum pegunungan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s8" value="c"> Indonesia memiliki tiga zona waktu</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s8" value="d"> Indonesia terletak di sekitar khatulistiwa</label></li>
+            </ul>
+            <p class="quiz-feedback">Daerah di sekitar <strong>khatulistiwa</strong> mengalami panjang siang dan malam yang hampir sama, sekitar 12 jam.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>9. Zaman dinosaurus hidup di bumi berlangsung pada masa …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s9" value="a"> Paleozoikum</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s9" value="b"> Kenozoikum</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s9" value="c"> Mesozoikum</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s9" value="d"> Prakambrium</label></li>
+            </ul>
+            <p class="quiz-feedback">Dinosaurus hidup pada masa <strong>Mesozoikum</strong>; mamalia berkembang pada Kenozoikum.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>10. Kerak samudra berbeda dengan kerak benua karena kerak samudra …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x04-s10" value="a"> lebih tebal dan bersifat granitik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s10" value="b"> lebih tipis dan bersifat basaltik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s10" value="c"> berwujud cair</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x04-s10" value="d"> tersusun atas besi dan nikel</label></li>
+            </ul>
+            <p class="quiz-feedback">Kerak samudra tebalnya ± 5–10 km dan <strong>basaltik</strong>; kerak benua ± 30–70 km dan granitik.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Model Lapisan Bumi dan Simulasi Rotasi</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berpasangan.</p>
+          <ol>
+            <li>Buat model irisan lapisan bumi dari bahan sederhana (plastisin, kardus, atau kertas warna) dengan perbandingan ketebalan yang mendekati sebenarnya.</li>
+            <li>Beri label setiap lapisan beserta wujud dan perkiraan ketebalannya.</li>
+            <li>Di ruangan gelap, sinari bola atau jeruk dengan senter, lalu putar perlahan untuk menyimulasikan siang-malam. Rekam dengan HP.</li>
+            <li>Tandai posisi Indonesia pada bola dan amati kapan wilayah WIB, WITA, dan WIT mengalami pagi.</li>
+          </ol>
+          <p><strong>Produk:</strong> Model lapisan bumi dan video simulasi rotasi (maksimal 2 menit) dengan narasi penjelasan.</p>
+          <p><strong>Kriteria penilaian:</strong> ketepatan urutan dan ciri lapisan, kebenaran penjelasan rotasi dan perbedaan waktu, kreativitas, serta kejelasan narasi.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="x-04" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="x-03-penelitian.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Penelitian Geografi</span>
+          </a>
+          <a href="x-05-litosfer.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Dinamika Litosfer dan Dampaknya</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>

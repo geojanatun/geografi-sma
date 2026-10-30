@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Dinamika Litosfer dan Dampaknya — Kelas X | Geografi SMA</title>
+  <meta name="description" content="Modul 5 Geografi Kelas X (Fase E): Batuan, tenaga pembentuk muka bumi, dan tanah, serta pengaruhnya bagi kehidupan manusia. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Leaflet 1.9.4 (pustaka peta) disimpan di dalam website: js/vendor/leaflet/
+       Tidak memakai CDN, sehingga tidak terblokir jaringan sekolah dan tetap jalan tanpa internet. -->
+  <link rel="stylesheet" href="../js/vendor/leaflet/leaflet.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-x.html -->
+<body data-modul="x-05" data-kelas="x">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html" aria-current="page">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Dinamika Litosfer dan Dampaknya</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas X · Kelompok B · Modul 5</span>
+          <h1>🌋 Dinamika Litosfer dan Dampaknya</h1>
+          <p class="subtitle">
+            Batuan, tenaga pembentuk muka bumi, dan tanah, serta pengaruhnya bagi kehidupan manusia.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase E</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Proses/fenomena yang memengaruhi lingkungan fisik</span> — Menggunakan informasi tentang proses alam untuk menjelaskan perubahan lingkungan fisik di wilayah tertentu.</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 2.3</span> Peserta didik mampu memanfaatkan informasi proses alam (tenaga endogen/eksogen) untuk menjelaskan perubahan lingkungan fisik di wilayah tertentu.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>mengklasifikasikan batuan berdasarkan proses pembentukannya;</li>
+            <li>menganalisis tenaga endogen dan eksogen beserta bentuk muka bumi yang dihasilkan;</li>
+            <li>menjelaskan proses pembentukan tanah serta dampak positif dan negatif dinamika litosfer.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#judul-3d-gunung-api">Model 3D</a></li>
+            <li><a href="#batuan">Batuan dan Siklusnya</a></li>
+            <li><a href="#endogen">Tenaga Endogen</a></li>
+            <li><a href="#eksogen">Tenaga Eksogen</a></li>
+            <li><a href="#tanah">Tanah dan Dampak Dinamika Litosfer</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="x-05-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>1. Batuan yang terbentuk dari pembekuan magma disebut batuan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-p1" value="a"> sedimen</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p1" value="b"> beku</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p1" value="c"> metamorf</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p1" value="d"> organik</label></li>
+            </ul>
+            <p class="quiz-feedback">Batuan beku terbentuk dari magma yang membeku.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>2. Tenaga yang berasal dari dalam bumi disebut tenaga …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-p2" value="a"> eksogen</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p2" value="b"> endogen</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p2" value="c"> atmosfer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p2" value="d"> biotik</label></li>
+            </ul>
+            <p class="quiz-feedback">Tenaga endogen berasal dari dalam bumi; tenaga eksogen dari luar bumi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Getaran pada permukaan bumi akibat pelepasan energi dari dalam bumi disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-p3" value="a"> erosi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p3" value="b"> abrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p3" value="c"> gempa bumi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p3" value="d"> sedimentasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Gempa bumi (seisme) adalah getaran akibat pelepasan energi dari dalam bumi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>4. Pengikisan pantai oleh gelombang laut disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-p4" value="a"> abrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p4" value="b"> deflasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p4" value="c"> ablasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p4" value="d"> korasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Abrasi adalah pengikisan oleh gelombang laut.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>5. Contoh batuan sedimen adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-p5" value="a"> granit</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p5" value="b"> marmer</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p5" value="c"> basal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-p5" value="d"> batu pasir</label></li>
+            </ul>
+            <p class="quiz-feedback">Batu pasir terbentuk dari endapan material; granit dan basal batuan beku, marmer batuan metamorf.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- MODEL3D-MULAI -->
+        <!-- ===== EDIT DI SINI: model 3D modul ini (file di folder 3d/) ===== -->
+        <section class="model-3d" aria-labelledby="judul-3d-gunung-api">
+          <div class="model-3d-kepala">
+            <span class="model-ikon" aria-hidden="true">🌋</span>
+            <div>
+              <span class="media-label">🧊 Model 3D Interaktif</span>
+              <h2 id="judul-3d-gunung-api" class="box-title">Gunung Api 3D</h2>
+            </div>
+          </div>
+          <p>Jelajahi kawah, pipa kepundan, dapur magma, dan lapisan strato, lalu jalankan animasi erupsi dan peta Kawasan Rawan Bencana.</p>
+          <ul class="model-fitur"><li>Animasi erupsi</li><li>Belah gunung</li><li>Peta KRB</li></ul>
+          <div class="model-aksi">
+            <button type="button" class="btn btn-primary" data-muat-3d="../3d/gunung-api.html?embed=1" aria-controls="bingkai-3d-gunung-api">▶ Tampilkan di halaman ini</button>
+            <a class="btn btn-outline" href="../3d/gunung-api.html">⛶ Buka layar penuh</a>
+          </div>
+          <div class="model-3d-bingkai" id="bingkai-3d-gunung-api" hidden></div>
+          <noscript><p><a href="../3d/gunung-api.html">Buka model 3D</a></p></noscript>
+        </section>
+        <!-- MODEL3D-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="batuan">A. Batuan dan Siklusnya</h2>
+          <ul>
+            <li><strong>Batuan beku</strong> terbentuk dari pembekuan <a href="../glosarium.html?cari=magma">magma</a>. Contoh: granit (membeku di dalam bumi), basal dan batu apung (membeku di permukaan).</li>
+            <li><strong>Batuan sedimen</strong> terbentuk dari endapan material hasil pelapukan dan erosi. Contoh: batu pasir, batu gamping, konglomerat.</li>
+            <li><strong>Batuan metamorf</strong> terbentuk dari perubahan batuan lain akibat suhu dan tekanan tinggi. Contoh: marmer (dari batu gamping), batu sabak (dari serpih).</li>
+          </ul>
+          <p>Ketiga jenis batuan saling berubah dalam <strong>siklus batuan</strong> yang berlangsung jutaan tahun.</p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-05-1 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-x05-siklus">
+            <span class="media-label">🖼️ Diagram</span>
+            <svg viewBox="0 0 560 330" role="img" aria-labelledby="x05-siklus-j x05-siklus-d">
+              <title id="x05-siklus-j">Siklus batuan</title>
+              <desc id="x05-siklus-d">Magma membeku menjadi batuan beku; batuan beku melapuk dan mengendap menjadi batuan sedimen; suhu dan tekanan tinggi mengubahnya menjadi batuan metamorf; pelelehan mengembalikannya menjadi magma.</desc>
+              <defs><marker id="pn-x05" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-garis)"/></marker></defs>
+              <path class="garis" d="M180,80 H378" marker-end="url(#pn-x05)"/>
+              <path class="garis" d="M460,108 V222" marker-end="url(#pn-x05)"/>
+              <path class="garis" d="M380,250 H182" marker-end="url(#pn-x05)"/>
+              <path class="garis" d="M100,222 V108" marker-end="url(#pn-x05)"/>
+              <path class="garis" d="M170,104 L382,226" stroke-dasharray="6 4" marker-end="url(#pn-x05)"/>
+              <text class="t-tengah t-kecil" x="280" y="48">pelapukan, erosi,</text>
+              <text class="t-tengah t-kecil" x="280" y="66">sedimentasi, pemadatan</text>
+              <text class="t-kecil" x="472" y="160">suhu &amp;</text><text class="t-kecil" x="472" y="177">tekanan</text>
+              <text class="t-tengah t-kecil" x="280" y="282">pelelehan</text>
+              <text class="t-kecil t-kanan" x="90" y="170">pembekuan</text>
+              <text class="t-kecil" x="296" y="160">suhu &amp; tekanan</text>
+              <rect class="f-batu" x="22" y="54" width="156" height="52" rx="12" stroke="var(--svg-garis)" stroke-width="1.5"/><text class="t-tengah t-tebal" x="100" y="85">Batuan Beku</text><rect class="f-tanah" x="382" y="54" width="156" height="52" rx="12" stroke="var(--svg-garis)" stroke-width="1.5"/><text class="t-tengah t-tebal" x="460" y="85">Batuan Sedimen</text><rect class="kotak" x="382" y="224" width="156" height="52" rx="12" stroke="var(--svg-garis)" stroke-width="1.5"/><text class="t-tengah t-tebal" x="460" y="255">Batuan Metamorf</text><rect class="f-magma" x="22" y="224" width="156" height="52" rx="12" stroke="var(--svg-garis)" stroke-width="1.5"/><text class="t-tengah t-tebal" x="100" y="255" style="fill:#ffffff">Magma</text>
+            </svg>
+            <figcaption>Batuan terus berubah wujud dalam <strong>siklus batuan</strong> selama jutaan tahun. Contoh: granit (beku) → melapuk menjadi pasir → batu pasir (sedimen) → kuarsit (metamorf).</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="endogen">B. Tenaga Endogen</h2>
+          <p><a href="../glosarium.html?cari=endogen">Tenaga endogen</a> berasal dari dalam bumi dan cenderung membentuk relief:</p>
+          <ul>
+            <li><strong>Tektonisme</strong>: lipatan (antiklin dan sinklin) serta patahan (horst atau tanah naik dan graben atau tanah turun). Gerakan lempeng menghasilkan pegunungan dan palung.</li>
+            <li><strong>Vulkanisme</strong>: naiknya magma ke permukaan. Bentuk gunung api antara lain <em>strato</em> (kerucut berlapis, misalnya Merapi), <em>perisai</em> (landai, misalnya Mauna Loa), dan <em>maar</em> (kawah berbentuk corong, misalnya kawah-kawah di Dataran Tinggi Dieng).</li>
+            <li><strong>Seisme</strong> (gempa bumi): getaran akibat pelepasan energi, terutama di zona pertemuan lempeng dan <a href="../glosarium.html?cari=sesar">sesar</a>.</li>
+          </ul>
+
+
+
+
+
+
+
+
+
+
+          <!-- MEDIA-MULAI x-05-2 (diagram/animasi/grafik/video) -->
+          <figure class="media anim" id="media-x05-patahan">
+            <span class="media-label">🎞️ Animasi</span>
+            <svg viewBox="0 0 560 270" role="img" aria-labelledby="x05-patahan-j x05-patahan-d">
+              <title id="x05-patahan-j">Terbentuknya horst dan graben</title>
+              <desc id="x05-patahan-d">Penampang batuan berlapis dengan dua patahan. Blok tengah turun membentuk graben, sedangkan blok di kedua sisinya relatif lebih tinggi membentuk horst.</desc>
+              <defs><clipPath id="cl-x05a"><polygon points="20,90 200,90 240,240 20,240"/></clipPath><clipPath id="cl-x05b"><polygon points="200,90 360,90 320,240 240,240"/></clipPath><clipPath id="cl-x05c"><polygon points="360,90 540,90 540,240 320,240"/></clipPath><marker id="pn-x05p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--svg-garis)"/></marker></defs>
+              <g clip-path="url(#cl-x05a)"><rect class="f-tanah" x="0" y="80" width="560" height="44"/><rect class="f-batu" x="0" y="124" width="560" height="40"/><rect class="f-tanah-gelap" x="0" y="164" width="560" height="80"/></g><polygon points="20,90 200,90 240,240 20,240" fill="none" stroke="var(--svg-garis)" stroke-width="2"/><g clip-path="url(#cl-x05c)"><rect class="f-tanah" x="0" y="80" width="560" height="44"/><rect class="f-batu" x="0" y="124" width="560" height="40"/><rect class="f-tanah-gelap" x="0" y="164" width="560" height="80"/></g><polygon points="360,90 540,90 540,240 320,240" fill="none" stroke="var(--svg-garis)" stroke-width="2"/><g><g clip-path="url(#cl-x05b)"><rect class="f-tanah" x="0" y="80" width="560" height="44"/><rect class="f-batu" x="0" y="124" width="560" height="40"/><rect class="f-tanah-gelap" x="0" y="164" width="560" height="80"/></g><polygon points="200,90 360,90 320,240 240,240" fill="none" stroke="var(--svg-garis)" stroke-width="2"/><animateTransform attributeName="transform" type="translate" values="0 0;0 26;0 26;0 0" keyTimes="0;0.45;0.75;1" dur="6s" repeatCount="indefinite"/></g><text class="t-tengah t-tebal" x="110" y="74">Horst</text>
+              <text class="t-tengah t-tebal" x="280" y="74">Graben</text>
+              <text class="t-tengah t-tebal" x="450" y="74">Horst</text>
+              <path class="garis" d="M80,30 H24" marker-end="url(#pn-x05p)"/><path class="garis" d="M480,30 H536" marker-end="url(#pn-x05p)"/>
+              <text class="t-tengah t-kecil" x="280" y="35">gaya tarik (tensional) memisahkan blok batuan</text>
+            </svg>
+            <div class="media-kontrol"><button type="button" class="anim-toggle" aria-pressed="false">⏸ Jeda animasi</button></div>
+            <figcaption>Gaya tarik membuat batuan patah. Blok yang turun disebut <strong>graben</strong> (slenk), blok yang relatif naik disebut <strong>horst</strong>. Garis tebal miring adalah bidang patahan (sesar); perhatikan lapisan batuan yang bergeser di sepanjang bidang itu.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI x-05-3 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-x05-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="DeafytS3Rjw" data-judul="Video Animasi Mitigasi Gempabumi">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=DeafytS3Rjw" rel="noopener">YouTube: Video Animasi Mitigasi Gempabumi</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Video Animasi Mitigasi Gempabumi</strong> — animasi BMKG tentang gempa bumi dan langkah menyelamatkan diri sebelum, saat, dan sesudah gempa.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>Info BMKG</strong> (2019) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=DeafytS3Rjw" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="eksogen">C. Tenaga Eksogen</h2>
+          <p>Tenaga eksogen berasal dari luar bumi dan cenderung meratakan relief melalui:</p>
+          <ul>
+            <li><strong>Pelapukan</strong>: fisik (batuan pecah karena perubahan suhu), kimiawi (misalnya pelarutan batu gamping yang membentuk gua karst), dan organik (oleh akar tumbuhan atau makhluk hidup).</li>
+            <li><strong>Erosi</strong>: pengikisan oleh air, angin, gletser, atau gelombang laut (<a href="../glosarium.html?cari=abrasi">abrasi</a>).</li>
+            <li><strong>Gerak massa</strong> (<em>mass wasting</em>): perpindahan material lereng karena gravitasi, misalnya tanah longsor.</li>
+            <li><strong>Sedimentasi</strong>: pengendapan material, membentuk <a href="../glosarium.html?cari=delta">delta</a>, gosong, dan dataran aluvial.</li>
+          </ul>
+
+          <h2 id="tanah">D. Tanah dan Dampak Dinamika Litosfer</h2>
+          <p>
+            Tanah terbentuk dari pelapukan batuan yang dipengaruhi <strong>iklim, organisme, bahan induk, topografi,
+            dan waktu</strong>. Tanah vulkanis (andosol) di lereng gunung api tergolong sangat subur.
+          </p>
+          <p>
+            <strong>Dampak positif</strong> dinamika litosfer: tanah subur, bahan tambang, energi panas bumi, dan
+            bentang alam untuk wisata. <strong>Dampak negatif</strong>: gempa bumi, letusan gunung api, longsor,
+            serta kerusakan permukiman dan infrastruktur.
+          </p>
+
+
+
+
+
+          <!-- MEDIA-MULAI x-05-4 (diagram/animasi/grafik/video) -->
+          <section class="media peta-titik" id="media-x05-peta" aria-labelledby="x05-peta-judul"
+            data-legenda='{"aktif":{"warna":"#c0392b","label":"Erupsi abad ke-21"},"bersejarah":{"warna":"#6a4c93","label":"Letusan besar bersejarah"},"lainnya":{"warna":"#2d6a4f","label":"Potensi &amp; pemanfaatan"}}'>
+            <span class="media-label">🗺️ Peta Interaktif</span>
+            <h3 id="x05-peta-judul">Sebaran Gunung Api Penting di Indonesia</h3>
+            <p>Perhatikan bahwa gunung api berjajar mengikuti busur Sumatra–Jawa–Nusa Tenggara dan Sulawesi Utara–Maluku. Klik titik untuk membaca keterangannya.</p>
+            <div class="peta-container" role="region" aria-label="Peta interaktif gunung api di Indonesia"></div>
+            <div class="peta-toolbar"><button type="button" class="btn btn-outline peta-reset" hidden>🔄 Tampilkan semua titik</button></div>
+            <p class="box box-info peta-pesan" role="status" hidden></p>
+            <noscript><p class="box box-info">⚠️ JavaScript nonaktif. Data gunung api tetap dapat dibaca pada tabel berikut.</p></noscript>
+            <!-- ===== EDIT DI SINI: data gunung api (kolom: Nama | Lokasi | Catatan | Kategori | Keterangan).
+                 data-jenis: aktif | bersejarah | lainnya ===== -->
+            <div class="table-wrap">
+              <table class="peta-tabel">
+                <caption>Contoh gunung api penting di Indonesia (koordinat perkiraan)</caption>
+                <thead><tr><th scope="col">Gunung api</th><th scope="col">Lokasi</th><th scope="col">Catatan</th><th scope="col">Kategori</th><th scope="col">Keterangan</th></tr></thead>
+                <tbody>
+                    <tr data-lat="3.170" data-lng="98.392" data-jenis="aktif">
+                      <td>Gunung Sinabung</td><td>Sumatra Utara</td><td>Aktif kembali sejak 2010</td><td>Erupsi abad ke-21</td><td>Setelah sekitar 400 tahun tidak meletus, erupsi berulang sejak 2010 memaksa ribuan warga Karo mengungsi.</td>
+                    </tr>
+                    <tr data-lat="2.680" data-lng="98.880" data-jenis="bersejarah">
+                      <td>Kaldera Toba</td><td>Sumatra Utara</td><td>± 74.000 tahun lalu</td><td>Letusan besar bersejarah</td><td>Letusan supervulkan membentuk kaldera raksasa yang kini menjadi Danau Toba.</td>
+                    </tr>
+                    <tr data-lat="-0.381" data-lng="100.473" data-jenis="aktif">
+                      <td>Gunung Marapi</td><td>Sumatra Barat</td><td>Erupsi Desember 2023</td><td>Erupsi abad ke-21</td><td>Erupsi eksplosif 2023 menelan korban pendaki; material vulkaniknya memicu banjir lahar dingin pada 2024.</td>
+                    </tr>
+                    <tr data-lat="-1.697" data-lng="101.264" data-jenis="lainnya">
+                      <td>Gunung Kerinci</td><td>Jambi</td><td>± 3.805 m dpl</td><td>Potensi &amp; pemanfaatan</td><td>Gunung api tertinggi di Indonesia, berada di Taman Nasional Kerinci Seblat.</td>
+                    </tr>
+                    <tr data-lat="-6.102" data-lng="105.423" data-jenis="aktif">
+                      <td>Krakatau dan Anak Krakatau</td><td>Selat Sunda (Lampung)</td><td>Letusan 1883; longsor 2018</td><td>Erupsi abad ke-21</td><td>Letusan 1883 memicu tsunami dahsyat. Anak Krakatau tumbuh di kalderanya dan longsorannya memicu tsunami Selat Sunda 2018.</td>
+                    </tr>
+                    <tr data-lat="-6.716" data-lng="106.733" data-jenis="lainnya">
+                      <td>Gunung Salak</td><td>Jawa Barat (Bogor–Sukabumi)</td><td>Sumber panas bumi</td><td>Potensi &amp; pemanfaatan</td><td>Panas buminya dimanfaatkan sebagai pembangkit listrik; contoh dampak positif vulkanisme di dekat Bogor.</td>
+                    </tr>
+                    <tr data-lat="-6.770" data-lng="107.600" data-jenis="lainnya">
+                      <td>Gunung Tangkuban Parahu</td><td>Jawa Barat</td><td>Erupsi kecil 2019</td><td>Potensi &amp; pemanfaatan</td><td>Kawahnya menjadi objek wisata di utara Bandung; aktivitasnya tetap dipantau PVMBG.</td>
+                    </tr>
+                    <tr data-lat="-7.541" data-lng="110.446" data-jenis="aktif">
+                      <td>Gunung Merapi</td><td>DI Yogyakarta–Jawa Tengah</td><td>Erupsi besar 2010</td><td>Erupsi abad ke-21</td><td>Salah satu gunung api paling aktif di Indonesia; awan panasnya dikenal sebagai wedhus gembel.</td>
+                    </tr>
+                    <tr data-lat="-7.930" data-lng="112.308" data-jenis="aktif">
+                      <td>Gunung Kelud</td><td>Jawa Timur</td><td>Erupsi 2014</td><td>Erupsi abad ke-21</td><td>Letusan eksplosif 2014 menyebarkan abu hingga Yogyakarta dan Jawa Tengah.</td>
+                    </tr>
+                    <tr data-lat="-8.108" data-lng="112.922" data-jenis="aktif">
+                      <td>Gunung Semeru</td><td>Jawa Timur</td><td>Guguran awan panas 2021</td><td>Erupsi abad ke-21</td><td>Gunung tertinggi di Pulau Jawa (± 3.676 m dpl).</td>
+                    </tr>
+                    <tr data-lat="-8.343" data-lng="115.508" data-jenis="aktif">
+                      <td>Gunung Agung</td><td>Bali</td><td>Letusan 1963 dan 2017</td><td>Erupsi abad ke-21</td><td>Sebaran abu erupsi 2017 sempat menutup Bandara I Gusti Ngurah Rai.</td>
+                    </tr>
+                    <tr data-lat="-8.410" data-lng="116.460" data-jenis="bersejarah">
+                      <td>Rinjani (Samalas)</td><td>Nusa Tenggara Barat</td><td>Letusan Samalas 1257</td><td>Letusan besar bersejarah</td><td>Letusan Gunung Samalas termasuk yang terbesar dalam seribu tahun terakhir; kalderanya kini Danau Segara Anak.</td>
+                    </tr>
+                    <tr data-lat="-8.250" data-lng="118.000" data-jenis="bersejarah">
+                      <td>Gunung Tambora</td><td>Nusa Tenggara Barat</td><td>Letusan 1815</td><td>Letusan besar bersejarah</td><td>Letusan terbesar dalam sejarah modern; abunya menyebabkan “tahun tanpa musim panas” 1816 di belahan bumi utara.</td>
+                    </tr>
+                    <tr data-lat="-8.542" data-lng="122.775" data-jenis="aktif">
+                      <td>Gunung Lewotobi Laki-laki</td><td>Nusa Tenggara Timur</td><td>Erupsi November 2024</td><td>Erupsi abad ke-21</td><td>Erupsi 2024 menimbulkan korban jiwa dan merusak permukiman di Flores Timur.</td>
+                    </tr>
+                    <tr data-lat="2.300" data-lng="125.370" data-jenis="aktif">
+                      <td>Gunung Ruang</td><td>Sulawesi Utara</td><td>Erupsi April 2024</td><td>Erupsi abad ke-21</td><td>Erupsi eksplosif 2024 memaksa penduduk pulau mengungsi; contoh gunung api jalur Sirkum Pasifik.</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="peta-sumber">Peta dasar: © Kontributor OpenStreetMap. Status aktivitas terkini gunung api dapat dipantau di MAGMA Indonesia (PVMBG).</p>
+          </section>
+          <!-- MEDIA-SELESAI -->
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Batuan beku berasal dari magma, batuan sedimen dari endapan, dan batuan metamorf dari perubahan batuan akibat suhu dan tekanan.</li>
+            <li>Tenaga endogen (tektonisme, vulkanisme, seisme) membentuk relief muka bumi.</li>
+            <li>Tenaga eksogen (pelapukan, erosi, gerak massa, sedimentasi) cenderung meratakan relief.</li>
+            <li>Pembentukan tanah dipengaruhi iklim, organisme, bahan induk, topografi, dan waktu.</li>
+            <li>Dinamika litosfer memberi manfaat (tanah subur, tambang, panas bumi) sekaligus ancaman bencana.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="x-05" data-pembanding="x-05-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>1. Marmer terbentuk dari batu gamping yang mengalami tekanan dan suhu tinggi. Marmer termasuk batuan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s1" value="a"> Beku dalam</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s1" value="b"> Beku luar</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s1" value="c"> Metamorf</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s1" value="d"> Sedimen</label></li>
+            </ul>
+            <p class="quiz-feedback">Batuan yang berubah sifat karena suhu dan tekanan tinggi disebut batuan <strong>metamorf</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Bagian kerak bumi yang turun di antara dua patahan disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s2" value="a"> Graben</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s2" value="b"> Horst</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s2" value="c"> Antiklin</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s2" value="d"> Sinklin</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Graben</strong> adalah blok yang turun; horst adalah blok yang naik. Antiklin dan sinklin adalah bagian lipatan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>3. Gunung api berbentuk kerucut berlapis yang tersusun atas lava dan material piroklastik, seperti Gunung Merapi, termasuk tipe …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s3" value="a"> Perisai</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s3" value="b"> Maar</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s3" value="c"> Kaldera</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s3" value="d"> Strato</label></li>
+            </ul>
+            <p class="quiz-feedback">Gunung api <strong>strato</strong> berbentuk kerucut dan berlapis-lapis; sebagian besar gunung api di Indonesia bertipe ini.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>4. Terbentuknya gua dan stalaktit di daerah karst merupakan hasil pelapukan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s4" value="a"> Fisik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s4" value="b"> Kimiawi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s4" value="c"> Organik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s4" value="d"> Mekanik</label></li>
+            </ul>
+            <p class="quiz-feedback">Air hujan yang mengandung CO<sub>2</sub> melarutkan batu gamping. Proses ini adalah pelapukan <strong>kimiawi</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Lereng Gunung Merapi menjadi lahan pertanian yang subur. Hal ini merupakan dampak positif dari …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s5" value="a"> Pelapukan material vulkanik</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s5" value="b"> Abrasi pantai</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s5" value="c"> Sedimentasi delta</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s5" value="d"> Gerak massa</label></li>
+            </ul>
+            <p class="quiz-feedback">Material vulkanik yang melapuk membentuk tanah (andosol) yang kaya mineral, sehingga lahan menjadi <strong>subur</strong>.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>6. Bagian lipatan yang menonjol ke atas disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s6" value="a"> sinklin</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s6" value="b"> horst</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s6" value="c"> graben</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s6" value="d"> antiklin</label></li>
+            </ul>
+            <p class="quiz-feedback">Punggung lipatan disebut <strong>antiklin</strong>, lembahnya sinklin.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>7. Batu apung yang ringan dan berpori terbentuk karena …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s7" value="a"> batu gamping terkena suhu tinggi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s7" value="b"> magma membeku cepat di permukaan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s7" value="c"> endapan pasir memadat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s7" value="d"> pelarutan oleh air hujan</label></li>
+            </ul>
+            <p class="quiz-feedback">Batu apung adalah batuan beku luar yang terbentuk dari magma yang membeku cepat di permukaan.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>8. Akar pohon yang tumbuh di celah batuan hingga batuan retak merupakan contoh pelapukan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s8" value="a"> kimiawi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s8" value="b"> mekanik akibat suhu</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s8" value="c"> abrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s8" value="d"> organik</label></li>
+            </ul>
+            <p class="quiz-feedback">Pelapukan oleh makhluk hidup, seperti akar tumbuhan, disebut pelapukan <strong>organik</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>9. Endapan material sungai di muara yang membentuk daratan baru disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s9" value="a"> meander</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s9" value="b"> delta</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s9" value="c"> tombolo</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s9" value="d"> gua</label></li>
+            </ul>
+            <p class="quiz-feedback"><strong>Delta</strong> terbentuk dari sedimentasi material sungai di muara.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>10. Lima faktor pembentuk tanah adalah iklim, organisme, bahan induk, topografi, dan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="x05-s10" value="a"> waktu</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s10" value="b"> manusia</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s10" value="c"> pupuk</label></li>
+              <li><label class="quiz-option"><input type="radio" name="x05-s10" value="d"> gravitasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Tanah terbentuk dipengaruhi iklim, organisme, bahan induk, topografi, dan <strong>waktu</strong>.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Identifikasi Batuan dan Bentang Alam Sekitar</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berkelompok (3–4 orang).</p>
+          <ol>
+            <li>Kumpulkan 3–5 sampel batuan dari sekitar rumah atau madrasah (atau gunakan foto dari internet jika tidak memungkinkan).</li>
+            <li>Amati warna, tekstur, kekerasan, dan ada tidaknya lapisan atau pori pada setiap sampel.</li>
+            <li>Klasifikasikan setiap sampel ke dalam batuan beku, sedimen, atau metamorf beserta alasannya.</li>
+            <li>Cari satu bentang alam di daerahmu (bukit, sungai, lembah) lalu jelaskan tenaga endogen atau eksogen yang membentuknya.</li>
+          </ol>
+          <p><strong>Produk:</strong> Tabel identifikasi batuan berfoto dan satu paragraf analisis bentang alam.</p>
+          <p><strong>Kriteria penilaian:</strong> ketelitian pengamatan, ketepatan klasifikasi, kebenaran analisis tenaga pembentuk, dan kerapian laporan.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="x-05" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="x-04-bumi-ruang-kehidupan.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Bumi sebagai Ruang Kehidupan</span>
+          </a>
+          <a href="x-06-atmosfer.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Dinamika Atmosfer dan Dampaknya</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+  <!-- Peta interaktif: Leaflet lokal, data peta dasar, lalu skrip peta (urutan jangan dibalik) -->
+  <script src="../js/vendor/leaflet/leaflet.js"></script>
+  <script src="../js/peta-dasar-data.js"></script>
+  <script src="../js/peta-dasar.js"></script>
+  <script src="../js/peta-titik.js"></script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!doctype html><html lang="id"><head><meta charset=utf8><!-- GeoRuang 3D · bagian dari website Geografi SMA/MA (Janatun Rahmilah, MAN 3 Bogor).
+     Pustaka three.js disimpan lokal di js/vendor agar tetap jalan tanpa CDN. -->
+<script>try{var t=localStorage.getItem("geografi-tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gempa dan Tsunami 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: panggung 3D lebar di kiri, panel materi di kanan (bertumpuk di HP) */
+:root{
+  --bg:#eceee9; --surface:#fbfbf8; --fg:#1b201d; --muted:#5b655e; --line:#d3d8d0;
+  --accent:#c2410c; --accent-soft:#f8e3d6; --stage:#dde3e6; --safe:#1d7a4f;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101412; --surface:#181d1a; --fg:#e5eae6; --muted:#97a29a; --line:#2a322d;
+  --accent:#ff8a4c; --accent-soft:#3a2218; --stage:#131a1e; --safe:#4cc98a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101412; --surface:#181d1a; --fg:#e5eae6; --muted:#97a29a; --line:#2a322d;
+  --accent:#ff8a4c; --accent-soft:#3a2218; --stage:#131a1e; --safe:#4cc98a; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.01em;color:inherit;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.crumbs{display:flex;gap:6px;font-size:.85rem;color:var(--muted);flex-wrap:wrap;min-width:0}
+.crumbs span+span::before{content:"›";margin-right:6px;opacity:.6}
+.top .spacer{flex:1}
+.pill{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--accent-soft);color:var(--accent)}
+
+.app{display:grid;gap:16px;grid-template-columns:1fr}
+.stage{position:relative;border-radius:16px;overflow:hidden;background:var(--stage);height:58vh;min-height:360px;border:1px solid var(--line)}
+.stage canvas{display:block;width:100%;height:100%;touch-action:none}
+.stage .fallback{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--muted)}
+
+.hs{position:absolute;left:0;top:0;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;
+  border:2px solid #fff;background:var(--accent);color:#fff;font-family:var(--mono);font-size:.85rem;
+  display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.35);transition:transform .15s}
+.hs:hover{transform:scale(1.12)}
+.hs.on{background:#fff;color:var(--accent);border-color:var(--accent);transform:scale(1.18)}
+.tagl{position:absolute;left:0;top:0;transform:translate(-50%,-50%);font-family:var(--mono);font-size:.72rem;color:#fff;
+  background:rgba(22,24,28,.82);border:1px solid rgba(255,255,255,.3);padding:3px 8px;border-radius:6px;white-space:nowrap;pointer-events:none}
+.tagl.safe{background:#1d7a4f;border-color:#1d7a4f}
+
+.banner{position:absolute;left:50%;top:12px;transform:translateX(-50%);max-width:calc(100% - 24px);text-align:center;
+  font-family:var(--display);font-weight:700;font-size:1rem;padding:8px 16px;border-radius:10px;background:#b42318;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.banner small{display:block;font-family:var(--mono);font-weight:500;font-size:.72rem;opacity:.9;letter-spacing:.04em}
+.banner.ok{background:#1d7a4f}
+.banner.info{background:#2b3440}
+
+.parts{position:absolute;left:12px;top:12px;background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:12px;padding:10px 12px;width:210px;display:none}
+.parts h3{margin:0 0 6px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--muted);font-weight:500}
+.parts ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.parts button{display:flex;gap:8px;align-items:center;width:100%;text-align:left;background:none;border:0;padding:5px 6px;border-radius:8px;font-size:.9rem}
+.parts button:hover,.parts button.on{background:var(--accent-soft)}
+.parts b{font-family:var(--mono);font-weight:500;color:var(--accent);font-size:.8rem;width:14px}
+
+.dock{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;display:flex;gap:8px;overflow-x:auto;
+  background:linear-gradient(transparent,color-mix(in srgb,var(--stage) 85%,transparent) 40%)}
+.act{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;border:1px solid var(--line);
+  background:var(--surface);font-size:.9rem;font-weight:700;white-space:nowrap}
+.act svg{width:18px;height:18px}
+.act[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.hint{position:absolute;right:12px;top:12px;font-size:.78rem;color:var(--muted);background:color-mix(in srgb,var(--surface) 80%,transparent);padding:4px 10px;border-radius:99px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 22px 26px;min-width:0}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.panel h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,2.6rem);line-height:1.02;letter-spacing:-.025em;margin:6px 0 4px;text-wrap:balance}
+.tag{font-family:var(--display);font-weight:500;font-size:1.1rem;color:var(--muted);margin:0 0 12px}
+.desc{margin:0 0 18px;max-width:62ch}
+.panel h2{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin:20px 0 8px;text-transform:uppercase}
+.facts{margin:0;display:grid;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:minmax(110px,40%) 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.facts dt{color:var(--muted);font-size:.9rem}
+.facts dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.flow{list-style:none;margin:0;padding:0;counter-reset:f}
+.flow li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;position:relative;padding-bottom:10px}
+.flow li::before{content:counter(f);counter-increment:f;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);
+  font-family:var(--mono);font-size:.78rem;display:grid;place-items:center;background:var(--surface);position:relative;z-index:1}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:13px;top:26px;bottom:0;border-left:1.5px dashed var(--line)}
+.flow li span{padding-top:2px}
+.flow li.now::before{background:var(--accent);color:#fff}
+.flow li.done::before{background:var(--accent-soft)}
+.flow li.now span{font-weight:700}
+.know{margin-top:20px;background:var(--accent-soft);border-radius:12px;padding:14px 16px}
+.know strong{display:block;font-family:var(--display);font-size:1rem;margin-bottom:4px;color:var(--accent)}
+.know p{margin:0}
+.kur{margin-top:18px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.back{background:none;border:0;padding:0;color:var(--accent);font-weight:700;font-size:.9rem;margin-bottom:10px}
+.go{margin-top:14px;display:inline-flex;gap:8px;align-items:center;border:0;background:var(--accent);color:#fff;font-weight:700;padding:10px 16px;border-radius:10px}
+.go.alt{background:none;border:1.5px solid var(--accent);color:var(--accent)}
+.live{border:1.5px solid var(--accent);border-radius:12px;padding:14px 16px;margin-bottom:16px}
+.clock{font-family:var(--mono);font-size:2rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.clock span{font-size:.8rem;color:var(--muted);margin-left:6px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.88rem;margin-top:6px}
+.legend i{display:inline-block;width:22px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.check li{display:grid;grid-template-columns:22px 1fr;gap:8px}
+.check li::before{content:"✓";color:var(--safe);font-weight:700}
+.note{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+
+.quiz .q{font-family:var(--display);font-weight:700;font-size:1.25rem;line-height:1.25;margin:4px 0 14px;text-wrap:balance}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface)}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt.ok{border-color:#2e8b57;background:color-mix(in srgb,#2e8b57 14%,var(--surface))}
+.opt.no{border-color:#c0392b;background:color-mix(in srgb,#c0392b 12%,var(--surface))}
+.opt:disabled{cursor:default}
+.fb{margin-top:12px;font-size:.95rem}
+.bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden;margin:10px 0 4px}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.score{font-family:var(--display);font-weight:800;font-size:3.4rem;line-height:1;color:var(--accent)}
+
+.embed .top{display:none}
+@media (min-width:900px){
+  html,body{height:100%}
+  body{display:flex;flex-direction:column}
+  .app{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 400px}
+  .stage{height:auto;min-height:0}
+  .panel{overflow-y:auto}
+  .parts{display:block}
+}
+@media (prefers-reduced-motion:reduce){.hs,.bar i{transition:none}}
+</style>
+
+<header class="top">
+  <a class="brand" href="../materi/xi-03-mitigasi-adaptasi.html">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 22c4 0 5-12 12-12 4 0 6 3 6 6-2-2-5-1-5 2 0 2 2 4 6 4h9v6H2z" fill="var(--accent)"/><path d="M2 12l4-3 3 4 3-5" stroke="var(--muted)" stroke-width="1.6" fill="none"/></svg>
+    GeoRuang 3D
+  </a>
+  <nav class="crumbs" aria-label="Lokasi materi"><span>Geografi Kelas XI</span><span>Mitigasi dan Adaptasi Kebencanaan</span></nav>
+  <div class="spacer"></div>
+  <span class="pill">XI-03 · Kelas XI</span>
+</header>
+
+<main class="app">
+  <section class="stage" id="stage" aria-label="Model 3D gempa dan tsunami">
+    <div class="fallback" id="fallback">Memuat model 3D…</div>
+    <div id="labels"></div>
+    <div class="banner" id="banner" hidden></div>
+    <div class="parts" id="parts"><h3>BAGIAN · 7 TITIK BELAJAR</h3><ol id="partsList"></ol></div>
+    <div class="hint" id="hint">Seret untuk memutar · scroll/cubit untuk zoom</div>
+    <div class="dock">
+      <button class="act" id="aQuake" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h3l2-6 3 12 3-9 2 5 2-2h5"/></svg>Simulasi Gempa</button>
+      <button class="act" id="aTsu" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18c3 0 3-8 9-8 3 0 4 2 4 4-2-1-4 0-4 2s2 2 4 2h7"/><path d="M2 22h20"/></svg>Simulasi Tsunami</button>
+      <button class="act" id="aEvac" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="14" cy="4" r="2"/><path d="M9 21l3-7 3 3v4M12 14l-1-5 5 2 3 3M11 9l-4 2-1 4"/></svg>Jalur Evakuasi</button>
+      <button class="act" id="aQuiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17.5v.01"/></svg>Kuis</button>
+      <button class="act" id="aFull"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Layar kelas</button>
+    </div>
+  </section>
+  <aside class="panel" id="panel" aria-live="polite"></aside>
+</main>
+
+<script src="../js/vendor/three/three.min.js"></script>
+<script src="../js/vendor/three/OrbitControls.js"></script>
+<script>
+(function(){
+if(/[?&]embed=1/.test(location.search))document.body.classList.add('embed');
+const KUR='Kurikulum Merdeka · Geografi Fase F · Mitigasi dan Adaptasi Kebencanaan';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const panel=$('#panel');
+
+const OVERVIEW={eyebrow:'Bencana · Geologi',name:'Gempa dan Tsunami',tag:'Saat lempeng bumi melepas energi',
+ desc:'Di selatan Jawa dan barat Sumatra, Lempeng Indo-Australia menunjam ke bawah Lempeng Eurasia. Ketika lempeng yang saling mengunci tiba-tiba bergeser, terjadi gempa. Jika dasar laut ikut terangkat, air laut di atasnya terdorong menjadi tsunami.',
+ facts:[['Zona subduksi','Selatan Jawa, barat Sumatra, Bali–Nusa Tenggara'],['Laju penunjaman','± 6–7 cm per tahun'],['Lembaga peringatan dini','BMKG (InaTEWS)'],['Lembaga penanggulangan','BNPB dan BPBD']],
+ flowT:'Rantai kejadian di model ini',flow:['Lempeng bergeser tiba-tiba di zona subduksi','Gelombang seismik menjalar, permukaan bergetar','Dasar laut terangkat dan mendorong air laut','Tsunami menjalar dan meninggi di dekat pantai','Warga yang sudah mengungsi ke tempat tinggi selamat'],
+ tahu:'Gempa dan tsunami Aceh 26 Desember 2004 berkekuatan sekitar M 9,1. Peristiwa itu mendorong Indonesia membangun sistem peringatan dini tsunami InaTEWS.'};
+
+const SPOTS=[
+ {id:'hipo',name:'Hiposentrum',eyebrow:'Gempa · Di dalam bumi',tag:'Titik asal getaran',sec:1,
+  desc:'Titik pusat gempa di dalam bumi, tempat batuan pertama kali patah atau bergeser. Dari sini gelombang seismik menjalar ke segala arah.',
+  facts:[['Gempa dangkal','Kurang dari 60 km, paling merusak'],['Gempa menengah','60–300 km'],['Gempa dalam','Lebih dari 300 km']],
+  tahu:'Gempa yang dapat memicu tsunami umumnya berpusat di laut, dangkal, dan berkekuatan besar, dengan pergeseran dasar laut secara vertikal.'},
+ {id:'epi',name:'Episentrum',eyebrow:'Gempa · Di permukaan',tag:'Titik tepat di atas pusat gempa',sec:1,
+  desc:'Titik di permukaan bumi yang tegak lurus di atas hiposentrum. Lokasi gempa yang diumumkan BMKG adalah letak episentrum ini, bersama kedalaman dan magnitudonya.',
+  facts:[['Magnitudo','Besarnya energi gempa (M)'],['Intensitas','Dampak yang dirasakan (skala MMI)'],['Alat pencatat','Seismograf']],
+  tahu:'Satu gempa hanya punya satu nilai magnitudo, tetapi intensitasnya berbeda-beda di tiap tempat. Makin jauh dari episentrum, biasanya getaran makin lemah.'},
+ {id:'palung',name:'Palung dan Zona Subduksi',eyebrow:'Tektonik · Batas lempeng',tag:'Tempat lempeng samudra menunjam',sec:1,
+  desc:'Lempeng samudra yang lebih berat menunjam ke bawah lempeng benua. Garis penunjaman di dasar laut membentuk palung yang sangat dalam. Bidang kontak kedua lempeng disebut megathrust.',
+  facts:[['Lempeng menunjam','Indo-Australia (samudra)'],['Lempeng di atasnya','Eurasia (benua)'],['Contoh palung','Palung Jawa, lebih dari 7.000 m']],
+  tahu:'Di atas zona subduksi terbentuk deretan gunung api. Itulah sebabnya Sumatra dan Jawa punya banyak gunung api yang berjajar sejajar palung.'},
+ {id:'gelombang',name:'Gelombang Tsunami',eyebrow:'Tsunami · Di laut lepas',tag:'Cepat di laut dalam, tinggi di pantai',
+  desc:'Di laut dalam, tsunami melaju sangat cepat tetapi tingginya kecil, sehingga hampir tidak terasa oleh kapal. Saat masuk ke laut dangkal, gelombang melambat, memendek, dan meninggi.',
+  facts:[['Kecepatan di laut dalam','Bisa lebih dari 700 km/jam'],['Tinggi di laut lepas','Sering kurang dari 1 m'],['Di dekat pantai','Bisa mencapai belasan meter']],
+  tahu:'Tsunami bukan satu ombak. Biasanya datang beberapa gelombang selama berjam-jam, dan gelombang pertama belum tentu yang terbesar.'},
+ {id:'pantai',name:'Pantai',eyebrow:'Tsunami · Tanda alam',tag:'Kenali tandanya, segera menjauh',
+  desc:'Air laut yang tiba-tiba surut jauh adalah tanda alam bahaya tsunami. Jangan mendekat untuk melihat atau memungut ikan. Segera lari ke tempat tinggi.',
+  facts:[['Tanda 1','Gempa kuat yang membuat sulit berdiri, atau gempa lemah tetapi lama'],['Tanda 2','Air laut surut tiba-tiba'],['Tanda 3','Suara gemuruh dari arah laut']],
+  tahu:'Hutan mangrove dan cemara pantai termasuk mitigasi struktural alami. Akar dan batangnya meredam energi gelombang sebelum mencapai permukiman.'},
+ {id:'evak',name:'Jalur dan Titik Evakuasi',eyebrow:'Mitigasi · Penyelamatan diri',tag:'Ke tempat tinggi, secepatnya',evac:1,
+  desc:'Jalur evakuasi menuntun warga menuju tempat aman: bukit atau tempat evakuasi sementara (TES) berupa gedung tinggi yang kuat. Ikuti rambu evakuasi dan jangan kembali sebelum dinyatakan aman.',
+  facts:[['Tujuan','Bukit atau gedung TES yang tinggi'],['Titik kumpul','Tempat berkumpul dan mendata warga'],['Kembali ke rumah','Setelah ada pernyataan aman dari BMKG atau BPBD']],
+  tahu:'Kampanye kesiapsiagaan "20-20-20" mengajak warga pesisir: jika gempa terasa sekitar 20 detik, segera mengungsi dalam 20 menit ke tempat setinggi minimal 20 meter.'},
+ {id:'ews',name:'Peringatan Dini',eyebrow:'Mitigasi · Nonstruktural',tag:'Menit-menit yang menyelamatkan',
+  desc:'Sistem peringatan dini tsunami Indonesia (InaTEWS) dikelola BMKG. Data dari seismometer, pengukur pasang surut, dan pelampung dipakai untuk menilai apakah gempa berpotensi tsunami, lalu peringatan disebarkan sampai ke sirene di pesisir.',
+  facts:[['Target informasi gempa','± 5 menit setelah gempa'],['Penyebaran','SMS, aplikasi, televisi, radio, sirene'],['Aplikasi resmi','InfoBMKG']],
+  tahu:'Untuk tsunami yang sumbernya dekat pantai, gelombang bisa tiba sebelum peringatan diterima. Karena itu tanda alam tetap menjadi peringatan pertama.'}
+];
+
+const QUIZ=[
+ {q:'Titik pusat gempa yang berada di dalam bumi disebut…',o:['Episentrum','Hiposentrum','Seismograf','Palung'],a:1,e:'Hiposentrum di dalam bumi, episentrum di permukaan tepat di atasnya.'},
+ {q:'Gempa dengan kedalaman kurang dari 60 km tergolong…',o:['Gempa dalam','Gempa menengah','Gempa dangkal','Gempa vulkanik'],a:2,e:'Gempa dangkal (< 60 km) paling merusak karena energinya dekat dengan permukaan.'},
+ {q:'Gelombang seismik yang paling cepat dan pertama tercatat seismograf adalah…',o:['Gelombang P','Gelombang S','Gelombang permukaan','Gelombang tsunami'],a:0,e:'Gelombang primer (P) merambat paling cepat, disusul gelombang sekunder (S).'},
+ {q:'Mengapa tsunami meninggi saat mendekati pantai?',o:['Angin bertiup lebih kencang','Laut makin dangkal sehingga gelombang melambat dan menumpuk','Air laut memanas','Bulan menarik air laut'],a:1,e:'Di laut dangkal, gelombang melambat sehingga energinya terkumpul menjadi gelombang tinggi.'},
+ {q:'Tanda alam yang menunjukkan tsunami akan datang adalah…',o:['Langit mendung','Air laut tiba-tiba surut','Angin darat bertiup','Pasang naik di malam hari'],a:1,e:'Air laut surut tiba-tiba menandakan lembah gelombang tsunami tiba lebih dulu.'},
+ {q:'Tindakan yang tepat saat air laut tiba-tiba surut setelah gempa kuat adalah…',o:['Memungut ikan di pantai','Merekam dengan ponsel dari pantai','Segera lari ke tempat tinggi','Menunggu sirene berbunyi'],a:2,e:'Jangan menunggu peringatan resmi bila tanda alam sudah terlihat.'},
+ {q:'Hutan mangrove di pesisir termasuk mitigasi…',o:['Nonstruktural','Struktural','Rehabilitasi','Rekonstruksi'],a:1,e:'Mitigasi struktural berupa bangunan fisik atau vegetasi yang meredam bahaya.'}
+];
+
+let current=null,mode=null,liveFn=null;
+function renderInfo(d,isSpot,pre,post){
+  let h='';
+  if(isSpot)h+='<button class="back" id="pBack">← Ringkasan modul</button>';
+  if(pre)h+=pre;
+  h+='<div class="eyebrow">'+esc(d.eyebrow)+'</div><h1>'+esc(d.name)+'</h1><p class="tag">'+esc(d.tag)+'</p><p class="desc">'+esc(d.desc)+'</p>';
+  if(d.facts)h+='<h2>Fakta kunci</h2><dl class="facts">'+d.facts.map(f=>'<div><dt>'+esc(f[0])+'</dt><dd>'+esc(f[1])+'</dd></div>').join('')+'</dl>';
+  if(post)h+=post;
+  if(d.flow)h+='<h2>'+esc(d.flowT)+'</h2><ol class="flow" id="flow">'+d.flow.map(f=>'<li><span>'+esc(f)+'</span></li>').join('')+'</ol>';
+  if(d.tahu)h+='<div class="know"><strong>Tahukah kamu?</strong><p>'+esc(d.tahu)+'</p></div>';
+  if(!isSpot)h+='<button class="go" id="pQuiz">Uji pemahaman · '+QUIZ.length+' soal</button>';
+  h+='<div class="kur">'+KUR+'</div>';
+  panel.innerHTML=h;panel.scrollTop=0;
+  const b=$('#pBack');if(b)b.onclick=()=>{setMode(null);select(null);};
+  const q=$('#pQuiz');if(q)q.onclick=startQuiz;
+}
+let qi=0,qs=0;
+function startQuiz(){liveFn=null;qi=0;qs=0;showQ();}
+function showQ(){
+  if(qi>=QUIZ.length){
+    const msg=qs===QUIZ.length?'Sempurna! Kamu siap menghadapi gempa dan tsunami.':qs>=5?'Bagus. Ulangi bagian yang masih keliru di model 3D.':'Jalankan lagi simulasinya, lalu coba ulang.';
+    panel.innerHTML='<div class="quiz"><div class="eyebrow">Kuis · Hasil</div><p class="score">'+qs+'/'+QUIZ.length+'</p><p class="desc" style="margin-top:12px">'+msg+'</p><button class="go" id="qAgain">Ulangi kuis</button> <button class="back" id="qBack" style="margin-left:12px">Kembali ke materi</button></div>';
+    $('#qAgain').onclick=startQuiz;$('#qBack').onclick=()=>select(null);return;}
+  const Q=QUIZ[qi];
+  panel.innerHTML='<div class="quiz"><button class="back" id="qBack">← Kembali ke materi</button><div class="eyebrow">Kuis · Soal '+(qi+1)+' dari '+QUIZ.length+'</div><div class="bar"><i style="width:'+(qi/QUIZ.length*100)+'%"></i></div><p class="q">'+esc(Q.q)+'</p><div class="opts">'+
+   Q.o.map((o,i)=>'<button class="opt" id="opt'+i+'" data-i="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>').join('')+'</div><div class="fb" id="fb"></div></div>';
+  $('#qBack').onclick=()=>select(null);
+  panel.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i;panel.querySelectorAll('.opt').forEach(x=>x.disabled=true);$('#opt'+Q.a).classList.add('ok');
+    if(i===Q.a){qs++;$('#fb').innerHTML='<strong>Benar.</strong> '+esc(Q.e);}else{b.classList.add('no');$('#fb').innerHTML='<strong>Belum tepat.</strong> '+esc(Q.e);}
+    $('#fb').innerHTML+='<br><button class="go" id="qNext">'+(qi+1<QUIZ.length?'Soal berikutnya':'Lihat hasil')+'</button>';
+    $('#qNext').onclick=()=>{qi++;showQ();};});
+}
+$('#aQuiz').onclick=startQuiz;
+$('#partsList').innerHTML=SPOTS.map((s,i)=>'<li><button data-id="'+s.id+'"><b>'+(i+1)+'</b>'+esc(s.name)+'</button></li>').join('');
+$('#partsList').addEventListener('click',e=>{const b=e.target.closest('button');if(b)select(b.dataset.id);});
+renderInfo(OVERVIEW,false);
+
+if(!window.THREE){$('#fallback').textContent='Model 3D tidak dapat dimuat. Pastikan perangkat mendukung WebGL, lalu muat ulang halaman.';return;}
+$('#fallback').remove();
+
+// ---------- landform ----------
+const XL=-12,XR=12,ZE=7,YB=-6,X0=-3,TR=-6.5,DIP=0.38;
+const sm=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t);};
+const lerp=(a,b,t)=>a+(b-a)*t;
+function prof(x){
+  if(x<-8)return -3.3;
+  if(x<TR)return lerp(-3.3,-4.0,sm(-8,TR,x));
+  if(x<0)return -4.0+3.3*sm(TR,0,x);
+  if(x<3)return lerp(-0.7,-0.02,x/3);
+  if(x<4)return lerp(-0.02,0.3,x-3);
+  if(x<8)return lerp(0.3,0.7,(x-4)/4);
+  return lerp(0.7,1.5,(x-8)/4);
+}
+const HILL={x:9.4,z:-3.2};
+function h(x,z){
+  const sx=x+0.35*Math.sin(z*0.55);
+  let y=prof(sx);
+  y+=3.0*Math.exp(-(((x-HILL.x)**2+(z-HILL.z)**2)/(2*1.5*1.5)));
+  if(sx>3.5)y+=0.05*Math.sin(x*2.3)*Math.cos(z*1.9)*sm(3.5,5,sx);
+  if(sx<-1)y+=0.08*Math.sin(x*1.7+z*0.9);
+  return y;
+}
+const slabTop=x=>x<TR?h(x,ZE):-4.0-(x-TR)*DIP;
+const HYPO_Y=slabTop(X0);
+
+const stage=$('#stage');
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+stage.prepend(renderer.domElement);
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(40,1,0.1,300);
+const HOME={p:[13,11,22],t:[0,-0.5,0]};
+camera.position.set(...HOME.p);
+const controls=new THREE.OrbitControls(camera,renderer.domElement);
+controls.target.set(...HOME.t);controls.enableDamping=true;controls.minDistance=5;controls.maxDistance=60;controls.maxPolarAngle=Math.PI*0.6;
+controls.addEventListener('start',()=>{tween=null;$('#hint').hidden=true;});
+scene.add(new THREE.HemisphereLight(0xf3f5f6,0x5a5040,0.72));
+const dl=new THREE.DirectionalLight(0xfff3df,0.8);dl.position.set(10,16,8);scene.add(dl);
+
+// terrain
+const tg=new THREE.PlaneGeometry(24,14,240,140);tg.rotateX(-Math.PI/2);
+const tp=tg.attributes.position;for(let i=0;i<tp.count;i++)tp.setY(i,h(tp.getX(i),tp.getZ(i)));tg.computeVertexNormals();
+const cols=new Float32Array(tp.count*3);tg.setAttribute('color',new THREE.BufferAttribute(cols,3));
+(function(){const t=new THREE.Color(),sand=new THREE.Color(0xd9c690),deep=new THREE.Color(0x384b5c),grass=new THREE.Color(0x86ad5a),hill=new THREE.Color(0x4f7d3e);
+ for(let i=0;i<tp.count;i++){const x=tp.getX(i),y=tp.getY(i),z=tp.getZ(i);
+  if(y<-0.03)t.copy(sand).lerp(deep,Math.min(1,-y/3.4));else if(y<0.32)t.copy(sand);else{t.copy(grass).lerp(hill,sm(0.9,2.6,y));}
+  t.multiplyScalar(0.95+0.05*Math.sin(x*4.1)*Math.cos(z*3.7));cols[i*3]=t.r;cols[i*3+1]=t.g;cols[i*3+2]=t.b;}})();
+scene.add(new THREE.Mesh(tg,new THREE.MeshLambertMaterial({vertexColors:true})));
+
+// geology colors (shared by section and side walls)
+function geo(x,y,s){
+  if(y>s)return y<=0?'water':null;
+  const d=s-y;
+  if(d<0.12)return s<0?[185,167,126]:[120,90,62];
+  const st=slabTop(x);
+  if(x<TR){if(d<0.9)return d<0.18?[70,78,88]:[78,86,98];}
+  else{
+    if(y>st){const b=Math.floor((s-y)/0.55)%2;return b?[164,146,120]:[150,134,110];}
+    if(y>st-0.9)return y>st-0.08?[40,44,52]:[78,86,98];
+  }
+  const m=Math.min(1,(-y-3.5)/3);return [196-m*30,108-m*20,62-m*12];
+}
+function skirt(edge){
+  const pos=[],col=[],idx=[],R=40;
+  edge.forEach(p=>{const s=h(p[0],p[1]);for(let r=0;r<R;r++){const y=lerp(s,YB,r/(R-1));pos.push(p[0],y,p[1]);let c=geo(p[0],y-0.001,s);if(!c||c==='water')c=[90,90,90];col.push(c[0]/255,c[1]/255,c[2]/255);}});
+  for(let i=0;i<edge.length-1;i++)for(let r=0;r<R-1;r++){const a=i*R+r,b=(i+1)*R+r;idx.push(a,b,a+1,b,b+1,a+1);}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));g.setIndex(idx);g.computeVertexNormals();return g;}
+function waterSkirt(edge){const pos=[],idx=[];edge.forEach(p=>{const s=h(p[0],p[1]);pos.push(p[0],Math.min(s,0),p[1],p[0],0,p[1]);});
+  for(let i=0;i<edge.length-1;i++){const a=i*2,b=a+2;idx.push(a,b,a+1,b,b+1,a+1);}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g;}
+const skM=new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.DoubleSide});
+const wM=new THREE.MeshPhongMaterial({color:0x2a7fb0,transparent:true,opacity:.5,side:THREE.DoubleSide,depthWrite:false});
+const eB=[],eL=[],eR=[];for(let i=0;i<=240;i++)eB.push([XL+i*0.1,-ZE]);for(let i=0;i<=140;i++){eL.push([XL,-ZE+i*0.1]);eR.push([XR,-ZE+i*0.1]);}
+[eB,eL,eR].forEach(e=>scene.add(new THREE.Mesh(skirt(e),skM)));
+scene.add(new THREE.Mesh(waterSkirt(eB.filter(p=>p[0]<3.6)),wM));scene.add(new THREE.Mesh(waterSkirt(eL),wM));
+const bot=new THREE.Mesh(new THREE.PlaneGeometry(24,14),new THREE.MeshLambertMaterial({color:0x7a4a30}));bot.rotateX(Math.PI/2);bot.position.y=YB;scene.add(bot);
+
+// front section
+const SW=2048,SY0=2.4,SYS=SY0-YB,SH=Math.round(SW*SYS/24);
+const SX=x=>(x-XL)/24*SW,SYp=y=>(SY0-y)/SYS*SH;
+(function(){
+  const c=document.createElement('canvas');c.width=SW;c.height=SH;const ctx=c.getContext('2d');const img=ctx.createImageData(SW,SH),d=img.data;
+  for(let px=0;px<SW;px++){const x=XL+px/SW*24,s=h(x,ZE);
+    for(let py=0;py<SH;py++){const y=SY0-py/SH*SYS,k=(py*SW+px)*4;let col=geo(x,y,s);
+      if(!col){d[k+3]=0;continue;}
+      if(col==='water'){const f=1-Math.min(0.45,-y*0.1);col=[60*f,140*f,196*f];}
+      const n=0.94+0.06*Math.sin(px*1.1+py*0.8)*Math.cos(py*0.37);d[k]=col[0]*n;d[k+1]=col[1]*n;d[k+2]=col[2]*n;d[k+3]=255;}}
+  ctx.putImageData(img,0,0);
+  // megathrust rupture
+  ctx.strokeStyle='#ff3b2f';ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(SX(-5.2),SYp(slabTop(-5.2)));ctx.lineTo(SX(-1),SYp(slabTop(-1)));ctx.stroke();
+  // epicenter dashed vertical
+  ctx.setLineDash([10,8]);ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(SX(X0),SYp(HYPO_Y));ctx.lineTo(SX(X0),SYp(0));ctx.stroke();ctx.setLineDash([]);
+  // plate motion arrows
+  const arrow=(x1,y1,x2,y2)=>{ctx.strokeStyle='rgba(255,255,255,.9)';ctx.fillStyle='rgba(255,255,255,.9)';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(SX(x1),SYp(y1));ctx.lineTo(SX(x2),SYp(y2));ctx.stroke();
+    const a=Math.atan2(SYp(y2)-SYp(y1),SX(x2)-SX(x1));ctx.beginPath();ctx.moveTo(SX(x2),SYp(y2));ctx.lineTo(SX(x2)-18*Math.cos(a-0.45),SYp(y2)-18*Math.sin(a-0.45));ctx.lineTo(SX(x2)-18*Math.cos(a+0.45),SYp(y2)-18*Math.sin(a+0.45));ctx.fill();};
+  arrow(-11,-3.75,-8.6,-3.75);arrow(-4.8,slabTop(-4.8)-0.45,-3.4,slabTop(-3.4)-0.45);
+  ctx.strokeStyle='rgba(255,255,255,.95)';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(SX(XL),SYp(0));ctx.lineTo(SX(3.2),SYp(0));ctx.stroke();
+  const t=new THREE.CanvasTexture(c);t.anisotropy=4;
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(24,SYS),new THREE.MeshBasicMaterial({map:t,transparent:true,alphaTest:0.5,side:THREE.DoubleSide}));
+  m.position.set(0,(SY0+YB)/2,ZE+0.002);scene.add(m);
+})();
+// seismic wave overlay
+const OW=1024,OH=Math.round(OW*SYS/24),oc=document.createElement('canvas');oc.width=OW;oc.height=OH;const octx=oc.getContext('2d');
+const earthClip=new Path2D();(function(){earthClip.moveTo(0,OH);for(let px=0;px<=OW;px+=4){const x=XL+px/OW*24;earthClip.lineTo(px,(SY0-h(x,ZE))/SYS*OH);}earthClip.lineTo(OW,OH);earthClip.closePath();})();
+const otex=new THREE.CanvasTexture(oc);
+const ov=new THREE.Mesh(new THREE.PlaneGeometry(24,SYS),new THREE.MeshBasicMaterial({map:otex,transparent:true,depthWrite:false}));ov.position.set(0,(SY0+YB)/2,ZE+0.012);ov.visible=false;scene.add(ov);
+function drawWaves(t){octx.clearRect(0,0,OW,OH);if(t<0)return;octx.save();octx.clip(earthClip);
+  const cx=(X0-XL)/24*OW,cy=(SY0-HYPO_Y)/SYS*OH,u=OW/24;
+  [[6,'60,160,255'],[3.5,'255,70,60']].forEach(w=>{for(let k=0;k<3;k++){const r=(t-k*0.35)*w[0]*u;if(r<=0)continue;const a=Math.max(0,1-r/(14*u));
+    octx.strokeStyle='rgba('+w[1]+','+a+')';octx.lineWidth=4-k;octx.beginPath();octx.arc(cx,cy,r,0,6.2832);octx.stroke();}});
+  octx.restore();otex.needsUpdate=true;}
+
+// sea surface
+const SEA_X1=3.8,sNX=220,sNZ=24;
+const seaG=new THREE.PlaneGeometry(SEA_X1-XL,14,sNX,sNZ);seaG.rotateX(-Math.PI/2);seaG.translate((SEA_X1+XL)/2,0,0);
+const seaP=seaG.attributes.position,seaX=new Float32Array(seaP.count),seaZ=new Float32Array(seaP.count);
+for(let i=0;i<seaP.count;i++){seaX[i]=seaP.getX(i);seaZ[i]=seaP.getZ(i);}
+const sea=new THREE.Mesh(seaG,new THREE.MeshPhongMaterial({color:0x2a82b6,transparent:true,opacity:.8,shininess:90,specular:0x9fd0ee}));scene.add(sea);
+const floodG=new THREE.PlaneGeometry(7.6,14,1,1);floodG.rotateX(-Math.PI/2);floodG.translate(6.6,0,0);
+const flood=new THREE.Mesh(floodG,new THREE.MeshPhongMaterial({color:0x6f8f8a,transparent:true,opacity:.85,shininess:40}));flood.visible=false;scene.add(flood);
+
+// houses
+const HN=90,body=new THREE.InstancedMesh(new THREE.BoxGeometry(0.3,0.2,0.34),new THREE.MeshLambertMaterial({color:0xf1ece1}),HN);
+const roofG=new THREE.ConeGeometry(0.26,0.17,4);roofG.rotateY(Math.PI/4);
+const roof=new THREE.InstancedMesh(roofG,new THREE.MeshLambertMaterial({color:0xb6452c}),HN);
+const homes=[];{const m=new THREE.Matrix4(),q=new THREE.Quaternion(),s=new THREE.Vector3(1,1,1),p=new THREE.Vector3();let n=0,g=0;
+ while(n<HN&&g<6000){g++;const x=4.3+Math.random()*3.9,z=-6.6+Math.random()*13.2;
+  if(Math.hypot(x-HILL.x,z-HILL.z)<2.4||Math.hypot(x-6.6,z+4.8)<0.8)continue;if(homes.some(o=>Math.hypot(o[0]-x,o[1]-z)<0.48))continue;
+  const y=h(x,z);q.setFromAxisAngle(new THREE.Vector3(0,1,0),Math.random()*0.5);p.set(x,y+0.1,z);m.compose(p,q,s);body.setMatrixAt(n,m);p.set(x,y+0.285,z);m.compose(p,q,s);roof.setMatrixAt(n,m);homes.push([x,z]);n++;}
+ body.count=roof.count=n;}
+scene.add(body,roof);
+// TES building
+const tes=new THREE.Mesh(new THREE.BoxGeometry(0.8,1.4,0.8),new THREE.MeshLambertMaterial({color:0xd7dde2}));tes.position.set(6.6,h(6.6,-4.8)+0.7,-4.8);scene.add(tes);
+const tesTop=new THREE.Mesh(new THREE.BoxGeometry(0.9,0.06,0.9),new THREE.MeshLambertMaterial({color:0x1d7a4f}));tesTop.position.set(6.6,h(6.6,-4.8)+1.43,-4.8);scene.add(tesTop);
+// mangrove
+(function(){const n=70,mm=new THREE.InstancedMesh(new THREE.SphereGeometry(0.2,8,6),new THREE.MeshLambertMaterial({color:0x2f5a2c}),n);const m=new THREE.Matrix4(),q=new THREE.Quaternion(),s=new THREE.Vector3(),p=new THREE.Vector3();
+ for(let i=0;i<n;i++){const z=1.2+Math.random()*5.6,x=3.05+Math.random()*0.9-0.35*Math.sin(z*0.55),y=Math.max(h(x,z),0)+0.12;const k=0.7+Math.random()*0.6;s.set(k,k*0.75,k);p.set(x,y,z);m.compose(p,q,s);mm.setMatrixAt(i,m);}scene.add(mm);})();
+// siren tower & buoy
+const siren=new THREE.Group();siren.add(new THREE.Mesh(new THREE.CylinderGeometry(0.04,0.05,1.3,8),new THREE.MeshLambertMaterial({color:0x8a8f96})));
+const sh=new THREE.Mesh(new THREE.BoxGeometry(0.24,0.18,0.24),new THREE.MeshLambertMaterial({color:0xe0a800}));sh.position.y=0.7;siren.add(sh);
+siren.position.set(4.6,h(4.6,3.6)+0.65,3.6);scene.add(siren);
+const buoy=new THREE.Group();const bm=new THREE.Mesh(new THREE.CylinderGeometry(0.22,0.26,0.24,12),new THREE.MeshLambertMaterial({color:0xf2c200}));buoy.add(bm);
+const bmast=new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.02,0.5,6),new THREE.MeshLambertMaterial({color:0x444444}));bmast.position.y=0.35;buoy.add(bmast);
+buoy.position.set(-8.5,0.05,2);scene.add(buoy);
+// flag on hill
+const hillTop=new THREE.Vector3(HILL.x,h(HILL.x,HILL.z),HILL.z);
+const pole=new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.02,0.7,6),new THREE.MeshLambertMaterial({color:0x555555}));pole.position.set(hillTop.x+0.35,hillTop.y+0.35,hillTop.z);scene.add(pole);
+const flag=new THREE.Mesh(new THREE.PlaneGeometry(0.34,0.22),new THREE.MeshBasicMaterial({color:0x1d7a4f,side:THREE.DoubleSide}));flag.position.set(hillTop.x+0.52,hillTop.y+0.6,hillTop.z);scene.add(flag);
+// epicenter ring on sea
+const epiRing=new THREE.Mesh(new THREE.RingGeometry(0.25,0.33,40),new THREE.MeshBasicMaterial({color:0xff3b2f,side:THREE.DoubleSide,transparent:true}));epiRing.rotation.x=-Math.PI/2;epiRing.position.set(X0,0.06,ZE-0.6);scene.add(epiRing);
+function dotTex(){const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');const g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,240,200,1)');g.addColorStop(.3,'rgba(255,80,50,.9)');g.addColorStop(1,'rgba(255,60,40,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);}
+const hypo=new THREE.Sprite(new THREE.SpriteMaterial({map:dotTex(),transparent:true,depthWrite:false}));hypo.position.set(X0,HYPO_Y,ZE+0.05);hypo.scale.set(0.7,0.7,1);scene.add(hypo);
+
+// evacuation route
+const ROUTE=[[6.0,1.2],[6.9,0.1],[7.6,-1.1],[8.4,-2.2],[HILL.x,HILL.z]].map(p=>new THREE.Vector3(p[0],h(p[0],p[1])+0.06,p[1]));
+const routeCurve=new THREE.CatmullRomCurve3(ROUTE);
+const routePts=routeCurve.getPoints(80).map(p=>{p.y=h(p.x,p.z)+0.07;return p;});
+const routeLine=new THREE.Line(new THREE.BufferGeometry().setFromPoints(routePts),new THREE.LineDashedMaterial({color:0x1d7a4f,dashSize:0.22,gapSize:0.12,linewidth:2}));routeLine.computeLineDistances();routeLine.visible=false;scene.add(routeLine);
+const arrows=new THREE.Group();for(let i=1;i<6;i++){const t=i/6,p=routeCurve.getPointAt(t),tg2=routeCurve.getTangentAt(t);const a=new THREE.Mesh(new THREE.ConeGeometry(0.09,0.24,8),new THREE.MeshBasicMaterial({color:0x1d7a4f}));
+  a.position.set(p.x,h(p.x,p.z)+0.2,p.z);a.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(tg2.x,0,tg2.z).normalize());arrows.add(a);}arrows.visible=false;scene.add(arrows);
+// agents
+const AN=40,agents=new THREE.InstancedMesh(new THREE.SphereGeometry(0.06,8,6),new THREE.MeshBasicMaterial({color:0xff7a1a}),AN);
+const AG=[];for(let i=0;i<AN;i++){const hm=homes[Math.floor(Math.random()*homes.length)]||[6,0];AG.push({sx:hm[0]+0.2,sz:hm[1]+0.2,d:Math.random()*1.2,tesBound:hm[1]<-3&&Math.random()<0.6,u:0,phase:0});}
+const am=new THREE.Matrix4();function placeAgents(t,start){
+  AG.forEach((a,i)=>{let x=a.sx,z=a.sz,y;const tt=t-start-a.d;
+    if(tt>0){const v=1.35;let dist=tt*v;const target=a.tesBound?new THREE.Vector3(6.6,0,-4.8):ROUTE[0];
+      const d0=Math.hypot(target.x-a.sx,target.z-a.sz);
+      if(dist<d0){x=a.sx+(target.x-a.sx)*dist/d0;z=a.sz+(target.z-a.sz)*dist/d0;}
+      else if(a.tesBound){x=6.6+(i%3-1)*0.18;z=-4.8+((i>>2)%3-1)*0.18;y=h(6.6,-4.8)+1.52;}
+      else{const L=routeCurve.getLength(),u=Math.min(1,(dist-d0)/L),p=routeCurve.getPointAt(u);x=p.x+(u>=1?((i%5)-2)*0.12:0);z=p.z+(u>=1?((i>>3)%3-1)*0.12:0);}}
+    if(y===undefined)y=h(x,z)+0.07;am.makeTranslation(x,y,z);agents.setMatrixAt(i,am);});agents.instanceMatrix.needsUpdate=true;}
+placeAgents(0,99);scene.add(agents);
+
+// labels
+const labelsEl=$('#labels');
+function tag(text,pos,group,cls){const e=document.createElement('div');e.className='tagl'+(cls?' '+cls:'');e.textContent=text;e.hidden=true;labelsEl.appendChild(e);return {e,v:new THREE.Vector3(...pos),group};}
+const TAGS=[tag('Lempeng Indo-Australia',[-9.8,-3.4,ZE+0.05],'sec'),tag('Lempeng Eurasia',[6,-2.4,ZE+0.05],'sec'),tag('Mantel',[-9.6,-5.2,ZE+0.05],'sec'),
+ tag('Palung',[TR,-3.55,ZE+0.05],'sec'),tag('Bidang megathrust',[-1.6,slabTop(-1.6)+0.35,ZE+0.05],'sec'),tag('Episentrum',[X0,0.45,ZE+0.05],'sec'),tag('Hiposentrum',[X0+1.15,HYPO_Y-0.05,ZE+0.05],'sec'),
+ tag('Titik kumpul (bukit)',[hillTop.x,hillTop.y+1.0,hillTop.z],'evac','safe'),tag('TES (gedung evakuasi)',[6.6,h(6.6,-4.8)+2.0,-4.8],'evac','safe'),tag('Jalur evakuasi',[7.3,h(7.3,-0.7)+0.55,-0.7],'evac','safe'),
+ tag('Sirene',[4.6,h(4.6,3.6)+1.6,3.6],'evac'),tag('Hutan mangrove',[3.3,0.9,5.2],'evac')];
+
+// hotspots
+const SP={hipo:[X0,HYPO_Y,ZE+0.06],epi:[X0,0.2,ZE-0.6],palung:[TR,-3.9,ZE+0.06],gelombang:[-1.2,0.35,-1],pantai:[3.4,0.35,0.5],evak:[hillTop.x,hillTop.y+0.35,hillTop.z],ews:[-8.5,0.55,2]};
+const CAM={hipo:[[-2,-2.2,15],[-3,-3.6,ZE]],epi:[[-1,4,15],[-3,-1.5,ZE]],palung:[[-6,-2,15],[-6.5,-3.6,ZE]],gelombang:[[3,7,14],[-1,0,0]],pantai:[[8,4,8],[3.2,0,0.5]],evak:[[13,8,7],[8,1.2,-2]],ews:[[-3,4,10],[-6.5,0,2.5]]};
+SPOTS.forEach((s,i)=>{s.v=new THREE.Vector3(...SP[s.id]);const b=document.createElement('button');b.className='hs';b.textContent=i+1;b.setAttribute('aria-label',s.name);b.onclick=()=>select(s.id);labelsEl.appendChild(b);s.el=b;});
+
+// ---------- simulation ----------
+let tween=null,sim=null;
+const banner=$('#banner');
+function showBanner(txt,sub,cls){banner.className='banner'+(cls?' '+cls:'');banner.innerHTML=esc(txt)+(sub?'<small>'+esc(sub)+'</small>':'');banner.hidden=false;}
+function fly(p,t){tween={t:0,p0:camera.position.clone(),t0:controls.target.clone(),p1:new THREE.Vector3(...p),t1:new THREE.Vector3(...t)};tween.p1.sub(tween.t1).multiplyScalar(fitK()).add(tween.t1);}
+function fitK(){return Math.max(1,Math.pow(1.45/camera.aspect,0.7));}
+function setBtn(id,on){$(id).setAttribute('aria-pressed',on?'true':'false');}
+function highlight(id){SPOTS.forEach(s=>s.el.classList.toggle('on',s.id===id));document.querySelectorAll('#partsList button').forEach(b=>b.classList.toggle('on',b.dataset.id===id));}
+function resetSim(){sim=null;ov.visible=false;flood.visible=false;banner.hidden=true;placeAgents(0,99);for(let i=0;i<seaP.count;i++)seaP.setY(i,0);seaP.needsUpdate=true;}
+function setMode(m){mode=m;setBtn('#aQuake',m==='quake');setBtn('#aTsu',m==='tsu');setBtn('#aEvac',m==='evac');
+  const ev=m==='evac'||m==='tsu';routeLine.visible=arrows.visible=ev;if(m!=='quake'&&m!=='tsu')resetSim();}
+
+const QUAKE={eyebrow:'Simulasi · Gempa tektonik',name:'Saat Lempeng Bergeser',tag:'Energi menjalar sebagai gelombang seismik',
+ desc:'Lempeng Indo-Australia yang terkunci di bidang megathrust tiba-tiba bergeser. Lingkaran pada penampang menunjukkan gelombang seismik yang menjalar dari hiposentrum ke segala arah.',
+ facts:[['Gelombang P (primer)','Tercepat, ± 6 km/detik di kerak'],['Gelombang S (sekunder)','Lebih lambat, tidak melewati zat cair'],['Gelombang permukaan','Paling lambat, paling merusak']],
+ tahu:'Selisih waktu tibanya gelombang P dan S di seismograf dipakai untuk menghitung jarak stasiun ke episentrum.'};
+const TSU={eyebrow:'Simulasi · Tsunami dekat pantai',name:'Dari Gempa ke Tsunami',tag:'Waktu emas untuk menyelamatkan diri',
+ desc:'Dasar laut di atas bidang megathrust terangkat dan mendorong air laut. Gelombang menjalar ke dua arah. Ikuti jamnya: warga yang langsung mengungsi sampai di bukit dan gedung TES sebelum gelombang tiba.',
+ flowT:'Urutan kejadian',flow:['Gempa kuat mengguncang (menit ke-0)','BMKG mengeluarkan peringatan dini (± menit ke-5)','Warga mengungsi ke bukit dan gedung TES','Air laut tiba-tiba surut di pantai','Tsunami menerjang daratan rendah','Tetap di tempat tinggi, gelombang bisa datang lagi']};
+const STAGE_T=[0,2.5,3.2,8.3,10.4,15];
+function startSim(withTsu){resetSim();sim={t:0,tsu:withTsu,xc1:X0,xc2:X0,flood:0,stage:-1};ov.visible=true;}
+function showQuake(){current=null;highlight(null);
+  renderInfo(QUAKE,true,'<div class="live"><div class="eyebrow">Penampang · Gelombang seismik</div><div class="legend"><span><i style="background:#3ca0ff"></i>Gelombang P</span><span><i style="background:#ff463c"></i>Gelombang S</span></div><button class="go alt" id="pAgain">Ulangi getaran</button> <button class="go" id="pNext">Lanjut ke tsunami</button></div>');
+  $('#pAgain').onclick=()=>startSim(false);$('#pNext').onclick=()=>$('#aTsu').click();}
+function showTsu(){current=null;highlight(null);
+  renderInfo(TSU,true,'<div class="live"><div class="eyebrow">Waktu sejak gempa</div><div class="clock" id="tClock">00<span>menit</span></div><p class="note">Waktu dipercepat. Contoh untuk tsunami yang sumbernya dekat pantai.</p><button class="go alt" id="pAgain">Ulangi simulasi</button></div>');
+  $('#pAgain').onclick=()=>startSim(true);liveFn=updTsu;}
+function updTsu(){if(!sim)return;const c=$('#tClock');if(!c)return;c.innerHTML=String(Math.min(60,Math.round(sim.t*2))).padStart(2,'0')+'<span>menit</span>';
+  const fl=$('#flow');if(!fl)return;[...fl.children].forEach((li,i)=>{li.classList.toggle('now',i===sim.stage);li.classList.toggle('done',i<sim.stage);});}
+
+$('#aQuake').onclick=()=>{if(mode==='quake'){setMode(null);select(null);return;}setMode('quake');showQuake();fly([-1.5,-1,19],[-2.5,-2.6,ZE]);startSim(false);};
+$('#aTsu').onclick=()=>{if(mode==='tsu'){setMode(null);select(null);return;}setMode('tsu');showTsu();fly([5,9,20],[0.5,0,0]);startSim(true);};
+const EVAC={eyebrow:'Mitigasi · Kesiapsiagaan',name:'Rencana Evakuasi',tag:'Tahu ke mana harus lari sebelum bencana',
+ desc:'Garis hijau putus-putus menunjukkan jalur evakuasi dari permukiman pesisir ke bukit. Warga di sisi selatan menuju gedung TES karena lebih dekat.',tahu:'Siapkan tas siaga bencana: air minum, makanan ringan, obat-obatan, senter, peluit, salinan dokumen penting, dan pakaian ganti.'};
+function showEvac(){current=null;highlight(null);
+  renderInfo(EVAC,true,null,'<h2>Saat gempa terjadi</h2><ul class="check"><li>Lindungi kepala, berlindung di bawah meja yang kuat</li><li>Jauhi kaca, lemari, dan benda yang bisa jatuh</li><li>Setelah guncangan berhenti, keluar dengan tenang lewat tangga, bukan lift</li></ul>'+
+   '<h2>Jika berada di pesisir</h2><ul class="check"><li>Jangan menunggu sirene bila gempa terasa kuat atau lama</li><li>Ikuti rambu jalur evakuasi menuju bukit atau gedung TES</li><li>Berjalan kaki atau bersepeda, hindari kemacetan kendaraan</li><li>Bertahan di tempat tinggi sampai dinyatakan aman</li></ul>');}
+$('#aEvac').onclick=()=>{if(mode==='evac'){setMode(null);select(null);return;}setMode('evac');showEvac();fly([13,9,9],[7.5,1,-1.5]);};
+
+function select(id,keepCam){
+  current=id;highlight(id);liveFn=null;
+  if(!id){if(mode)setMode(null);renderInfo(OVERVIEW,false);if(!keepCam)fly(HOME.p,HOME.t);return;}
+  const s=SPOTS.find(x=>x.id===id);
+  if(s.evac){if(mode!=='evac')setMode('evac');}else if(mode)setMode(null);
+  renderInfo(s,true);if(!keepCam)fly(CAM[id][0],CAM[id][1]);
+}
+$('#aFull').onclick=()=>{try{if(document.fullscreenElement)document.exitFullscreen();else stage.requestFullscreen().catch(()=>{});}catch(e){}};
+function applyTheme(){const v=getComputedStyle(document.documentElement).getPropertyValue('--stage').trim()||'#dde3e6';renderer.setClearColor(new THREE.Color(v));}
+applyTheme();try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyTheme);}catch(e){}
+new MutationObserver(applyTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+function resize(){const w=stage.clientWidth,hh=stage.clientHeight;renderer.setSize(w,hh,false);camera.aspect=w/hh;camera.updateProjectionMatrix();}
+new ResizeObserver(resize).observe(stage);resize();
+
+const G=(x,w)=>Math.exp(-(x*x)/(2*w*w));
+const depth=x=>Math.max(0.04,-prof(x));
+const D0=depth(X0);
+const shoal=x=>Math.min(3.2,Math.pow(D0/depth(x),0.25));
+const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function stepSim(dt){
+  const s=sim;s.t+=dt;const t=s.t;
+  // stages + banners
+  let st=0;for(let i=0;i<STAGE_T.length;i++)if(t>=STAGE_T[i])st=i;
+  if(st!==s.stage){s.stage=st;
+    if(!s.tsu){if(st===0)showBanner('Gempa M 8,0 · kedalaman 25 km','Gelombang seismik menjalar dari hiposentrum');}
+    else{const B=[['Gempa M 8,0 · kedalaman 25 km','Pusat gempa di laut, dekat zona subduksi'],['Peringatan dini tsunami','BMKG: segera menjauhi pantai'],['Warga mengungsi ke tempat tinggi','Ikuti jalur evakuasi'],['Air laut tiba-tiba surut','Tanda alam: tsunami akan datang'],['Tsunami menerjang pesisir','Daratan rendah tergenang'],['Warga selamat di bukit dan gedung TES','Tunggu pernyataan aman dari BMKG/BPBD']];
+      showBanner(B[st][0],B[st][1],st===5?'ok':st===2?'info':'');}}
+  if(t<4.5)drawWaves(t);else if(ov.visible){drawWaves(-1);ov.visible=false;}
+  hypo.scale.setScalar(t<3?0.7+0.4*Math.abs(Math.sin(t*14)):0.7);
+  epiRing.scale.setScalar(t<4?1+t*3:1);epiRing.material.opacity=t<4?Math.max(0.2,1-t/4):1;
+  if(!s.tsu){if(t>6){banner.hidden=true;sim=null;}return;}
+  // tsunami surface
+  const H=0.55*sm(1,2.2,t);
+  if(t>2.4){s.xc1+=0.8*Math.sqrt(Math.max(0.35,depth(s.xc1)))*dt;s.xc2-=0.8*Math.sqrt(depth(s.xc2))*dt;}
+  const split=sm(2.2,3.2,t);
+  for(let i=0;i<seaP.count;i++){const x=seaX[i];let e;
+    if(t<=2.4)e=H*G(x-X0,1.4);
+    else{const w1=0.6+0.5*Math.sqrt(depth(s.xc1)),A1=0.27*shoal(x);
+      e=(1-split)*H*G(x-X0,1.4)+split*(A1*(G(x-s.xc1,w1)-0.5*G(x-(s.xc1+1.5),0.85))+0.27*G(x-s.xc2,1.3));
+      if(s.xc1>3.0)e*=Math.max(0,1-(s.xc1-3)*0.6);}
+    seaP.setY(i,e+0.01*Math.sin(seaZ[i]*1.3+t*2));}
+  seaP.needsUpdate=true;seaG.computeVertexNormals();
+  if(s.xc1>2.6&&!s.fl0){s.fl0=t;}
+  if(s.fl0){const u=t-s.fl0;s.flood=u<1.6?1.25*sm(0,1.6,u):u<4?1.25:1.25*(1-sm(4,7,u));flood.visible=s.flood>0.02;flood.position.y=s.flood;}
+  placeAgents(t,3.0);
+  if(t>24){banner.hidden=true;}
+}
+
+const clock=new THREE.Clock(),tv=new THREE.Vector3(),jit=new THREE.Vector3();
+function proj(v,el){tv.copy(v).project(camera);const w=stage.clientWidth,hh=stage.clientHeight;const hide=tv.z>1||Math.abs(tv.x)>1.05||Math.abs(tv.y)>1.05;el.hidden=hide;
+  if(!hide){el.style.left=((tv.x*.5+.5)*w)+'px';el.style.top=((-tv.y*.5+.5)*hh)+'px';}}
+let liveT=0;
+function loop(){
+  requestAnimationFrame(loop);
+  const dt=Math.min(clock.getDelta(),0.05),T=clock.elapsedTime;
+  if(tween){tween.t=Math.min(1,tween.t+dt/1.1);const e=1-Math.pow(1-tween.t,3);camera.position.lerpVectors(tween.p0,tween.p1,e);controls.target.lerpVectors(tween.t0,tween.t1,e);if(tween.t>=1)tween=null;}
+  controls.update();
+  if(sim)stepSim(dt);
+  else{for(let i=0;i<seaP.count;i+=1)seaP.setY(i,0.02*Math.sin(seaX[i]*1.8+T*1.4)+0.015*Math.cos(seaZ[i]*1.5+T));seaP.needsUpdate=true;}
+  buoy.position.y=0.05+0.03*Math.sin(T*2);
+  sh.material.color.setHex(sim&&sim.tsu&&sim.t>2.5&&sim.t<16&&Math.floor(T*4)%2?0xff3b2f:0xe0a800);
+  jit.set(0,0,0);if(sim&&sim.t<3&&!REDUCED){const k=0.12*(1-sim.t/3);jit.set((Math.random()-.5)*k,(Math.random()-.5)*k,(Math.random()-.5)*k);}
+  camera.position.add(jit);
+  renderer.render(scene,camera);
+  SPOTS.forEach(s=>{if(mode==='quake'||mode==='tsu'){s.el.hidden=true;return;}proj(s.v,s.el);});
+  const secOn=mode==='quake'||['hipo','epi','palung'].includes(current);
+  TAGS.forEach(t=>{const on=t.group==='sec'?secOn:(mode==='evac'||(mode==='tsu'&&t.e.textContent.startsWith('Titik')));if(!on){t.e.hidden=true;return;}proj(t.v,t.e);});
+  camera.position.sub(jit);
+  liveT+=dt;if(liveFn&&liveT>0.15){liveT=0;liveFn();}
+}
+camera.position.sub(controls.target).multiplyScalar(fitK()).add(controls.target);
+loop();
+})();
+</script>
+
+
+<style>.embed .top{display:none}</style>
+<script>if(/[?&]embed=1/.test(location.search))document.body.classList.add("embed");</script>
+</body></html>

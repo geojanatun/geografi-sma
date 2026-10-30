@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Glosarium Geografi A–Z | Geografi SMA</title>
+  <meta name="description" content="Glosarium istilah geografi SMA Kelas X–XII Kurikulum Merdeka dari A sampai Z, lengkap dengan pencarian cepat dan filter huruf.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- ===== EDIT DI SINI: nama website ===== -->
+      <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="kelas-x.html">Kelas X</a></li>
+          <li><a href="kelas-xi.html">Kelas XI</a></li>
+          <li><a href="kelas-xii.html">Kelas XII</a></li>
+          <li><a href="lab-3d.html">Lab 3D</a></li>
+          <li><a href="glosarium.html" aria-current="page">Glosarium</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari</label>
+          <input type="search" id="cari-modul" placeholder="Cari…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== KONTEN UTAMA ==================== -->
+  <main id="konten">
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Beranda</a></li>
+          <li><span aria-current="page">Glosarium</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-header">
+        <span class="eyebrow">Kamus Istilah</span>
+        <h1>📖 Glosarium Geografi</h1>
+        <!-- ===== EDIT DI SINI: kalimat pengantar ===== -->
+        <p class="subtitle">
+          Kumpulan istilah penting geografi Kelas X–XII. Ketik kata kunci atau
+          pilih huruf awal untuk menemukan istilah dengan cepat.
+        </p>
+      </header>
+
+      <!-- Alat pencarian & filter (muncul jika JavaScript aktif) -->
+      <section id="alat-glosarium" class="glossary-tools" aria-label="Pencarian dan filter istilah" hidden>
+        <div class="glossary-search">
+          <label for="cari-istilah">Cari istilah atau kata dalam definisi</label>
+          <div class="glossary-search-row">
+            <input type="search" id="cari-istilah" placeholder="Contoh: tsunami, kontur, wilayah…" autocomplete="off">
+            <button type="button" class="btn btn-outline" id="reset-glosarium" hidden>✖ Atur ulang</button>
+          </div>
+        </div>
+
+        <div class="glossary-index" id="filter-huruf" role="group" aria-label="Filter huruf awal"></div>
+
+        <p class="glossary-count" id="jumlah-istilah" aria-live="polite"></p>
+      </section>
+
+      <!-- Fallback bila JavaScript nonaktif -->
+      <noscript>
+        <div class="box box-info">
+          <p>
+            ⚠️ JavaScript di browser Anda nonaktif. Daftar istilah glosarium
+            membutuhkan JavaScript untuk ditampilkan. Silakan aktifkan JavaScript
+            pada pengaturan browser, lalu muat ulang halaman ini.
+          </p>
+        </div>
+      </noscript>
+
+      <!-- Daftar istilah diisi otomatis dari js/glosarium-data.js -->
+      <!-- ===== EDIT DI SINI: tambah/ubah istilah di file js/glosarium-data.js, BUKAN di sini ===== -->
+      <div id="daftar-istilah" class="glossary-results"></div>
+
+      <div class="no-results" id="istilah-kosong">
+        <p>🔍 Istilah tidak ditemukan. Coba kata kunci lain atau pilih <strong>Semua</strong>.</p>
+      </div>
+
+      <p class="back-to-top"><a href="#konten">↑ Kembali ke atas</a></p>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <!-- ===== EDIT DI SINI: nama & deskripsi website ===== -->
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="glosarium.html">Glosarium</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah & tahun ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="js/main.js"></script>
+  <script src="js/glosarium-data.js"></script>
+  <script src="js/glosarium.js"></script>
+</body>
+</html>

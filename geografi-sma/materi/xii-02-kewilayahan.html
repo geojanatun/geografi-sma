@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== EDIT DI SINI: judul tab & deskripsi untuk mesin pencari ===== -->
+  <title>Kewilayahan dan Pembangunan — Kelas XII | Geografi SMA</title>
+  <meta name="description" content="Modul 2 Geografi Kelas XII (Fase F): Bagaimana wilayah dibentuk, mengapa ada pusat pertumbuhan, dan bagaimana mengukur keberhasilan pembangunan. Dilengkapi rangkuman, latihan soal interaktif, dan tugas proyek.">
+
+  <!-- Terapkan tema gelap/terang sebelum halaman tampil (mencegah kedip) -->
+  <script>
+    try {
+      var t = localStorage.getItem("geografi-tema");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<!-- ===== EDIT DI SINI: kode modul (data-modul) & kelas (data-kelas) =====
+     data-modul harus SAMA dengan kode di js/main.js dan di kartu kelas-xii.html -->
+<body data-modul="xii-02" data-kelas="xii">
+
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+
+  <!-- ==================== 1. HEADER & NAVIGASI ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">🌍</span>
+        <span>Geografi SMA</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="menu-utama" aria-label="Buka menu">☰</button>
+
+      <nav class="main-nav" id="menu-utama" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-x.html">Kelas X</a></li>
+          <li><a href="../kelas-xi.html">Kelas XI</a></li>
+          <li><a href="../kelas-xii.html" aria-current="page">Kelas XII</a></li>
+          <li><a href="../lab-3d.html">Lab 3D</a></li>
+          <li><a href="../glosarium.html">Glosarium</a></li>
+          <li><a href="../tentang.html">Tentang</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="cari-modul" class="sr-only">Cari modul</label>
+          <input type="search" id="cari-modul" placeholder="Cari modul…" autocomplete="off">
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../kelas-xii.html">Kelas XII</a></li>
+          <!-- ===== EDIT DI SINI: nama modul ===== -->
+          <li><span aria-current="page">Kewilayahan dan Pembangunan</span></li>
+        </ol>
+      </nav>
+
+      <article class="content-narrow">
+
+        <!-- ===== EDIT DI SINI: judul & identitas modul ===== -->
+        <header class="page-header">
+          <span class="eyebrow">Kelas XII · Modul 2</span>
+          <h1>🏗️ Kewilayahan dan Pembangunan</h1>
+          <p class="subtitle">
+            Bagaimana wilayah dibentuk, mengapa ada pusat pertumbuhan, dan bagaimana mengukur keberhasilan pembangunan.
+          </p>
+          <ul class="module-meta">
+            <li>⏱️ ± 4 × 45 menit</li>
+            <li>📚 Fase F</li>
+          </ul>
+        </header>
+
+        <!-- ==================== 2. CP & TP ==================== -->
+        <section class="box box-cp" aria-labelledby="judul-cp">
+          <h2 id="judul-cp" class="box-title">🎯 Capaian &amp; Tujuan Pembelajaran</h2>
+
+          <h3>Capaian Pembelajaran</h3>
+<!-- ===== EDIT DI SINI: CP, TP, dan ATP bersumber dari ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP).
+               "pendukung" = modul ini menjadi landasan/pendukung ATP tersebut. ===== -->
+          <ul class="cp-elemen">
+            <li><strong>Elemen 1: Wilayah tempat tinggal dan lingkungan sekitar</strong><br><span class="cp-sub">Karakteristik fisik dan sosial wilayah</span> — Menjelaskan karakteristik wilayah berdasarkan informasi spasial.</li>
+            <li><strong>Elemen 2: Proses yang memengaruhi lingkungan fisik dan sosial</strong><br><span class="cp-sub">Faktor yang berpengaruh dalam lingkungan sosial</span> — Menerapkan indikator-indikator keberhasilan Pembangunan untuk pengembangan wilayah</li>
+          </ul>
+          <p class="cp-source"><small>Sumber: ATP Geografi TKA MAN 3 Bogor (5 elemen, 20 pertemuan, 60 JP)</small></p>
+
+          <h3>Tujuan Pembelajaran (ATP)</h3>
+          <ol class="tp-list">
+            <li><span class="atp-kode">ATP 2.1</span> Peserta didik mampu menerapkan indikator-indikator keberhasilan pembangunan (IPM, pertumbuhan ekonomi, kelestarian lingkungan) dalam pengembangan wilayah.</li>
+            <li><span class="atp-kode atp-pendukung">ATP 1.1 · pendukung</span> Peserta didik mampu menjelaskan karakteristik fisik dan sosial suatu wilayah berdasarkan peta dan informasi spasial secara cermat.</li>
+          </ol>
+
+          <h3>Indikator Ketercapaian Modul</h3>
+          <p>Setelah mempelajari modul ini, kamu diharapkan dapat:</p>
+          <ol>
+            <li>membedakan wilayah formal dan wilayah fungsional;</li>
+            <li>menganalisis teori pusat pertumbuhan dan menerapkannya pada contoh wilayah di Indonesia;</li>
+            <li>menjelaskan indikator keberhasilan pembangunan dan upaya mengatasi ketimpangan wilayah.</li>
+          </ol>
+        </section>
+
+        <!-- Daftar isi modul -->
+        <nav class="toc" aria-labelledby="judul-toc">
+          <h2 id="judul-toc">Isi Modul</h2>
+          <ol>
+            <li><a href="#pretest">Pretest</a></li>
+            <li><a href="#wilayah">Konsep Wilayah</a></li>
+            <li><a href="#pusat">Teori Pusat Pertumbuhan</a></li>
+            <li><a href="#indikator">Indikator Pembangunan</a></li>
+            <li><a href="#ketimpangan">Ketimpangan Wilayah</a></li>
+            <li><a href="#rangkuman">Rangkuman</a></li>
+            <li><a href="#latihan">Posttest</a></li>
+            <li><a href="#tugas">Tugas Proyek</a></li>
+          </ol>
+        </nav>
+
+        <!-- PRETEST-MULAI -->
+        <!-- ==================== PRETEST (sebelum materi) ====================
+             ===== EDIT DI SINI: SOAL PRETEST =====
+             Format sama dengan soal posttest di bagian bawah halaman.
+             data-simpan="pertama" = nilai percobaan pertama disimpan sebagai pembanding posttest. -->
+        <section class="quiz quiz-pretest" id="pretest" aria-labelledby="judul-pretest" data-kuis="xii-02-pre" data-simpan="pertama">
+          <h2 id="judul-pretest" class="box-title">🧭 Pretest: Cek Kemampuan Awal</h2>
+          <p>Kerjakan <strong>5 soal</strong> ini <strong>sebelum</strong> membaca materi. Jawab sejujurnya tanpa melihat materi;
+            nilai pretest dipakai untuk melihat seberapa besar kemajuanmu setelah mengerjakan posttest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>1. Bagian permukaan bumi yang memiliki ciri khas tertentu sehingga berbeda dengan daerah lain disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-p1" value="a"> negara</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p1" value="b"> kota</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p1" value="c"> pulau</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p1" value="d"> wilayah</label></li>
+            </ul>
+            <p class="quiz-feedback">Wilayah adalah area dengan ciri khas yang membedakannya dari area lain.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Daerah di sekitar kota yang memasok kebutuhan kota disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-p2" value="a"> hinterland</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p2" value="b"> CBD</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p2" value="c"> enklave</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p2" value="d"> metropolis</label></li>
+            </ul>
+            <p class="quiz-feedback">Hinterland adalah daerah belakang/penyangga yang berhubungan dengan pusat.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>3. Singkatan IPM adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-p3" value="a"> Indeks Pendapatan Masyarakat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p3" value="b"> Indeks Pembangunan Manusia</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p3" value="c"> Ikatan Pembangunan Masyarakat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p3" value="d"> Indeks Penduduk Miskin</label></li>
+            </ul>
+            <p class="quiz-feedback">IPM = Indeks Pembangunan Manusia.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>4. Kawasan yang diberi fasilitas khusus untuk menarik investasi dan menumbuhkan ekonomi disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-p4" value="a"> taman nasional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p4" value="b"> Kawasan Ekonomi Khusus (KEK)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p4" value="c"> cagar budaya</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p4" value="d"> hutan lindung</label></li>
+            </ul>
+            <p class="quiz-feedback">KEK dikembangkan sebagai pusat pertumbuhan ekonomi.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>5. Perbedaan tingkat kemajuan antara satu wilayah dan wilayah lain disebut …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-p5" value="a"> pemerataan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p5" value="b"> aglomerasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p5" value="c"> interaksi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-p5" value="d"> ketimpangan wilayah</label></li>
+            </ul>
+            <p class="quiz-feedback">Ketimpangan wilayah adalah perbedaan tingkat pembangunan antarwilayah.</p>
+          </fieldset>
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+          <p class="quiz-lanjut"><a class="btn btn-outline" href="#materi-mulai">📖 Lanjut ke materi</a></p>
+        </section>
+        <!-- PRETEST-SELESAI -->
+
+        <!-- ==================== 3. KONTEN MATERI ==================== -->
+        <!-- ===== EDIT DI SINI: ISI MATERI =====
+             Gunakan <h2> untuk subbab, <h3> untuk bagian kecil, <p> untuk paragraf.
+             Tautkan istilah ke glosarium: <a href="../glosarium.html?cari=istilah">istilah</a>
+             Jika menambah <h2 id="...">, tambahkan juga tautannya di "Isi Modul" di atas. -->
+        <div class="materi" id="materi-mulai">
+
+          <h2 id="wilayah">A. Konsep Wilayah</h2>
+          <ul>
+            <li><a href="../glosarium.html?cari=wilayah%20formal"><strong>Wilayah formal</strong></a> (seragam): ditandai kesamaan ciri tertentu, misalnya wilayah iklim, wilayah pertanian padi, atau wilayah berbahasa Sunda.</li>
+            <li><a href="../glosarium.html?cari=fungsional"><strong>Wilayah fungsional</strong></a> (nodal): terbentuk karena hubungan fungsional antara pusat dan daerah sekitarnya (<em>hinterland</em>), misalnya Jakarta dengan Bodetabek.</li>
+          </ul>
+          <p>
+            <strong>Perwilayahan</strong> (regionalisasi) adalah usaha membagi permukaan bumi menjadi wilayah-wilayah
+            tertentu untuk tujuan tertentu, misalnya pembagian wilayah administrasi, daerah aliran sungai, atau wilayah
+            pembangunan.
+          </p>
+
+          <h2 id="pusat">B. Teori Pusat Pertumbuhan</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Teori-teori pusat pertumbuhan</caption>
+              <thead><tr><th scope="col">Teori</th><th scope="col">Gagasan utama</th></tr></thead>
+              <tbody>
+                <tr><td>Kutub pertumbuhan (Perroux)</td><td>Pembangunan tidak terjadi merata, tetapi muncul di titik-titik tertentu dengan industri unggulan, lalu menyebar ke sekitarnya.</td></tr>
+                <tr><td>Tempat sentral (Christaller)</td><td>Pusat pelayanan membentuk pola heksagonal; jumlah dan jangkauan pelayanan diatur oleh prinsip pasar (k = 3), transportasi (k = 4), dan administrasi (k = 7).</td></tr>
+                <tr><td>Titik henti (Reilly)</td><td>Menentukan batas pengaruh dua pusat kegiatan berdasarkan jarak dan jumlah penduduknya; berguna untuk menentukan lokasi pasar atau fasilitas.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Rumus titik henti: <strong>DAB = dAB ÷ (1 + √(PB ÷ PA))</strong>, dengan DAB adalah jarak titik henti dari
+            kota A, dAB jarak kedua kota, PA penduduk kota A, dan PB penduduk kota B. Titik henti selalu lebih dekat ke
+            kota yang penduduknya lebih sedikit.
+          </p>
+          <p>
+            Di Indonesia, konsep pusat pertumbuhan diterapkan antara lain melalui <strong>Kawasan Ekonomi Khusus (KEK)</strong>
+            dan kawasan strategis nasional.
+          </p>
+
+
+
+
+
+
+          <!-- MEDIA-MULAI xii-02-1 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="pilih" id="media-xii02-christaller">
+            <span class="media-label">🖼️ Diagram Interaktif</span>
+            <h3>Pola Heksagonal Teori Tempat Sentral (Christaller)</h3>
+            <p>Klik setiap prinsip dan perhatikan letak pusat-pusat kecil (hijau) terhadap batas heksagon kota pusat (oranye).</p>
+            <div class="media-kontrol"><button type="button" class="pilih" data-pilih="k3" aria-pressed="true">k = 3 (prinsip pasar)</button><button type="button" class="pilih" data-pilih="k4" aria-pressed="false">k = 4 (prinsip transportasi)</button><button type="button" class="pilih" data-pilih="k7" aria-pressed="false">k = 7 (prinsip administrasi)</button></div>
+            <figure class="media" data-tampil="k3">
+              <svg viewBox="0 0 640 330" role="img" aria-label="Pola heksagonal Christaller k = 3 (prinsip pasar)"><polygon points="320.0,170.0 260.0,273.9 140.0,273.9 80.0,170.0 140.0,66.1 260.0,66.1" style="fill:var(--svg-langit);stroke:var(--warna-primer);stroke-width:3"/><circle cx="320.0" cy="170.0" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="260.0" cy="273.9" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="140.0" cy="273.9" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="80.0" cy="170.0" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="140.0" cy="66.1" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="260.0" cy="66.1" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="200" cy="170" r="14" style="fill:var(--svg-aksen);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="420" cy="80" r="12" class="f-aksen"/><text x="440" y="85">kota pusat (orde tinggi)</text><circle cx="420" cy="115" r="8" class="f-vegetasi"/><text x="440" y="120">pusat orde lebih rendah</text><line x1="408" y1="150" x2="432" y2="150" style="stroke:var(--warna-primer);stroke-width:3"/><text x="440" y="155">batas wilayah pelayanan</text>
+                <text x="408" y="215" class="t-tebal">k = 3 (prinsip pasar)</text><text x="408" y="245" class="t-kecil">Jumlah wilayah yang dilayani:</text><text x="408" y="268" class="t-tebal">1 + 6 × ⅓ = 3</text></svg>
+              <figcaption>Pusat-pusat kecil berada di <strong>sudut</strong> heksagon. Tiap pusat kecil dilayani tiga kota besar sekaligus, sehingga jarak ke pasar sependek mungkin bagi penduduk.</figcaption>
+            </figure>
+            <figure class="media" data-tampil="k4" hidden>
+              <svg viewBox="0 0 640 330" role="img" aria-label="Pola heksagonal Christaller k = 4 (prinsip transportasi)"><polygon points="320.0,170.0 260.0,273.9 140.0,273.9 80.0,170.0 140.0,66.1 260.0,66.1" style="fill:var(--svg-langit);stroke:var(--warna-primer);stroke-width:3"/><circle cx="290.0" cy="222.0" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="200.0" cy="273.9" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="110.0" cy="222.0" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="110.0" cy="118.0" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="200.0" cy="66.1" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="290.0" cy="118.0" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="200" cy="170" r="14" style="fill:var(--svg-aksen);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="420" cy="80" r="12" class="f-aksen"/><text x="440" y="85">kota pusat (orde tinggi)</text><circle cx="420" cy="115" r="8" class="f-vegetasi"/><text x="440" y="120">pusat orde lebih rendah</text><line x1="408" y1="150" x2="432" y2="150" style="stroke:var(--warna-primer);stroke-width:3"/><text x="440" y="155">batas wilayah pelayanan</text>
+                <text x="408" y="215" class="t-tebal">k = 4 (prinsip transportasi)</text><text x="408" y="245" class="t-kecil">Jumlah wilayah yang dilayani:</text><text x="408" y="268" class="t-tebal">1 + 6 × ½ = 4</text></svg>
+              <figcaption>Pusat-pusat kecil berada di <strong>tengah sisi</strong> heksagon, yaitu pada jalur lurus antara dua kota besar. Pola ini paling hemat untuk membangun jalan.</figcaption>
+            </figure>
+            <figure class="media" data-tampil="k7" hidden>
+              <svg viewBox="0 0 640 330" role="img" aria-label="Pola heksagonal Christaller k = 7 (prinsip administrasi)"><polygon points="320.0,170.0 260.0,273.9 140.0,273.9 80.0,170.0 140.0,66.1 260.0,66.1" style="fill:var(--svg-langit);stroke:var(--warna-primer);stroke-width:3"/><polygon points="294.6,224.6 260.3,244.4 226.0,224.6 226.0,185.0 260.3,165.2 294.6,185.0" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="260.3" cy="204.8" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><polygon points="234.3,259.4 200.0,279.2 165.7,259.4 165.7,219.8 200.0,200.0 234.3,219.8" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="200.0" cy="239.6" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><polygon points="174.0,224.6 139.7,244.4 105.4,224.6 105.4,185.0 139.7,165.2 174.0,185.0" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="139.7" cy="204.8" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><polygon points="174.0,155.0 139.7,174.8 105.4,155.0 105.4,115.4 139.7,95.6 174.0,115.4" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="139.7" cy="135.2" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><polygon points="234.3,120.2 200.0,140.0 165.7,120.2 165.7,80.6 200.0,60.8 234.3,80.6" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="200.0" cy="100.4" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><polygon points="294.6,155.0 260.3,174.8 226.0,155.0 226.0,115.4 260.3,95.6 294.6,115.4" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="260.3" cy="135.2" r="9" style="fill:var(--svg-vegetasi);stroke:var(--warna-permukaan);stroke-width:2"/><polygon points="234.3,189.8 200.0,209.6 165.7,189.8 165.7,150.2 200.0,130.4 234.3,150.2" style="fill:none;stroke:var(--svg-garis);stroke-width:1.2;stroke-dasharray:4 3"/><circle cx="200" cy="170" r="14" style="fill:var(--svg-aksen);stroke:var(--warna-permukaan);stroke-width:2"/><circle cx="420" cy="80" r="12" class="f-aksen"/><text x="440" y="85">kota pusat (orde tinggi)</text><circle cx="420" cy="115" r="8" class="f-vegetasi"/><text x="440" y="120">pusat orde lebih rendah</text><line x1="408" y1="150" x2="432" y2="150" style="stroke:var(--warna-primer);stroke-width:3"/><text x="440" y="155">batas wilayah pelayanan</text>
+                <text x="408" y="215" class="t-tebal">k = 7 (prinsip administrasi)</text><text x="408" y="245" class="t-kecil">Jumlah wilayah yang dilayani:</text><text x="408" y="268" class="t-tebal">1 + 6 × 1 = 7</text></svg>
+              <figcaption>Pusat-pusat kecil berada <strong>di dalam</strong> heksagon sehingga seluruh wilayahnya tunduk pada satu pusat. Cocok untuk pembagian wilayah pemerintahan.</figcaption>
+            </figure>
+          </div>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xii-02-2 (diagram/animasi/grafik/video) -->
+          <div class="widget" data-widget="reilly" id="media-xii02-reilly">
+            <span class="media-label">🧮 Alat Interaktif</span>
+            <h3>Kalkulator Titik Henti (Reilly)</h3>
+            <p>D<sub>AB</sub> = d<sub>AB</sub> ÷ (1 + √(P<sub>B</sub> ÷ P<sub>A</sub>)). Ubah jumlah penduduk atau jarak, lalu perhatikan titik henti bergeser mendekati kota yang lebih kecil.</p>
+            <div class="widget-baris tiga">
+              <div><label for="xii02-pa">Penduduk kota A</label><input type="number" id="xii02-pa" name="pa" value="400000" min="1" step="1" inputmode="numeric"></div>
+              <div><label for="xii02-pb">Penduduk kota B</label><input type="number" id="xii02-pb" name="pb" value="100000" min="1" step="1" inputmode="numeric"></div>
+              <div><label for="xii02-d">Jarak A–B (km)</label><input type="number" id="xii02-d" name="jarak" value="60" min="1" step="any" inputmode="decimal"></div>
+            </div>
+            <figure class="media">
+              <svg viewBox="0 0 560 130" role="img" aria-label="Garis antara kota A dan kota B dengan titik henti yang bergeser sesuai perhitungan.">
+                <line x1="80" y1="60" x2="480" y2="60" style="stroke:var(--svg-garis);stroke-width:4"/>
+                <circle cx="80" cy="60" r="20" style="fill:var(--warna-primer)"/><text x="80" y="66" class="t-tengah t-tebal" style="fill:#fff">A</text>
+                <circle cx="480" cy="60" r="14" style="fill:var(--svg-vegetasi)"/><text x="480" y="66" class="t-tengah t-tebal" style="fill:#fff">B</text>
+                <circle class="reilly-titik" cx="347" cy="60" r="9"/>
+                <text class="reilly-label t-tengah t-tebal" x="347" y="105">titik henti (40,0 km)</text>
+                <text x="80" y="30" class="t-tengah t-kecil">kota A</text><text x="480" y="30" class="t-tengah t-kecil">kota B</text>
+              </svg>
+            </figure>
+            <p class="widget-hasil" aria-live="polite">Titik henti berada 40 km dari kota A atau 20 km dari kota B.</p>
+            <p class="widget-noscript">Aktifkan JavaScript agar kalkulator dapat menghitung otomatis.</p>
+          </div>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="indikator">C. Indikator Pembangunan</h2>
+          <ul>
+            <li><strong>Indeks Pembangunan Manusia (IPM)</strong>: diukur dari tiga dimensi, yaitu umur panjang dan hidup sehat, pengetahuan, dan standar hidup layak.</li>
+            <li><strong>Pendapatan per kapita</strong> atau PDB/PDRB per kapita.</li>
+            <li><strong>Rasio Gini</strong>: ketimpangan pendapatan, bernilai 0 (merata sempurna) hingga 1 (timpang sempurna).</li>
+            <li>Indikator lain: tingkat kemiskinan, pengangguran, dan akses layanan dasar.</li>
+          </ul>
+
+
+
+
+          <!-- MEDIA-MULAI xii-02-3 (diagram/animasi/grafik/video) -->
+          <figure class="media" id="media-xii02-ipm">
+            <span class="media-label">📊 Grafik</span>
+            <svg viewBox="0 0 600 300" role="img" aria-labelledby="xii02-ipm-j xii02-ipm-d">
+              <title id="xii02-ipm-j">Indeks Pembangunan Manusia Indonesia</title>
+              <desc id="xii02-ipm-d">Kiri: IPM Indonesia 74,39 (2023), 75,02 (2024), 75,90 (2025). Kanan: IPM 2025 DKI Jakarta 85,05, Indonesia 75,90, Papua Pegunungan 54,91.</desc>
+              <defs></defs>
+              <line class="sumbu" x1="40" y1="250" x2="580" y2="250"/><line class="kisi" x1="40" y1="250" x2="580" y2="250"/><text class="t-kecil t-kanan" x="34" y="254">40</text><line class="kisi" x1="40" y1="166" x2="580" y2="166"/><text class="t-kecil t-kanan" x="34" y="170">60</text><line class="kisi" x1="40" y1="82" x2="580" y2="82"/><text class="t-kecil t-kanan" x="34" y="86">80</text><rect class="batang" x="70" y="105.6" width="50" height="144.4" rx="3"><title>IPM Indonesia 2023: 74,39</title></rect><text class="t-tengah t-tebal" x="95.0" y="98.6" style="font-size:13.5px">74,39</text><text class="t-tengah" x="95" y="270">2023</text><rect class="batang" x="145" y="102.9" width="50" height="147.1" rx="3"><title>IPM Indonesia 2024: 75,02</title></rect><text class="t-tengah t-tebal" x="170.0" y="95.9" style="font-size:13.5px">75,02</text><text class="t-tengah" x="170" y="270">2024</text><rect class="batang" x="220" y="99.2" width="50" height="150.8" rx="3"><title>IPM Indonesia 2025: 75,90</title></rect><text class="t-tengah t-tebal" x="245.0" y="92.2" style="font-size:13.5px">75,90</text><text class="t-tengah" x="245" y="270">2025</text><text class="t-tengah t-tebal" x="170" y="30">IPM Indonesia 2023–2025</text><line x1="310" y1="45" x2="310" y2="270" style="stroke:var(--warna-garis);stroke-dasharray:4 4"/><rect class="batang-basah" x="340" y="60.8" width="56" height="189.2" rx="3"><title>IPM DKI Jakarta 2025: 85,05</title></rect><text class="t-tengah t-tebal" x="368.0" y="53.8" style="font-size:13.5px">85,05</text><text class="t-tengah t-kecil" x="368" y="270">DKI Jakarta</text><rect class="batang" x="422" y="99.2" width="56" height="150.8" rx="3"><title>IPM Indonesia 2025: 75,90</title></rect><text class="t-tengah t-tebal" x="450.0" y="92.2" style="font-size:13.5px">75,90</text><text class="t-tengah t-kecil" x="450" y="270">Indonesia</text><rect class="batang-kering" x="504" y="187.4" width="56" height="62.6" rx="3"><title>IPM Papua Pegunungan 2025: 54,91</title></rect><text class="t-tengah t-tebal" x="532.0" y="180.4" style="font-size:13.5px">54,91</text><text class="t-tengah t-kecil" x="532" y="270">Papua Peg.</text><text class="t-tengah t-tebal" x="455" y="30">Perbandingan wilayah, 2025</text><text class="t-kecil" x="44" y="292">sumbu tegak dimulai dari 40 agar perbedaan terlihat</text>
+            </svg>
+            <figcaption>Sumber data: <strong>Badan Pusat Statistik</strong>, Indeks Pembangunan Manusia 2023–2025. IPM nasional terus naik, tetapi selisih antara provinsi tertinggi dan terendah masih sekitar 30 poin. Inilah contoh <strong>ketimpangan wilayah</strong>.</figcaption>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+
+          <!-- MEDIA-MULAI xii-02-4 (diagram/animasi/grafik/video) -->
+          <figure class="media media-video" id="media-xii02-video">
+            <span class="media-label">🎬 Video</span>
+            <!-- ===== EDIT DI SINI: ganti data-video-id dengan ID video YouTube lain bila perlu
+                 (ID = kode setelah "watch?v=" pada alamat video) ===== -->
+            <div class="video-lite" data-video-id="re-3epK3oio" data-judul="Mengukur Kualitas Hidup dengan Indeks Pembangunan Manusia">
+              <noscript><p class="box box-info">Tonton video di
+                <a href="https://www.youtube.com/watch?v=re-3epK3oio" rel="noopener">YouTube: Mengukur Kualitas Hidup dengan Indeks Pembangunan Manusia</a>.</p></noscript>
+            </div>
+            <figcaption><strong>Mengukur Kualitas Hidup dengan Indeks Pembangunan Manusia</strong> — Penjelasan BPS tentang komponen IPM dan contoh perkembangannya di Jawa Tengah. Bandingkan angkanya dengan grafik IPM nasional di atas.</figcaption>
+            <p class="video-sumber">Sumber: kanal YouTube <strong>BPS Provinsi Jawa Tengah</strong> (2024) ·
+              <a class="video-tautan" href="https://www.youtube.com/watch?v=re-3epK3oio" rel="noopener">buka di YouTube</a>.
+              Video baru dimuat setelah diklik dan membutuhkan internet.</p>
+          </figure>
+          <!-- MEDIA-SELESAI -->
+          <h2 id="ketimpangan">D. Ketimpangan Wilayah</h2>
+          <p>
+            Ketimpangan pembangunan, misalnya antara Kawasan Barat dan Kawasan Timur Indonesia atau antara kota dan
+            desa, disebabkan perbedaan sumber daya alam, kualitas sumber daya manusia, aksesibilitas, dan kebijakan.
+            Upaya mengatasinya meliputi pembangunan infrastruktur penghubung, dana desa, pengembangan KEK di luar Jawa,
+            serta peningkatan kualitas pendidikan dan kesehatan.
+          </p>
+        </div>
+
+        <!-- ==================== 4. RANGKUMAN ==================== -->
+        <section class="box box-rangkuman" id="rangkuman" aria-labelledby="judul-rangkuman">
+          <h2 id="judul-rangkuman" class="box-title">📝 Rangkuman</h2>
+          <!-- ===== EDIT DI SINI: poin-poin rangkuman ===== -->
+          <ul>
+            <li>Wilayah formal ditandai keseragaman ciri; wilayah fungsional terbentuk dari hubungan pusat dengan daerah sekitarnya.</li>
+            <li>Teori kutub pertumbuhan (Perroux) menekankan titik pertumbuhan yang menyebarkan kemajuan ke sekitarnya.</li>
+            <li>Teori tempat sentral (Christaller) menjelaskan pola heksagonal pusat pelayanan dengan prinsip k = 3, 4, dan 7.</li>
+            <li>Teori titik henti (Reilly) menentukan batas pengaruh dua kota berdasarkan jarak dan jumlah penduduk.</li>
+            <li>Keberhasilan pembangunan diukur dengan IPM, pendapatan per kapita, dan rasio Gini; ketimpangan diatasi dengan pemerataan infrastruktur dan SDM.</li>
+          </ul>
+        </section>
+
+        <!-- ==================== 5. LATIHAN SOAL ==================== -->
+        <!-- ===== EDIT DI SINI: SOAL LATIHAN =====
+             Setiap soal = satu <fieldset class="quiz-question" data-answer="huruf kunci">.
+             - name pada input harus sama dalam satu soal dan berbeda antarsoal.
+             - <p class="quiz-feedback"> berisi pembahasan, tampil setelah diperiksa.
+             Logika penilaian ada di js/kuis.js (tidak perlu diubah). -->
+        <section class="quiz" id="latihan" aria-labelledby="judul-latihan" data-kuis="xii-02" data-pembanding="xii-02-pre">
+          <h2 id="judul-latihan" class="box-title">✍️ Posttest</h2>
+          <p>Kerjakan <strong>10 soal</strong> ini <strong>setelah</strong> mempelajari materi. Pilih satu jawaban yang paling tepat, lalu klik <strong>Periksa Jawaban</strong>. Nilaimu akan dibandingkan dengan nilai pretest.</p>
+
+          <noscript>
+            <p class="box box-info">⚠️ Aktifkan JavaScript agar jawaban dapat diperiksa otomatis.</p>
+          </noscript>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>1. Wilayah yang terbentuk karena hubungan antara kota Jakarta sebagai pusat dengan Bogor, Depok, Tangerang, dan Bekasi sebagai daerah penyangga disebut wilayah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s1" value="a"> Formal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s1" value="b"> Fungsional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s1" value="c"> Administratif</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s1" value="d"> Homogen</label></li>
+            </ul>
+            <p class="quiz-feedback">Hubungan pusat dengan hinterland membentuk wilayah <strong>fungsional (nodal)</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. Prinsip Christaller yang menghasilkan pusat pelayanan paling efisien di sepanjang jalur jalan utama adalah prinsip …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s2" value="a"> Transportasi (k = 4)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s2" value="b"> Pasar (k = 3)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s2" value="c"> Administrasi (k = 7)</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s2" value="d"> Gravitasi</label></li>
+            </ul>
+            <p class="quiz-feedback">Prinsip <strong>transportasi (k = 4)</strong> menempatkan pusat pelayanan di sepanjang jalur transportasi utama.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. Kota A berpenduduk 40.000 jiwa dan kota B 10.000 jiwa, berjarak 30 km. Letak titik henti diukur dari kota A adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s3" value="a"> 10 km</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s3" value="b"> 15 km</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s3" value="c"> 20 km</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s3" value="d"> 25 km</label></li>
+            </ul>
+            <p class="quiz-feedback">DAB = 30 ÷ (1 + √(10.000 ÷ 40.000)) = 30 ÷ (1 + 0,5) = <strong>20 km</strong> dari kota A (lebih dekat ke kota B yang lebih kecil).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>4. Tiga dimensi dasar Indeks Pembangunan Manusia (IPM) adalah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s4" value="a"> Pendapatan, pengangguran, kemiskinan</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s4" value="b"> Industri, pertanian, jasa</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s4" value="c"> Umur panjang dan sehat, pengetahuan, standar hidup layak</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s4" value="d"> Kepadatan, pertumbuhan, migrasi penduduk</label></li>
+            </ul>
+            <p class="quiz-feedback">IPM mengukur <strong>kesehatan (umur panjang), pendidikan (pengetahuan), dan standar hidup layak</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>5. Rasio Gini suatu provinsi naik dari 0,35 menjadi 0,42. Artinya …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s5" value="a"> Ketimpangan pendapatan meningkat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s5" value="b"> Pendapatan makin merata</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s5" value="c"> IPM meningkat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s5" value="d"> Jumlah penduduk miskin pasti berkurang</label></li>
+            </ul>
+            <p class="quiz-feedback">Makin mendekati 1, distribusi pendapatan makin timpang, sehingga <strong>ketimpangan meningkat</strong>.</p>
+          </fieldset>
+
+          <!-- POSTTEST-TAMBAHAN-MULAI (soal 6–10) -->
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>6. Wilayah pertanian padi di pantai utara Jawa yang ditandai kesamaan jenis tanaman termasuk wilayah …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s6" value="a"> formal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s6" value="b"> fungsional</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s6" value="c"> nodal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s6" value="d"> administratif</label></li>
+            </ul>
+            <p class="quiz-feedback">Wilayah dengan keseragaman ciri disebut wilayah <strong>formal</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>7. Teori kutub pertumbuhan menyatakan bahwa pembangunan …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s7" value="a"> terjadi merata di semua tempat</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s7" value="b"> membentuk pola heksagonal</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s7" value="c"> ditentukan jarak dua kota</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s7" value="d"> muncul di titik tertentu lalu menyebar ke sekitarnya</label></li>
+            </ul>
+            <p class="quiz-feedback">Menurut Perroux, pertumbuhan muncul di <strong>titik-titik tertentu</strong> dengan industri unggulan lalu menyebar.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>8. Prinsip Christaller k = 7 berkaitan dengan prinsip …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s8" value="a"> pasar</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s8" value="b"> transportasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s8" value="c"> administrasi</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s8" value="d"> industri</label></li>
+            </ul>
+            <p class="quiz-feedback">k = 3 pasar, k = 4 transportasi, k = 7 <strong>administrasi</strong>.</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="d">
+            <legend>9. Kota A berpenduduk 90.000 jiwa dan kota B 10.000 jiwa, berjarak 40 km. Titik henti diukur dari kota A berjarak …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s9" value="a"> 10 km</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s9" value="b"> 20 km</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s9" value="c"> 13,3 km</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s9" value="d"> 30 km</label></li>
+            </ul>
+            <p class="quiz-feedback">D = 40 ÷ (1 + √(10.000 ÷ 90.000)) = 40 ÷ (1 + ⅓) = <strong>30 km</strong> dari A (lebih dekat ke kota B yang lebih kecil).</p>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>10. Rasio Gini suatu wilayah bernilai 0. Artinya, distribusi pendapatan di wilayah itu …</legend>
+            <ul class="quiz-options">
+              <li><label class="quiz-option"><input type="radio" name="xii02-s10" value="a"> timpang sempurna</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s10" value="b"> merata sempurna</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s10" value="c"> sangat timpang</label></li>
+              <li><label class="quiz-option"><input type="radio" name="xii02-s10" value="d"> tidak dapat diukur</label></li>
+            </ul>
+            <p class="quiz-feedback">Rasio Gini 0 berarti <strong>merata sempurna</strong>; 1 berarti timpang sempurna.</p>
+          </fieldset>
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+          <!-- POSTTEST-TAMBAHAN-SELESAI -->
+
+          <p class="quiz-warning" role="alert">Masih ada soal yang belum dijawab.</p>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-primary quiz-submit">Periksa Jawaban</button>
+            <button type="button" class="btn btn-outline quiz-reset" hidden>↺ Ulangi</button>
+          </div>
+
+          <div class="quiz-result" aria-live="polite">
+            <span class="quiz-score"></span>
+            <p class="quiz-message"></p>
+          </div>
+        </section>
+
+        <!-- ==================== 6. TUGAS PROYEK ==================== -->
+        <section class="box box-tugas" id="tugas" aria-labelledby="judul-tugas">
+          <h2 id="judul-tugas" class="box-title">🧪 Tugas Proyek: Analisis Pusat Pertumbuhan di Kabupaten/Kotaku</h2>
+          <!-- ===== EDIT DI SINI: petunjuk tugas proyek ===== -->
+          <p>Kerjakan secara berkelompok (3–4 orang).</p>
+          <ol>
+            <li>Unduh data jumlah penduduk dan fasilitas (pasar, sekolah, puskesmas) per kecamatan dari publikasi BPS “Kabupaten/Kota Dalam Angka”.</li>
+            <li>Tentukan kecamatan yang menjadi pusat pertumbuhan dan jelaskan alasannya.</li>
+            <li>Hitung titik henti antara pusat kota kabupaten/kotamu dan satu kota tetangga menggunakan rumus Reilly.</li>
+            <li>Tandai pusat pertumbuhan dan titik henti pada peta.</li>
+            <li>Bandingkan IPM daerahmu dengan rata-rata provinsi dan nasional (data BPS), lalu berikan dua rekomendasi pemerataan.</li>
+          </ol>
+          <p><strong>Produk:</strong> Laporan singkat dengan tabel data, perhitungan, peta, dan rekomendasi.</p>
+          <p><strong>Kriteria penilaian:</strong> ketepatan data dan sumber, kebenaran perhitungan, ketepatan analisis pusat pertumbuhan, dan kelayakan rekomendasi.</p>
+        </section>
+
+        <!-- ==================== TANDAI SELESAI ==================== -->
+        <!-- data-modul harus sama dengan kode di <body> -->
+        <div class="module-done-area">
+          <button type="button" class="btn btn-done" data-modul="xii-02" aria-pressed="false">☐ Tandai Selesai</button>
+          <p id="status-selesai" class="note" aria-live="polite"></p>
+        </div>
+
+        <!-- ==================== 7. NAVIGASI ANTARMODUL ==================== -->
+        <!-- ===== EDIT DI SINI: tautan modul sebelumnya & berikutnya =====
+             Modul pertama/terakhir ditautkan kembali ke halaman daftar modul kelas. -->
+        <nav class="module-nav" aria-label="Navigasi antarmodul">
+          <a href="xii-01-sig-lanjutan.html" class="prev" rel="prev">
+            <span class="nav-dir">← Modul Sebelumnya</span>
+            <span class="nav-title">Pemanfaatan Lanjutan Peta, Penginderaan Jauh, dan SIG</span>
+          </a>
+          <a href="xii-03-desa-kota.html" class="next" rel="next">
+            <span class="nav-dir">Modul Berikutnya →</span>
+            <span class="nav-title">Interaksi Desa-Kota dan Pemerataan Pembangunan</span>
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h2>🌍 Geografi SMA</h2>
+          <p>Materi Geografi Kelas X–XII berdasarkan Kurikulum Merdeka (Fase E dan Fase F).</p>
+        </div>
+        <div>
+          <h2>Materi</h2>
+          <ul class="footer-links">
+            <li><a href="../kelas-x.html">Kelas X (Fase E)</a></li>
+            <li><a href="../kelas-xi.html">Kelas XI (Fase F)</a></li>
+            <li><a href="../kelas-xii.html">Kelas XII (Fase F)</a></li>
+            <li><a href="../lab-3d.html">Lab 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Tautan</h2>
+          <ul class="footer-links">
+            <li><a href="../glosarium.html">Glosarium</a></li>
+            <li><a href="../tentang.html">Tentang</a></li>
+            <li><a href="../kontak.html">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- ===== EDIT DI SINI: nama guru / sekolah ===== -->
+      <p class="footer-bottom">
+        © <span class="tahun-sekarang">2026</span>
+        Janatun Rahmilah · MAN 3 Bogor.
+        Dibuat untuk pembelajaran Geografi.
+      </p>
+      <p class="footer-sosmed"><a href="https://www.instagram.com/janatun.r/" rel="noopener" target="_blank">Instagram @janatun.r</a> · <a href="https://www.tiktok.com/@janatun.r" rel="noopener" target="_blank">TikTok @janatun.r</a> · <a href="https://www.instagram.com/seputargeo/" rel="noopener" target="_blank">Instagram @seputargeo</a></p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (urutan jangan dibalik) ==================== -->
+  <script src="../js/main.js"></script>
+  <script src="../js/rekap.js"></script>
+  <script src="../js/kuis.js"></script>
+  <script src="../js/media.js"></script>
+</body>
+</html>
